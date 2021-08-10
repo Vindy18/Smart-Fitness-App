@@ -13,4 +13,12 @@
         android:text="Sajith ape wiraya"
         tools:layout_editor_absoluteX="119dp"
         tools:layout_editor_absoluteY="235dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sasanka"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="300dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
