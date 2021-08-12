@@ -18,7 +18,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sasanka"
+        android:text="@string/Ss"
         tools:layout_editor_absoluteX="145dp"
         tools:layout_editor_absoluteY="300dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
