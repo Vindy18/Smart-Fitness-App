@@ -10,20 +10,21 @@
 
     <Button
         android:id="@+id/btn_bmiCal"
-        android:layout_width="250"
-        android:layout_height="65"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp"
         android:text="@string/btn_bmical"
         android:textColor="@color/black"
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="290dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/btn_carIn"
-        android:layout_width="250"
-        android:layout_height="65"
+        android:id="@+id/btn_cv_CI"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
         android:layout_marginTop="30dp"
         android:text="@string/btn_carIn"
         android:textColor="@color/black"
@@ -34,9 +35,9 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_bmiCal" />
 
     <Button
-        android:id="@+id/btn_wt"
-        android:layout_width="250"
-        android:layout_height="65"
+        android:id="@+id/btn_cv_WT"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
         android:layout_marginTop="30dp"
         android:text="@string/btn_wt"
         android:textColor="@color/black"
@@ -44,12 +45,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_carIn" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_cv_CI" />
 
     <Button
-        android:id="@+id/btn_nut"
-        android:layout_width="250"
-        android:layout_height="65"
+        android:id="@+id/btn_cv_nut"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
         android:layout_marginTop="30dp"
         android:text="@string/btn_nut"
         android:textColor="@color/black"
@@ -57,6 +58,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_wt" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_cv_WT" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
