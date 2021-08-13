@@ -11,4 +11,5 @@
     <string name="Email_hint">Enter E-mail</string>
     <string name="password_hint">Enter Password</string>
     <string name="Login_btn">Login</string>
+    <string name="cal">Calculate</string>
 </resources>
