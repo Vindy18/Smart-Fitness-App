@@ -5,4 +5,10 @@
     <string name="btn_nut">Nutritionists</string>
     <string name="btn_carIn">Cardio Instructors</string>
     <string name="btn_addAdmin">Add an Admin</string>
+    <string name="btn_home">Enter</string>
+    <string name="tv_home_copyright">MAD project - @SubZero Developers</string>
+    <string name="btn_home_logInAsAdmin"><u>Log in as Admin</u></string>
+    <string name="Email_hint">Enter E-mail</string>
+    <string name="password_hint">Enter Password</string>
+    <string name="Login_btn">Login</string>
 </resources>
