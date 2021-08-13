@@ -5,37 +5,70 @@
     android:id="@+id/custemer_view_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/custemer_view_background"
+    android:background="@drawable/backgroun01"
     tools:context=".Customer_view_Activity">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="249dp" />
+        android:id="@+id/btn_bmiCal"
+        android:layout_width="250"
+        android:layout_height="65"
+        android:layout_marginTop="20dp"
+        android:text="@string/btn_bmical"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="357dp" />
+        android:id="@+id/btn_carIn"
+        android:layout_width="250"
+        android:layout_height="65"
+        android:layout_marginTop="30dp"
+        android:text="@string/btn_carIn"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bmiCal" />
 
     <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="462dp" />
+        android:id="@+id/btn_wt"
+        android:layout_width="250"
+        android:layout_height="65"
+        android:layout_marginTop="30dp"
+        android:text="@string/btn_wt"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_carIn" />
 
     <Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="555dp" />
+        android:id="@+id/btn_nut"
+        android:layout_width="250"
+        android:layout_height="65"
+        android:layout_marginTop="30dp"
+        android:text="@string/btn_nut"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_wt" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/Logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

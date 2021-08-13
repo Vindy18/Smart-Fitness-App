@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Smart Fitness</string>
+    <string name="btn_bmical">BMI Calculator</string>
+    <string name="btn_wt">Weight Trainers</string>
+    <string name="btn_nut">Nutritionists</string>
+    <string name="btn_carIn">Cardio Instructors</string>
 </resources>
