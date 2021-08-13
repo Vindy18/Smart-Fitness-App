@@ -8,10 +8,12 @@
     android:background="@drawable/backgroundadmin"
     tools:context=".Admin_view_Activity">
 
+
+
     <Button
         android:id="@+id/btn_av_CI"
-        android:layout_width="250"
-        android:layout_height="65"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
         android:layout_marginTop="30dp"
         android:text="@string/btn_carIn"
         android:textColor="@color/black"
@@ -23,8 +25,8 @@
 
     <Button
         android:id="@+id/btn_av_WT"
-        android:layout_width="250"
-        android:layout_height="65"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
         android:layout_marginTop="30dp"
         android:text="@string/btn_wt"
         android:textColor="@color/black"
@@ -36,8 +38,8 @@
 
     <Button
         android:id="@+id/btn_av_nut"
-        android:layout_width="250"
-        android:layout_height="65"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
         android:layout_marginTop="30dp"
         android:text="@string/btn_nut"
         android:textColor="@color/black"
@@ -49,8 +51,8 @@
 
     <Button
         android:id="@+id/btn_addAdmin"
-        android:layout_width="250"
-        android:layout_height="65"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
         android:layout_marginTop="20dp"
         android:text="@string/btn_addAdmin"
         android:textColor="@color/black"
@@ -62,12 +64,24 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="250"
-        android:layout_height="250"
-        android:layout_marginTop="30dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/admin" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
