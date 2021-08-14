@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/trainer"
-    tools:context=".Admin_View_AddWeightTrainer">
+    tools:context=".Admin_View_DeleteWeightTrainer">
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imageView14"
         android:layout_width="178dp"
         android:layout_height="153dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
@@ -44,7 +44,7 @@
     </com.google.android.material.tabs.TabLayout>
 
     <EditText
-        android:id="@+id/editTextTextPersonName10"
+        android:id="@+id/editTextTextPersonName5"
         android:layout_width="382dp"
         android:layout_height="57dp"
         android:background="@color/white"
@@ -52,83 +52,43 @@
         android:fontFamily="sans-serif-thin"
         android:inputType="textPersonName"
         android:text="  Name"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="237dp" />
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="252dp" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress"
+        android:id="@+id/editTextTextPersonName15"
         android:layout_width="382dp"
         android:layout_height="57dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="sans-serif-thin"
-        android:inputType="textPostalAddress"
-        android:text="  Address"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="370dp" />
-
-    <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="382dp"
-        android:layout_height="57dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="sans-serif-thin"
-        android:inputType="phone"
-        android:text="  Contact number"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="440dp" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName11"
-        android:layout_width="382dp"
-        android:layout_height="91dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
         android:inputType="textPersonName"
-        android:text="  About"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="580dp" />
+        android:text="  TrainerID"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="335dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName17"
+        android:layout_width="382dp"
+        android:layout_height="168dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="textPersonName"
+        android:text="   Reason"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="411dp" />
 
     <Button
-        android:id="@+id/button9"
-        android:layout_width="312dp"
-        android:layout_height="52dp"
-        android:background="@color/black"
-        android:text="Add"
+        android:id="@+id/button10"
+        android:layout_width="272dp"
+        android:layout_height="89dp"
+        android:background="@color/white"
+        android:text="  Delete"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:backgroundTint="@color/white"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="705dp" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName12"
-        android:layout_width="382dp"
-        android:layout_height="57dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="sans-serif-thin"
-        android:inputType="textPersonName"
-        android:text="  Working Hours"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="507dp" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName14"
-        android:layout_width="382dp"
-        android:layout_height="57dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="sans-serif-thin"
-        android:inputType="textPersonName"
-        android:text="  Trainer ID"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="306dp" />
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="644dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
