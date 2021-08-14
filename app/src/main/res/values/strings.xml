@@ -47,5 +47,7 @@
     <string name="btn_save" />
     <string name="ntr_location">Location</string>
     <string name="btn_cancel">Cancel</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="delete_profile">Delete profile</string>
 
 </resources>

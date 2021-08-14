@@ -14,6 +14,15 @@
         <activity android:name=".Search_nutritionists" />
         <activity android:name=".add_nutritionist" />
         <activity android:name=".Admin_profile_activity" />
+        <activity android:name=".Admin_View_WeightTrainer_Home"></activity>
+        <activity android:name=".Admin_View_DeleteWeightTrainer" />
+        <activity android:name=".Customer_View_WeightTrainerList" />
+        <activity android:name=".Admin_View_AddWeightTrainer" />
+        <activity android:name=".Customer_view_cardio_ins_profile" />
+        <activity android:name=".Admin_view_cardio_ins_add" />
+        <activity android:name=".Admin_view_cardio_home" />
+        <activity android:name=".customer_view_cardio_ins_list" />
+        <activity android:name=".Admin_profile_activity" />
         <activity android:name=".Edit_admin_activity" />
         <activity android:name=".Add_admin_activity" />
         <activity android:name=".Customer_view_BMI_calculeter" />
