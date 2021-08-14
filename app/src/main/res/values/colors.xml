@@ -10,5 +10,6 @@
     <color name="custemer_view_background">#CCCCFF</color>
     <color name="tollbar">#333333</color>
     <color name="Tab_color">#838383</color>
+    <color name="Available_green">#059B0C</color>
 
 </resources>
