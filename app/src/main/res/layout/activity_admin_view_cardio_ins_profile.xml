@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cardio_wall"
-    tools:context=".Customer_view_cardio_ins_profile">
+    tools:context=".Admin_view_cardio_ins_profile">
 
     <ImageView
         android:id="@+id/imageView5"
@@ -43,6 +43,17 @@
             android:layout_height="wrap_content"
             android:text="@string/Tabs_3" />
     </com.google.android.material.tabs.TabLayout>
+
+    <ImageButton
+        android:id="@+id/cardio_main_admin_btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/admin" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -102,14 +113,26 @@
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="129dp"
-        android:layout_height="55dp"
-        android:text="Call"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/Available_green"
-        app:iconTint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_profile"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/button10"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="650dp" />
+        tools:layout_editor_absoluteY="649dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_profile"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/Warning_red"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

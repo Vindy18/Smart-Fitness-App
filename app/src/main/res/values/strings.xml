@@ -35,5 +35,7 @@
     <string name="contactnumber"> Mobile number</string>
     <string name="add">Add</string>
     <string name="save">Save</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="delete_profile">Delete profile</string>
 
 </resources>
