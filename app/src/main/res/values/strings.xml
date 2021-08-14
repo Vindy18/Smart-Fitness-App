@@ -23,4 +23,17 @@
     <string name="contDescription4" />
     <string name="image_logo">logo</string>
 
+    <string name="Tabs_1">Cardio instructor</string>
+    <string name="Tabs_2">Weight trainers</string>
+    <string name="Tabs_3">Nutrition instructor</string>
+    <string name="cal">Calculate</string>
+    <string name="firstname"> First name</string>
+    <string name="lasttname"> Last name</string>
+    <string name="city"> City</string>
+    <string name="email"> Email</string>
+    <string name="password"> Password</string>
+    <string name="contactnumber"> Mobile number</string>
+    <string name="add">Add</string>
+    <string name="save">Save</string>
+
 </resources>

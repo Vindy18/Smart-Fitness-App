@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Home">
-        <activity android:name=".NutritionistSearchingView"></activity>
+        <activity android:name=".Admin_profile_activity"></activity>
+        <activity android:name=".Edit_admin_activity" />
+        <activity android:name=".Add_admin_activity" />
+        <activity android:name=".Customer_view_BMI_calculeter" />
         <activity android:name=".Admin_view_cardio_ins_list" />
         <activity android:name=".MainAdminLogin" />
         <activity android:name=".Admin_view_Activity" />
