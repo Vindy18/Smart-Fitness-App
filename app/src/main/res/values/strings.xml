@@ -11,9 +11,9 @@
     <string name="Email_hint">Enter E-mail</string>
     <string name="password_hint">Enter Password</string>
     <string name="Login_btn">Login</string>
-    <string name="ntr_tab1">Cardio Instructors</string>
-    <string name="ntr_tab2">  Weight Trainers</string>
-    <string name="ntr_tab3">  Nutritionists</string>
+    <string name="ntr_tab1">CARDIO INSTRUCTORS</string>
+    <string name="ntr_tab2">WEIGHT TRAINERS</string>
+    <string name="ntr_tab3">NUTRITIONISTS</string>
     <string name="scroll1">Nutritionist Name</string>
     <string name="ntr_district">District</string>
     <string name="ntr_name">Nutritionist Name</string>
@@ -35,5 +35,17 @@
     <string name="contactnumber"> Mobile number</string>
     <string name="add">Add</string>
     <string name="save">Save</string>
+    <string name="ntr_phone">+94 XXX XXXXXX</string>
+    <string name="seaech_name">NAME</string>
+    <string name="search_locaion">LOCATION</string>
+    <string name="person_image">person_image</string>
+    <string name="edit_btn">EDIT</string>
+    <string name="add_new">ADD</string>
+    <string name="btn_delete">X</string>
+    <string name="ntr_details">Other</string>
+    <string name="btn_call">CALL</string>
+    <string name="btn_save" />
+    <string name="ntr_location">Location</string>
+    <string name="btn_cancel">Cancel</string>
 
 </resources>
