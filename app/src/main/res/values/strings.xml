@@ -11,6 +11,18 @@
     <string name="Email_hint">Enter E-mail</string>
     <string name="password_hint">Enter Password</string>
     <string name="Login_btn">Login</string>
+    <string name="ntr_tab1">Cardio Instructors</string>
+    <string name="ntr_tab2">  Weight Trainers</string>
+    <string name="ntr_tab3">  Nutritionists</string>
+    <string name="scroll1">Nutritionist Name</string>
+    <string name="ntr_district">District</string>
+    <string name="ntr_name">Nutritionist Name</string>
+    <string name="contDescription1">image_person</string>
+    <string name="contDescription2">image_person</string>
+    <string name="contDescription3">image_person</string>
+    <string name="contDescription4" />
+    <string name="image_logo">logo</string>
+
     <string name="Tabs_1">Cardio instructor</string>
     <string name="Tabs_2">Weight trainers</string>
     <string name="Tabs_3">Nutrition instructor</string>
