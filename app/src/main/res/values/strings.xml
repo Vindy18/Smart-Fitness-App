@@ -11,4 +11,7 @@
     <string name="Email_hint">Enter E-mail</string>
     <string name="password_hint">Enter Password</string>
     <string name="Login_btn">Login</string>
+    <string name="Tabs_1">Cardio instructor</string>
+    <string name="Tabs_2">Weight trainers</string>
+    <string name="Tabs_3">Nutrition instructor</string>
 </resources>
