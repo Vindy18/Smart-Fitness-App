@@ -12,10 +12,9 @@
         android:layout_width="531dp"
         android:layout_height="190dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/box_container"
-        tools:layout_editor_absoluteY="277dp" />
+        tools:layout_editor_absoluteY="253dp" />
 
     <TextView
         android:id="@+id/textView22"
@@ -23,8 +22,8 @@
         android:layout_height="86dp"
         android:text="Total No.of Trainers"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="333dp" />
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="299dp" />
 
     <ImageView
         android:id="@+id/imageView19"
@@ -71,7 +70,18 @@
         android:textSize="20sp"
         app:backgroundTint="@color/white"
         tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="509dp" />
+        tools:layout_editor_absoluteY="439dp" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="347dp"
+        android:layout_height="85dp"
+        android:text="Modify Trainer Details"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/white"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="538dp" />
 
     <Button
         android:id="@+id/button12"
@@ -82,7 +92,7 @@
         android:textSize="20sp"
         app:backgroundTint="@color/white"
         tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="624dp" />
+        tools:layout_editor_absoluteY="634dp" />
 
     <Button
         android:id="@+id/button13"
@@ -105,6 +115,6 @@
         android:textColor="@color/black"
         android:textSize="34sp"
         tools:layout_editor_absoluteX="381dp"
-        tools:layout_editor_absoluteY="333dp" />
+        tools:layout_editor_absoluteY="310dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

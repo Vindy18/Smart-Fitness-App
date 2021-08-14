@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/trainer"
+    tools:context=".Admin_View_Edit_WeightTrainer">
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="312dp"
+        android:layout_height="52dp"
+        android:background="@color/black"
+        android:text="Modify"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:backgroundTint="@color/white"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="804dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName25"
+        android:layout_width="386dp"
+        android:layout_height="138dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="textPersonName"
+        android:text="  About"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="613dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName24"
+        android:layout_width="382dp"
+        android:layout_height="57dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="textPersonName"
+        android:text="  Working Hours"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="535dp" />
+
+    <EditText
+        android:id="@+id/editTextPhone3"
+        android:layout_width="382dp"
+        android:layout_height="57dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="phone"
+        android:text="  Contact number"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPostalAddress4"
+        android:layout_width="382dp"
+        android:layout_height="57dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="textPostalAddress"
+        android:text="  Address"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="389dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName20"
+        android:layout_width="382dp"
+        android:layout_height="57dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="textPersonName"
+        android:text="  Trainer ID"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="319dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName19"
+        android:layout_width="382dp"
+        android:layout_height="57dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="textPersonName"
+        android:text="  Name"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="237dp" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="178dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="588dp"
+        android:layout_height="wrap_content"
+        android:background="@color/Tab_color"
+        app:tabIndicatorColor="@color/black"
+        app:tabSelectedTextColor="#100F0F"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="174dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cardio Instructor" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight Trainer" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nutrition Instructor" />
+    </com.google.android.material.tabs.TabLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

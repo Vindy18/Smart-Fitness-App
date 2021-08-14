@@ -67,7 +67,7 @@
         android:text="  Address"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="370dp" />
+        tools:layout_editor_absoluteY="389dp" />
 
     <EditText
         android:id="@+id/editTextPhone"
@@ -80,20 +80,20 @@
         android:text="  Contact number"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="440dp" />
+        tools:layout_editor_absoluteY="474dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName11"
-        android:layout_width="382dp"
-        android:layout_height="91dp"
+        android:layout_width="386dp"
+        android:layout_height="138dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
         android:inputType="textPersonName"
         android:text="  About"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="580dp" />
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="685dp" />
 
     <Button
         android:id="@+id/button9"
@@ -104,8 +104,8 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         app:backgroundTint="@color/white"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="705dp" />
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="916dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName12"
@@ -116,8 +116,8 @@
         android:fontFamily="sans-serif-thin"
         android:inputType="textPersonName"
         android:text="  Working Hours"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="507dp" />
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="566dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName14"
