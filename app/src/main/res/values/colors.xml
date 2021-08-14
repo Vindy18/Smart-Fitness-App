@@ -11,5 +11,6 @@
     <color name="tollbar">#333333</color>
     <color name="Tab_color">#838383</color>
     <color name="Available_green">#059B0C</color>
+    <color name="Warning_red">#E92617</color>
 
 </resources>

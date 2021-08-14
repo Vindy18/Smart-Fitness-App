@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Home">
-        <activity android:name=".Admin_View_AddWeightTrainer"></activity>
+        <activity android:name=".Admin_view_cardio_ins_profile"></activity>
+        <activity android:name=".Admin_View_AddWeightTrainer" />
         <activity android:name=".Customer_view_cardio_ins_profile" />
         <activity android:name=".Admin_view_cardio_ins_add" />
         <activity android:name=".Admin_view_cardio_home" />

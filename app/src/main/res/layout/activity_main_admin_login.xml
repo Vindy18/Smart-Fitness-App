@@ -28,35 +28,6 @@
         app:srcCompat="@drawable/logo"
         tools:layout_editor_absoluteY="25dp" />
 
-    <EditText
-        android:id="@+id/home_login_et_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/Email_hint"
-        android:inputType="textPersonName|textEmailAddress"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.457" />
-
-    <EditText
-        android:id="@+id/home_login_et_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="@string/password_hint"
-        android:inputType="textPassword"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_login_et_email" />
-
     <Button
         android:id="@+id/home_login_btn_log"
         android:layout_width="119dp"
@@ -67,8 +38,32 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_home_copyright2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="277dp"
+        android:layout_height="43dp"
+        android:background="@drawable/custominput"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_login_et_password"
-        app:layout_constraintVertical_bias="0.177" />
+        tools:layout_editor_absoluteY="316dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="277dp"
+        android:layout_height="43dp"
+        android:background="@drawable/custominput"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="385dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
