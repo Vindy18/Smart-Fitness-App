@@ -13,6 +13,7 @@
         android:layout_width="250dp"
         android:layout_height="65dp"
         android:layout_marginTop="20dp"
+        android:onClick="BMIonClick"
         android:text="@string/btn_bmical"
         android:textColor="@color/black"
         app:backgroundTint="@color/white"
