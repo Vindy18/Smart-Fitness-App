@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    // variables
     Button btn_enter;
     Button btn_logAsAdmin;
     CharSequence message = "Loading";
@@ -21,9 +22,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // get elements by id
         btn_enter = (Button) findViewById(R.id.btn_enter);
         btn_logAsAdmin = (Button) findViewById(R.id.btn_logInAsAdmin);
 
+        // event Listener for Enter button
         btn_enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // event Listener for Log_as_an_admin button
         btn_logAsAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

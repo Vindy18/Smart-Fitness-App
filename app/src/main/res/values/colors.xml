@@ -12,5 +12,7 @@
     <color name="Tab_color">#838383</color>
     <color name="Available_green">#059B0C</color>
     <color name="Warning_red">#E92617</color>
+    <color name="Delete">#F06157</color>
+    <color name="lite_grean">#1BC522</color>
 
 </resources>
