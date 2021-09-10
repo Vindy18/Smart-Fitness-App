@@ -1,9 +1,11 @@
-package com.smartFitness.home;
+package com.smartFitness.home.CustomerBmiCalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.smartFitness.home.R;
 
 public class Customer_view_BMI_calculeter extends AppCompatActivity {
 

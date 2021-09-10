@@ -1,9 +1,11 @@
-package com.smartFitness.home;
+package com.smartFitness.home.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.smartFitness.home.R;
 
 public class Admin_profile_activity extends AppCompatActivity {
 

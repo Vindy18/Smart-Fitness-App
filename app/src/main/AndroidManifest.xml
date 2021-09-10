@@ -13,7 +13,7 @@
         <activity android:name=".Nutritionist_profile_view" />
         <activity android:name=".Search_nutritionists" />
         <activity android:name=".add_nutritionist" />
-        <activity android:name=".Admin_profile_activity" />
+        <activity android:name=".Admin.Admin_profile_activity" />
         <activity android:name=".Admin_View_WeightTrainer_Home"></activity>
         <activity android:name=".Admin_View_Edit_WeightTrainer"></activity>
         <activity android:name=".Admin_View_DeleteWeightTrainer" />
@@ -23,14 +23,14 @@
         <activity android:name=".Admin_view_cardio_ins_add" />
         <activity android:name=".Admin_view_cardio_home" />
         <activity android:name=".customer_view_cardio_ins_list" />
-        <activity android:name=".Edit_admin_activity" />
-        <activity android:name=".Add_admin_activity" />
-        <activity android:name=".Customer_view_BMI_calculeter" />
+        <activity android:name=".Admin.Edit_admin_activity" />
+        <activity android:name=".Admin.Add_admin_activity" />
+        <activity android:name=".CustomerBmiCalculator.Customer_view_BMI_calculeter" />
         <activity android:name=".Admin_view_cardio_ins_list" />
-        <activity android:name=".MainAdminLogin" />
-        <activity android:name=".Admin_view_Activity" />
-        <activity android:name=".Customer_view_Activity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".AdminCommon.MainAdminLogin" />
+        <activity android:name=".AdminCommon.Admin_view_Activity" />
+        <activity android:name=".CustomerCommon.Customer_view_Activity" />
+        <activity android:name=".AppCommon.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

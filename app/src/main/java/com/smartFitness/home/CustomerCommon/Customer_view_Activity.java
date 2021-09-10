@@ -1,4 +1,4 @@
-package com.smartFitness.home;
+package com.smartFitness.home.CustomerCommon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.smartFitness.home.CustomerBmiCalculator.Customer_view_BMI_calculeter;
+import com.smartFitness.home.R;
 
 public class Customer_view_Activity extends AppCompatActivity {
 
@@ -29,7 +32,7 @@ public class Customer_view_Activity extends AppCompatActivity {
         btn_bmiCal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Customer_view_Activity.this,Customer_view_BMI_calculeter.class);
+                Intent intent = new Intent(Customer_view_Activity.this, Customer_view_BMI_calculeter.class);
                 startActivity(intent);
 
                 Context context = getApplicationContext();

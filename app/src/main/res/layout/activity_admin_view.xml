@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundadmin"
-    tools:context=".Admin_view_Activity">
+    tools:context=".AdminCommon.Admin_view_Activity">
 
 
 

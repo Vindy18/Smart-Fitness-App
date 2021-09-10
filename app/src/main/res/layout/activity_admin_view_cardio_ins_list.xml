@@ -193,7 +193,7 @@
         tools:layout_editor_absoluteY="587dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/et_addfirstName"
         android:layout_width="277dp"
         android:layout_height="43dp"
         android:background="@drawable/custominput"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroun01"
-    tools:context=".Customer_view_Activity">
+    tools:context=".CustomerCommon.Customer_view_Activity">
 
     <Button
         android:id="@+id/btn_bmiCal"

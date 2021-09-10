@@ -1,8 +1,10 @@
-package com.smartFitness.home;
+package com.smartFitness.home.Admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.smartFitness.home.R;
 
 public class Edit_admin_activity extends AppCompatActivity {
 

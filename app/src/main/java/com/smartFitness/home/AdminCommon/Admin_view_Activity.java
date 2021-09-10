@@ -1,4 +1,4 @@
-package com.smartFitness.home;
+package com.smartFitness.home.AdminCommon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.smartFitness.home.Admin.Add_admin_activity;
+import com.smartFitness.home.Admin.Admin_profile_activity;
+import com.smartFitness.home.R;
 
 public class Admin_view_Activity extends AppCompatActivity {
 
@@ -32,7 +36,7 @@ public class Admin_view_Activity extends AppCompatActivity {
         btn_addAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Admin_view_Activity.this,Add_admin_activity.class);
+                Intent intent = new Intent(Admin_view_Activity.this, Add_admin_activity.class);
                 startActivity(intent);
 
                 Context context = getApplicationContext();
@@ -43,7 +47,7 @@ public class Admin_view_Activity extends AppCompatActivity {
         // event Listener for Admin profile image button
         btn_adminProfile.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
-                Intent intent = new Intent(Admin_view_Activity.this,Admin_profile_activity.class);
+                Intent intent = new Intent(Admin_view_Activity.this, Admin_profile_activity.class);
                 startActivity(intent);
 
                 Context context = getApplicationContext();
