@@ -40,7 +40,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public long addAdmin(String firstName, String lastName, String city, String email, String mobileNumber, String password ){
+    public boolean addAdmin(String firstName, String lastName, String city, String email, String mobileNumber, String password ){
         //Get all date repository write mode
         SQLiteDatabase db = getWritableDatabase();
 
@@ -53,7 +53,13 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(AdminMaster.Admins.COLUMN_NAME_PASSWORD,password);
 
         long newRowId = (db.insert(AdminMaster.Admins.TABLE_NAME,null, values));
-        return newRowId;
+
+        if(newRowId > 0){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
     public List readAllAdminInfo(String req){
@@ -99,7 +105,7 @@ public class DBHelper extends SQLiteOpenHelper {
             String password = cursor.getString(cursor.getColumnIndexOrThrow(AdminMaster.Admins.COLUMN_NAME_PASSWORD));
 
             emails.add(email);
-            passwords.add(passwords);
+            passwords.add(password);
 
 
         }
@@ -113,4 +119,13 @@ public class DBHelper extends SQLiteOpenHelper {
             return null;
         }
     }
+
+    public void delete() {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        //deleting rows
+        sqLiteDatabase.delete(AdminMaster.Admins.TABLE_NAME, null, null);
+        sqLiteDatabase.close();
+    }
+
+
 }
