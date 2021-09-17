@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ntr3"
-    tools:context=".Search_nutritionists">
+    tools:context=".CustomerNutritionists.Customer_View_Nutritionists_List">
 
     <RelativeLayout
         android:id="@+id/relativeLayoutPerson1"
