@@ -36,7 +36,7 @@ public class MainAdminLogin extends AppCompatActivity {
         et_password = findViewById(R.id.et_password);
         btn_login = findViewById(R.id.btn_login);
 
-
+        boolean val = dbHelper.addAdmin("Harsha","Prabhath","Kaduwela","admin@gmail.com","0716258847","pass@123!");
     }
     protected void onResume() {
         super.onResume();
@@ -70,7 +70,7 @@ public class MainAdminLogin extends AppCompatActivity {
                     }
                 }else{
                     Context context = getApplicationContext();
-                    Toast.makeText(MainAdminLogin.this,"Login Fail",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainAdminLogin.this,"Admin is not found",Toast.LENGTH_SHORT).show();
                 }
 
             }
