@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundadmin"
-    tools:context=".Admin_view_Activity">
+    tools:context=".AdminCommon.Admin_view_Activity">
 
 
 
@@ -74,7 +74,7 @@
         app:srcCompat="@drawable/logo" />
 
     <ImageButton
-        android:id="@+id/btn_admin"
+        android:id="@+id/btn_adminProfile"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
