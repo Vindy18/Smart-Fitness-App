@@ -23,7 +23,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/menu_tab1"
+                android:id="@+id/ntr_menu_tab1"
                 android:layout_width="136dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -34,7 +34,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/menu_tab2"
+                android:id="@+id/ntr_menu_tab2"
                 android:layout_width="136dp"
                 android:layout_height="43dp"
                 android:layout_weight="1"
@@ -44,7 +44,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/menu_tab3"
+                android:id="@+id/ntr_menu_tab3"
                 android:layout_width="136dp"
                 android:layout_height="43dp"
                 android:layout_weight="1"
@@ -80,50 +80,40 @@
 
             <Button
                 android:id="@+id/btn_cancel"
-                android:layout_width="77dp"
+                android:layout_width="84dp"
                 android:layout_height="35dp"
-                android:layout_alignParentLeft="false"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="2dp"
-                android:layout_marginEnd="-1dp"
-                android:layout_marginRight="-1dp"
+                android:layout_marginEnd="-2dp"
+                android:layout_marginRight="-2dp"
                 android:layout_marginBottom="12dp"
                 android:text="@string/btn_cancel"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 app:backgroundTint="#04574F" />
 
             <Button
                 android:id="@+id/btn_save"
-                android:layout_width="77dp"
+                android:layout_width="84dp"
                 android:layout_height="35dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="false"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="-3dp"
-                android:layout_marginEnd="128dp"
-                android:layout_marginRight="48dp"
-                android:layout_marginBottom="11dp"
-                android:text="save"
+                android:layout_marginBottom="13dp"
+                android:text="@string/ntr_btn_save"
                 android:textSize="12sp"
                 app:backgroundTint="#04574F" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName5"
+                android:id="@+id/ntr_add_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
                 android:layout_marginTop="60dp"
                 android:layout_marginBottom="60dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:text="@string/ntr_add_name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName6"
+                android:id="@+id/ntr_add_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -135,7 +125,7 @@
                 android:text="Location" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName7"
+                android:id="@+id/ntr_add_contact_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -147,7 +137,7 @@
                 android:text="Contact Number" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName8"
+                android:id="@+id/ntr_add_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -159,7 +149,7 @@
                 android:text="Email" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName9"
+                android:id="@+id/ntr_add_other"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -175,7 +165,25 @@
         <RelativeLayout
             android:layout_width="91dp"
             android:layout_height="107dp"
-            android:background="#BC646864">
+            android:background="#6B6D70">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="false"
+                android:contentDescription="@string/add_new"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.954"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_add" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -185,18 +193,6 @@
                 android:text="Upload Image"
                 android:textColor="@color/black"
                 android:textStyle="bold|italic" />
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="50dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:background="#00674545"
-                app:srcCompat="@android:drawable/ic_input_add" />
 
         </RelativeLayout>
     </RelativeLayout>

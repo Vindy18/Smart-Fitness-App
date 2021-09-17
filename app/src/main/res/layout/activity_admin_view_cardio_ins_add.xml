@@ -82,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/ntr_add_location"
         android:layout_width="310dp"
         android:layout_height="49dp"
         android:background="@drawable/custominput"
@@ -96,7 +96,7 @@
         tools:layout_editor_absoluteY="257dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/ntr_add_contact_number"
         android:layout_width="310dp"
         android:layout_height="49dp"
         android:background="@drawable/custominput"
@@ -110,7 +110,7 @@
         tools:layout_editor_absoluteY="326dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName8"
+        android:id="@+id/ntr_add_email"
         android:layout_width="310dp"
         android:layout_height="49dp"
         android:background="@drawable/custominput"
@@ -124,7 +124,7 @@
         tools:layout_editor_absoluteY="393dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName9"
+        android:id="@+id/ntr_add_other"
         android:layout_width="310dp"
         android:layout_height="150dp"
         android:background="@drawable/custominput"
