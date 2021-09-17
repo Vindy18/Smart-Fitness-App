@@ -234,7 +234,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/ntr_menu_tab1"
+                android:id="@+id/menu_tab1"
                 android:layout_width="136dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -244,7 +244,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/ntr_menu_tab2"
+                android:id="@+id/menu_tab2"
                 android:layout_width="136dp"
                 android:layout_height="43dp"
                 android:layout_weight="1"
@@ -254,7 +254,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/ntr_menu_tab3"
+                android:id="@+id/menu_tab3"
                 android:layout_width="136dp"
                 android:layout_height="43dp"
                 android:layout_weight="1"
@@ -293,7 +293,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
             android:background="@color/Tab_color"
-            android:text="@string/search_name"
+            android:text="@string/seaech_name"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="italic" />
@@ -321,7 +321,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/Tab_color"
-            android:text="@string/search_location"
+            android:text="@string/search_locaion"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="italic" />

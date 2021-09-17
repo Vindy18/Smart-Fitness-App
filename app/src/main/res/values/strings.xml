@@ -35,8 +35,8 @@
     <string name="add">Add</string>
     <string name="save">Save</string>
     <string name="ntr_phone">+94 XXX XXXXXX</string>
-    <string name="search_name">NAME</string>
-    <string name="search_location">LOCATION</string>
+    <string name="seaech_name">NAME</string>
+    <string name="search_locaion">LOCATION</string>
     <string name="person_image">person_image</string>
     <string name="edit_btn">EDIT</string>
     <string name="add_new">ADD</string>
@@ -48,7 +48,5 @@
     <string name="btn_cancel">Cancel</string>
     <string name="edit_profile">Edit profile</string>
     <string name="delete_profile">Delete profile</string>
-    <string name="ntr_btn_save">save</string>
-    <string name="ntr_add_name">Name</string>
 
 </resources>

@@ -111,7 +111,7 @@
                 app:backgroundTint="#04574F" />
 
             <EditText
-                android:id="@+id/et_password"
+                android:id="@+id/editTextTextPersonName5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
