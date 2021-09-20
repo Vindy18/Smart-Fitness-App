@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ntr3"
-    tools:context=".Nutritionist_profile_view">
+    tools:context=".CustomerNutritionists.Customer_View_Nutritionist_Profile_View">
 
     <HorizontalScrollView
         android:id="@+id/horizontalMenuBar"
@@ -161,7 +161,6 @@
                 android:id="@+id/btn_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="false"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"

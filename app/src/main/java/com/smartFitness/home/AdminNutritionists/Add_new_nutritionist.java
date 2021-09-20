@@ -1,8 +1,10 @@
-package com.smartFitness.home;
+package com.smartFitness.home.AdminNutritionists;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.smartFitness.home.R;
 
 public class Add_new_nutritionist extends AppCompatActivity {
 
