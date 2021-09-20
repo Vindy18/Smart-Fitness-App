@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/home"
-    tools:context=".MainActivity" >
+    tools:context=".AppCommon.MainActivity" >
 
     <ImageView
         android:id="@+id/imageView"
@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/logo" />
 
     <Button
-        android:id="@+id/btn_home_enter"
+        android:id="@+id/btn_enter"
         android:layout_width="170dp"
         android:layout_height="80dp"
         android:text="@string/btn_home"
@@ -47,7 +47,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_home_logInAsAdmin"
+        android:id="@+id/btn_logInAsAdmin"
         android:layout_width="181dp"
         android:layout_height="38dp"
         android:background="@android:color/transparent"
@@ -56,7 +56,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_home_copyright"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_home_enter"
+        app:layout_constraintTop_toBottomOf="@+id/btn_enter"
         app:layout_constraintVertical_bias="0.776" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

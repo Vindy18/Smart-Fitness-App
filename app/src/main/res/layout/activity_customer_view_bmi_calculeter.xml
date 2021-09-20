@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bmibackground"
-    tools:context=".Customer_view_BMI_calculeter">
+    tools:context=".CustomerBmiCalculator.Customer_view_BMI_calculeter">
 
     <TextView
         android:id="@+id/textView6"
@@ -17,7 +17,9 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView2"
@@ -62,9 +64,13 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/custominput"
         android:ems="10"
         android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumber2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -78,7 +84,9 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumber"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumber" />
 
     <Button
         android:id="@+id/button"
@@ -95,14 +103,18 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="103dp"
-        android:layout_height="33dp"
+        android:layout_width="67dp"
+        android:layout_height="34dp"
         android:layout_marginStart="110dp"
         android:layout_marginLeft="110dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:text=" BMI :"
         android:textColor="@color/white"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
@@ -111,6 +123,8 @@
         android:layout_width="388dp"
         android:layout_height="277dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
