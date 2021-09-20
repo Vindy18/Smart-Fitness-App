@@ -48,5 +48,16 @@
     <string name="btn_cancel">Cancel</string>
     <string name="edit_profile">Edit profile</string>
     <string name="delete_profile">Delete profile</string>
+    <string name="editTextTextPersonName10">Name</string>
+    <string name="editTextTextPersonName14">Trainer ID</string>
+    <string name="editTextTextPostalAddress">Address</string>
+    <string name="editTextPhone">Contact Number</string>
+    <string name="editTextTextPersonName12">Working Hours</string>
+    <string name="About" />
+    <string name="button11">Add Trainer</string>
+    <string name="editTextTextPersonName5">Name</string>
+    <string name="editTextTextPersonName15">Trainer ID</string>
+    <string name="editTextTextPersonName17">Reason</string>
+    <string name="button10">DELETE</string>
 
 </resources>
