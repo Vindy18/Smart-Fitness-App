@@ -14,11 +14,11 @@
         <activity android:name=".AdminNutritionists.Admin_View_Nutritionists_List" />
         <activity android:name=".AdminNutritionists.Add_new_nutritionist" />
         <activity android:name=".Admin.Admin_profile_activity" />
-        <activity android:name=".Admin_View_WeightTrainer_Home" />
-        <activity android:name=".Admin_View_Edit_WeightTrainer" />
-        <activity android:name=".Admin_View_DeleteWeightTrainer" />
-        <activity android:name=".Customer_View_WeightTrainerList" />
-        <activity android:name=".Admin_View_AddWeightTrainer" />
+        <activity android:name=".AdminWeightTrainer.Admin_View_WeightTrainer_Home" />
+        <activity android:name=".AdminWeightTrainer.Admin_View_Edit_WeightTrainer" />
+        <activity android:name=".AdminWeightTrainer.Admin_View_DeleteWeightTrainer" />
+        <activity android:name=".CustomerWeightTrainer.Customer_View_WeightTrainerList" />
+        <activity android:name=".AdminWeightTrainer.Admin_View_AddWeightTrainer" />
         <activity android:name=".Customer_view_cardio_ins_profile" />
         <activity android:name=".Admin_view_cardio_ins_add" />
         <activity android:name=".Admin_view_cardio_home" />

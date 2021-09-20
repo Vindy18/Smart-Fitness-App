@@ -1,8 +1,10 @@
-package com.smartFitness.home;
+package com.smartFitness.home.AdminWeightTrainer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.smartFitness.home.R;
 
 public class Admin_View_AddWeightTrainer extends AppCompatActivity {
 
