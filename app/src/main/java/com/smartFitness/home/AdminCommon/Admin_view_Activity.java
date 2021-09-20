@@ -27,6 +27,7 @@ public class Admin_view_Activity extends AppCompatActivity {
 
         // get intent object
         Intent loginIntent = getIntent();
+        String emailExtra = loginIntent.getStringExtra("emailaddress");
 
         // get elements by id
         btn_addAdmin = findViewById(R.id.btn_addAdmin);
@@ -48,6 +49,7 @@ public class Admin_view_Activity extends AppCompatActivity {
         btn_adminProfile.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 Intent intent = new Intent(Admin_view_Activity.this, Admin_profile_activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);
 
                 Context context = getApplicationContext();
