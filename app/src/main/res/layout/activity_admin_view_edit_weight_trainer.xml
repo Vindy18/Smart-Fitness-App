@@ -16,8 +16,8 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         app:backgroundTint="@color/white"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="804dp" />
+        tools:layout_editor_absoluteX="221dp"
+        tools:layout_editor_absoluteY="1002dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName25"
@@ -29,8 +29,8 @@
         android:inputType="textPersonName"
         android:text="  About"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="613dp" />
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="774dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName24"
@@ -41,8 +41,8 @@
         android:fontFamily="sans-serif-thin"
         android:inputType="textPersonName"
         android:text="  Working Hours"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="535dp" />
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="688dp" />
 
     <EditText
         android:id="@+id/editTextPhone3"
@@ -54,8 +54,8 @@
         android:inputType="phone"
         android:text="  Contact number"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="464dp" />
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="574dp" />
 
     <EditText
         android:id="@+id/editTextTextPostalAddress4"
@@ -67,8 +67,8 @@
         android:inputType="textPostalAddress"
         android:text="  Address"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="389dp" />
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="461dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName20"
@@ -79,8 +79,8 @@
         android:fontFamily="sans-serif-thin"
         android:inputType="textPersonName"
         android:text="  Trainer ID"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="319dp" />
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="357dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName19"
@@ -92,8 +92,8 @@
         android:inputType="textPersonName"
         android:text="  Name"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="237dp" />
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="268dp" />
 
     <ImageView
         android:id="@+id/imageView17"
@@ -107,13 +107,13 @@
         app:srcCompat="@drawable/logo" />
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_width="588dp"
-        android:layout_height="wrap_content"
+        android:layout_width="780dp"
+        android:layout_height="58dp"
         android:background="@color/Tab_color"
         app:tabIndicatorColor="@color/black"
         app:tabSelectedTextColor="#100F0F"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="174dp">
+        tools:layout_editor_absoluteY="164dp">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"

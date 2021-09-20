@@ -9,23 +9,26 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="178dp"
-        android:layout_height="153dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="163dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
         app:srcCompat="@drawable/logo" />
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_width="588dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/tabLayout2"
+        android:layout_width="411dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="20dp"
         android:background="@color/Tab_color"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
         app:tabIndicatorColor="@color/black"
         app:tabSelectedTextColor="#100F0F"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="174dp">
+        tools:layout_editor_absoluteX="0dp">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -47,27 +50,36 @@
         android:id="@+id/editTextTextPersonName10"
         android:layout_width="382dp"
         android:layout_height="57dp"
+        android:layout_marginTop="32dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
+        android:hint="@string/editTextTextPersonName10"
         android:inputType="textPersonName"
         android:text="  Name"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="237dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextTextPostalAddress"
         android:layout_width="382dp"
         android:layout_height="57dp"
+        android:layout_marginBottom="16dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
+        android:hint="@string/editTextTextPostalAddress"
         android:inputType="textPostalAddress"
         android:text="  Address"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextPhone"
@@ -76,24 +88,29 @@
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
+        android:hint="@string/editTextPhone"
         android:inputType="phone"
         android:text="  Contact number"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="474dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="463dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName11"
-        android:layout_width="386dp"
-        android:layout_height="138dp"
+        android:layout_width="382dp"
+        android:layout_height="100dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
+        android:hint="@string/About"
         android:inputType="textPersonName"
         android:text="  About"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="685dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName12" />
 
     <Button
         android:id="@+id/button9"
@@ -104,31 +121,38 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         app:backgroundTint="@color/white"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="916dp" />
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="880dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName12"
         android:layout_width="382dp"
         android:layout_height="57dp"
+        android:layout_marginTop="20dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
+        android:hint="@string/editTextTextPersonName12"
         android:inputType="textPersonName"
         android:text="  Working Hours"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="566dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
 
     <EditText
         android:id="@+id/editTextTextPersonName14"
         android:layout_width="382dp"
         android:layout_height="57dp"
+        android:layout_marginBottom="28dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
+        android:hint="@string/editTextTextPersonName14"
         android:inputType="textPersonName"
         android:text="  Trainer ID"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="306dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPostalAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
