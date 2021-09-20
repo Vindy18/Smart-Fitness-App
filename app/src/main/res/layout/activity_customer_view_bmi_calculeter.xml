@@ -8,12 +8,12 @@
     tools:context=".CustomerBmiCalculator.Customer_view_BMI_calculeter">
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="103dp"
-        android:layout_height="33dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginRight="110dp"
-        android:text="kg/m^2"
+        android:id="@+id/tv_bmiCalResult"
+        android:layout_width="183dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:text="     kg/m^2"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
@@ -51,14 +51,14 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
-        android:text="Hight (cm)"
+        android:text="Height (cm)"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/et_height"
         android:layout_width="180dp"
         android:layout_height="45dp"
         android:layout_marginStart="20dp"
@@ -69,13 +69,13 @@
         android:background="@drawable/custominput"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumber2"
+        app:layout_constraintEnd_toStartOf="@+id/et_weight"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/et_weight"
         android:layout_width="180dp"
         android:layout_height="45dp"
         android:layout_marginEnd="20dp"
@@ -83,13 +83,13 @@
         android:background="@drawable/custominput"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumber"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber" />
+        app:layout_constraintStart_toEndOf="@+id/et_height" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_bmi_cal"
         android:layout_width="130dp"
         android:layout_height="65dp"
         android:layout_marginTop="10dp"
@@ -99,7 +99,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/et_height" />
 
     <TextView
         android:id="@+id/textView4"
@@ -113,10 +113,10 @@
         android:text=" BMI :"
         android:textColor="@color/white"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintEnd_toStartOf="@+id/tv_bmiCalResult"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_bmi_cal" />
 
     <ImageView
         android:id="@+id/imageView4"

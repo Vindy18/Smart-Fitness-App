@@ -18,10 +18,10 @@ import java.util.List;
 
 public class MainAdminLogin extends AppCompatActivity {
 
+    // variables
     EditText et_email;
     EditText et_password;
     Button btn_login;
-
     DBHelper dbHelper;
 
     @Override
@@ -29,6 +29,7 @@ public class MainAdminLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_admin_login);
 
+        //get intent object from main view
         Intent mainIntent = getIntent();
 
         dbHelper = new DBHelper(this);
@@ -38,6 +39,7 @@ public class MainAdminLogin extends AppCompatActivity {
 
         boolean val = dbHelper.addAdmin("Harsha","Prabhath","Kaduwela","admin@gmail.com","0716258847","pass@123!");
     }
+
     protected void onResume() {
         super.onResume();
 
@@ -65,7 +67,7 @@ public class MainAdminLogin extends AppCompatActivity {
                     }else{
 
                         Context context = getApplicationContext();
-                        Toast.makeText(MainAdminLogin.this,"Login Fail",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainAdminLogin.this,"User name or password is invalid",Toast.LENGTH_SHORT).show();
 
                     }
                 }else{
@@ -75,34 +77,5 @@ public class MainAdminLogin extends AppCompatActivity {
 
             }
         });
-    }
-
-    public void Login(View view){
-
-
-
-        List emails = dbHelper.readAllAdminInfo("email");
-        List passwords = dbHelper.readAllAdminInfo("Password");
-
-        String email = et_email.getText().toString();
-        String password = et_password.getText().toString();
-
-
-       if(emails.indexOf(email)>=0 ){
-
-            if(passwords.get(emails.indexOf(email)).equals(password )){
-                Intent intent = new Intent(MainAdminLogin.this, Admin_view_Activity.class);
-                startActivity(intent);
-
-                Context context = getApplicationContext();
-                Toast.makeText(context,"Login Success",Toast.LENGTH_SHORT).show();
-
-            }else{
-
-                Context context = getApplicationContext();
-                Toast.makeText(context,"Login Fail",Toast.LENGTH_SHORT).show();
-
-            }
-        }
     }
 }
