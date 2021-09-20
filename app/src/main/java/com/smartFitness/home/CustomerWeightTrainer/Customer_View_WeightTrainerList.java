@@ -1,8 +1,10 @@
-package com.smartFitness.home;
+package com.smartFitness.home.CustomerWeightTrainer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.smartFitness.home.R;
 
 public class Customer_View_WeightTrainerList extends AppCompatActivity {
 
