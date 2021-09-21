@@ -68,7 +68,7 @@ public class Admin_view_Activity extends AppCompatActivity {
                 startActivity(intent);
 
                 Context context = getApplicationContext();
-                Toast.makeText(context,"Welcome",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"Find Nutritionists here!!",Toast.LENGTH_SHORT).show();
             }
         });
 
