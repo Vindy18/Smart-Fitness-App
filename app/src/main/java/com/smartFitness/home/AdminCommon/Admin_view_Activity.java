@@ -12,12 +12,14 @@ import android.widget.Toast;
 
 import com.smartFitness.home.Admin.Add_admin_activity;
 import com.smartFitness.home.Admin.Admin_profile_activity;
+import com.smartFitness.home.AdminNutritionists.Admin_View_Nutritionists_List;
 import com.smartFitness.home.R;
 
 public class Admin_view_Activity extends AppCompatActivity {
 
     // variables
     Button btn_addAdmin;
+    Button btn_avNutritionist;
     ImageButton btn_adminProfile;
 
     @Override
@@ -32,6 +34,7 @@ public class Admin_view_Activity extends AppCompatActivity {
         // get elements by id
         btn_addAdmin = findViewById(R.id.btn_addAdmin);
         btn_adminProfile = findViewById(R.id.btn_adminProfile);
+        btn_avNutritionist = findViewById(R.id.btn_av_nut);
 
         // event Listener for Add admin button
         btn_addAdmin.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +59,20 @@ public class Admin_view_Activity extends AppCompatActivity {
                 Toast.makeText(context,"Admin profile Loading",Toast.LENGTH_SHORT).show();
             }
         });
+
+        // event Listener for Admin profile image button
+        btn_avNutritionist.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent intent = new Intent(Admin_view_Activity.this, Admin_View_Nutritionists_List.class);
+                intent.putExtra ("emailaddress",emailExtra);
+                startActivity(intent);
+
+                Context context = getApplicationContext();
+                Toast.makeText(context,"Welcome",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
 
