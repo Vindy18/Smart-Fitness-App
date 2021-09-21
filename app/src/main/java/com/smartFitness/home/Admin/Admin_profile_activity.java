@@ -31,7 +31,7 @@ public class Admin_profile_activity extends AppCompatActivity {
     TextView tv_adminEmail;
     TextView tv_adminMobileNumber;
     DBHelper dbHelper;
-
+    String emailExtra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class Admin_profile_activity extends AppCompatActivity {
 
         // get intent object
         Intent adminMenuIntent = getIntent();
-        String emailExtra = adminMenuIntent.getStringExtra("emailaddress");
+        emailExtra = adminMenuIntent.getStringExtra("emailaddress");
 
         dbHelper = new DBHelper(this);
         btn_logout = findViewById(R.id.btn_logOut);
@@ -53,9 +53,9 @@ public class Admin_profile_activity extends AppCompatActivity {
         tv_adminMobileNumber = findViewById(R.id.tv_admin_mobile);
 
         Admin admin = dbHelper.getAdmin(emailExtra);
-        String fulname = admin.firstName +" "+admin.lastName;
+        String fullname = admin.firstName +" "+admin.lastName;
 
-        tv_adminName.setText(fulname);
+        tv_adminName.setText(fullname);
         tv_adminCity.setText(admin.city);
         tv_adminEmail.setText(admin.email);
         tv_adminMobileNumber.setText(admin.mobileNumber);
@@ -107,10 +107,12 @@ public class Admin_profile_activity extends AppCompatActivity {
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Admin admin = dbHelper.getAdmin("admin@gmail.com");
-                String x = admin.firstName;
+                dbHelper.deleteAdmin(emailExtra);
+                Context context = getApplicationContext();
+                Toast.makeText(context,"Deleting..",Toast.LENGTH_SHORT).show();
 
-                tv_adminName.setText(x);
+                Intent intent = new Intent(Admin_profile_activity.this, MainAdminLogin.class);
+                startActivity(intent);
             }
         });
 

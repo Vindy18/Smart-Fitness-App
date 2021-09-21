@@ -151,18 +151,15 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-    public void delete() {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        //deleting rows
-        sqLiteDatabase.delete(AdminMaster.Admins.TABLE_NAME, null, null);
-        sqLiteDatabase.close();
-    }
 
-    public void deleteAdmin() {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        //deleting rows
-        sqLiteDatabase.delete(AdminMaster.Admins.TABLE_NAME, null, null);
-        sqLiteDatabase.close();
+
+    public void deleteAdmin(String Email) {
+        SQLiteDatabase db= getReadableDatabase();
+        //deleting admin
+        String sql = AdminMaster.Admins.COLUMN_NAME_EMAIL + " LIKE ?";
+        String[] selectionArgs = {Email};
+        db.delete(AdminMaster.Admins.TABLE_NAME, sql ,selectionArgs );
+
     }
 
 
