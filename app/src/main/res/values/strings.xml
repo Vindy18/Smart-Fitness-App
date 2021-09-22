@@ -59,5 +59,7 @@
     <string name="editTextTextPersonName15">Trainer ID</string>
     <string name="editTextTextPersonName17">Reason</string>
     <string name="button10">DELETE</string>
+    <string name="button">Add</string>
+    <string name="editTextPhone">Contact Number</string>
 
 </resources>

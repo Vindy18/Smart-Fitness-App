@@ -9,8 +9,14 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="163dp"
-        android:layout_height="110dp"
+        android:layout_width="159dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -21,14 +27,23 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout2"
-        android:layout_width="411dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="390dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
         android:background="@color/Tab_color"
+        app:layout_constraintBottom_toTopOf="@+id/et_topicID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="0.0"
         app:tabIndicatorColor="@color/black"
-        app:tabSelectedTextColor="#100F0F"
-        tools:layout_editor_absoluteX="0dp">
+        app:tabSelectedTextColor="#100F0F">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -47,10 +62,13 @@
     </com.google.android.material.tabs.TabLayout>
 
     <EditText
-        android:id="@+id/editTextTextPersonName10"
+        android:id="@+id/et_wtName"
         android:layout_width="382dp"
         android:layout_height="57dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
@@ -58,17 +76,23 @@
         android:inputType="textPersonName"
         android:text="  Name"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName14"
+        app:layout_constraintBottom_toTopOf="@+id/et_topicID"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout2"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress"
+        android:id="@+id/et_wtaddress"
         android:layout_width="382dp"
         android:layout_height="57dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
@@ -76,15 +100,22 @@
         android:inputType="textPostalAddress"
         android:text="  Address"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPhone"
+        app:layout_constraintBottom_toTopOf="@+id/et_wtContactnumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_topicID" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/et_wtContactnumber"
         android:layout_width="382dp"
         android:layout_height="57dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
@@ -92,14 +123,22 @@
         android:inputType="phone"
         android:text="  Contact number"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_workinghours"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="463dp" />
+        app:layout_constraintTop_toBottomOf="@+id/et_wtaddress" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName11"
+        android:id="@+id/et_about"
         android:layout_width="382dp"
         android:layout_height="100dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
@@ -109,50 +148,69 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName12" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="312dp"
-        android:layout_height="52dp"
-        android:background="@color/black"
-        android:text="Add"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTint="@color/white"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="880dp" />
+        app:layout_constraintTop_toBottomOf="@+id/et_workinghours"
+        app:layout_constraintVertical_bias="0.193" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName12"
+        android:id="@+id/et_workinghours"
         android:layout_width="382dp"
         android:layout_height="57dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
         android:hint="@string/editTextTextPersonName12"
         android:inputType="textPersonName"
         android:text="  Working Hours"
+        app:layout_constraintBottom_toTopOf="@+id/et_about"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/et_wtContactnumber" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName14"
+        android:id="@+id/et_topicID"
         android:layout_width="382dp"
         android:layout_height="57dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
         android:hint="@string/editTextTextPersonName14"
         android:inputType="textPersonName"
         android:text="  Trainer ID"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPostalAddress"
+        app:layout_constraintBottom_toTopOf="@+id/et_wtaddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_wtName" />
+
+    <Button
+        android:id="@+id/btn_addNewWeightTrainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
+        android:hint="@string/button"
+        android:text="Add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_about" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
