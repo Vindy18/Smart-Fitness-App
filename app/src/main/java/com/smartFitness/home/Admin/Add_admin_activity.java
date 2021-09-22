@@ -8,13 +8,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.smartFitness.home.AdminCommon.Admin_view_Activity;
 import com.smartFitness.home.DataBase.DBHelper;
 import com.smartFitness.home.R;
 
 public class Add_admin_activity extends AppCompatActivity {
 
+    ImageButton btn_adminProfile;
     EditText et_firstName;
     EditText et_lastName;
     EditText et_city;
@@ -22,6 +25,7 @@ public class Add_admin_activity extends AppCompatActivity {
     EditText et_email;
     EditText et_password;
     Button btn_add;
+    String emailExtra;
 
     DBHelper dbHelper;
 
@@ -31,9 +35,11 @@ public class Add_admin_activity extends AppCompatActivity {
         setContentView(R.layout.activity_add_admin);
 
         // get intent object
-        Intent loginIntent = getIntent();
+        Intent menuIntent = getIntent();
+        emailExtra = menuIntent.getStringExtra("emailaddress");
 
         dbHelper = new DBHelper(this);
+        btn_adminProfile = findViewById(R.id.btn_imageAdminAdd);
         et_firstName = findViewById(R.id.et_addfirstName);
         et_lastName = findViewById(R.id.et_addlastName);
         et_city = findViewById(R.id.et_addcity);
@@ -47,6 +53,17 @@ public class Add_admin_activity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        btn_adminProfile.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent intent = new Intent(Add_admin_activity.this, Admin_profile_activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
+                startActivity(intent);
+
+                Context context = getApplicationContext();
+                Toast.makeText(context,"Admin profile Loading",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override

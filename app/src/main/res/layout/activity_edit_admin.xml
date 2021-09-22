@@ -8,7 +8,7 @@
     tools:context=".Admin.Edit_admin_activity">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_imageAdminEdit"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_addfirstName"
+        android:id="@+id/et_admineditFirstName"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
@@ -47,7 +47,8 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_adminName" />
 
     <EditText
-        android:id="@+id/et_addlastName"
+
+        android:id="@+id/et_adminEditLastName"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
@@ -59,10 +60,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_addfirstName" />
+        app:layout_constraintTop_toBottomOf="@+id/et_admineditFirstName" />
 
     <EditText
-        android:id="@+id/et_addcity"
+        android:id="@+id/et_adminEditCity"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
@@ -74,40 +75,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_addlastName" />
+        app:layout_constraintTop_toBottomOf="@+id/et_adminEditLastName" />
 
     <EditText
-        android:id="@+id/et_addEmail"
+        android:id="@+id/et_adminEditEmail"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/custominput"
         android:ems="10"
         android:hint="@string/email"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_addcity" />
+        app:layout_constraintTop_toBottomOf="@+id/et_adminEditCity" />
+
+
 
     <EditText
-        android:id="@+id/et_addpassword"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/custominput"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_addmobilenumber" />
-
-    <EditText
-        android:id="@+id/et_addmobilenumber"
+        android:id="@+id/et_adminEditmobilenumber"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
@@ -119,14 +107,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_addEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/et_adminEditEmail" />
 
     <Button
-        android:id="@+id/btn_addNewAdmin"
+        android:id="@+id/btn_editAdmin"
         android:layout_width="140dp"
         android:layout_height="60dp"
         android:layout_marginTop="40dp"
-        android:text="@string/save"
+        android:text="SAVE"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:backgroundTint="@color/white"
@@ -134,6 +122,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_addpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/et_adminEditmobilenumber" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

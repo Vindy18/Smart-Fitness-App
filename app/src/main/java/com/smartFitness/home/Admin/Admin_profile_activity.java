@@ -26,6 +26,7 @@ public class Admin_profile_activity extends AppCompatActivity {
     Button btn_edit;
     Button btn_delete;
     Button btn_menu;
+    Button btn_changePassword;
     TextView tv_adminName;
     TextView tv_adminCity;
     TextView tv_adminEmail;
@@ -51,6 +52,7 @@ public class Admin_profile_activity extends AppCompatActivity {
         tv_adminCity = findViewById(R.id.tv_admin_city);
         tv_adminEmail = findViewById(R.id.tv_admin_email);
         tv_adminMobileNumber = findViewById(R.id.tv_admin_mobile);
+        btn_changePassword = findViewById(R.id.btn_changePass);
 
         Admin admin = dbHelper.getAdmin(emailExtra);
         String fullname = admin.firstName +" "+admin.lastName;
@@ -84,6 +86,7 @@ public class Admin_profile_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Admin_profile_activity.this, Edit_admin_activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);
 
                 Context context = getApplicationContext();
@@ -96,6 +99,7 @@ public class Admin_profile_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Admin_profile_activity.this, Admin_view_Activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);
 
                 Context context = getApplicationContext();
@@ -113,6 +117,18 @@ public class Admin_profile_activity extends AppCompatActivity {
 
                 Intent intent = new Intent(Admin_profile_activity.this, MainAdminLogin.class);
                 startActivity(intent);
+            }
+        });
+
+        btn_changePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Admin_profile_activity.this, Edit_admin_pass_activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
+                startActivity(intent);
+
+                Context context = getApplicationContext();
+                Toast.makeText(context,"You Can Change Password",Toast.LENGTH_SHORT).show();
             }
         });
 

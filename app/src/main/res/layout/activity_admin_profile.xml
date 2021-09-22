@@ -73,7 +73,7 @@
         android:id="@+id/btn_adminEdit"
         android:layout_width="105dp"
         android:layout_height="55dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:text="Edit"
         android:textColor="@color/black"
         app:backgroundTint="@color/Available_green"
@@ -159,6 +159,20 @@
         android:textSize="25sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
         app:layout_constraintStart_toEndOf="@+id/textView7" />
+
+    <Button
+        android:id="@+id/btn_changePass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Change Password"
+        android:textColor="#101010"
+        app:backgroundTint="#FAFAFA"
+        app:cornerRadius="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_adminMenu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
