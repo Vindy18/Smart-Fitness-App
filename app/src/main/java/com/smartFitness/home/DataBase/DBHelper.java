@@ -6,6 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.smartFitness.home.Model.Admin;
+
+import org.w3c.dom.Node;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -120,11 +124,42 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void delete() {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        //deleting rows
-        sqLiteDatabase.delete(AdminMaster.Admins.TABLE_NAME, null, null);
-        sqLiteDatabase.close();
+    public Admin getAdmin(String Email) {
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        String sql = "select * from admins where email=?";
+        Cursor cursor = db.rawQuery(sql , new String[]{Email});
+
+        Admin admin = new Admin();
+
+        // Read data, I simplify cursor in one line
+        if (cursor.moveToFirst()) {
+
+            // Get imageData in byte[]. Easy, right?
+            admin.firstName = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_FIRSTNAME));
+            admin.lastName = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_LASTNAME));
+            admin.city = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_CITY));
+            admin.email = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_EMAIL));
+            admin.mobileNumber = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_MOBILENUMBER));
+            admin.Password = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_PASSWORD));
+        }
+
+        cursor.close();
+        db.close();
+        return admin;
+    }
+
+
+
+
+    public void deleteAdmin(String Email) {
+        SQLiteDatabase db= getReadableDatabase();
+        //deleting admin
+        String sql = AdminMaster.Admins.COLUMN_NAME_EMAIL + " LIKE ?";
+        String[] selectionArgs = {Email};
+        db.delete(AdminMaster.Admins.TABLE_NAME, sql ,selectionArgs );
+
     }
 
 

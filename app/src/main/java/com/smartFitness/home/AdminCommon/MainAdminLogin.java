@@ -37,7 +37,7 @@ public class MainAdminLogin extends AppCompatActivity {
         et_password = findViewById(R.id.et_password);
         btn_login = findViewById(R.id.btn_login);
 
-        boolean val = dbHelper.addAdmin("Harsha","Prabhath","Kaduwela","admin@gmail.com","0716258847","pass@123!");
+        //boolean val = dbHelper.addAdmin("Harsha","Prabhath","Kaduwela","admin@gmail.com","0716258847","pass@123!");
     }
 
     protected void onResume() {
@@ -60,6 +60,7 @@ public class MainAdminLogin extends AppCompatActivity {
                     if(passwords.get(emails.indexOf(email)).equals(password)){
 
                         Intent intent = new Intent(MainAdminLogin.this, Admin_view_Activity.class);
+                        intent.putExtra ("emailaddress",email );
                         startActivity(intent);
 
                         Toast.makeText(MainAdminLogin.this ,"Login Success",Toast.LENGTH_SHORT).show();
@@ -74,7 +75,6 @@ public class MainAdminLogin extends AppCompatActivity {
                     Context context = getApplicationContext();
                     Toast.makeText(MainAdminLogin.this,"Admin is not found",Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
     }

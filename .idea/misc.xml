@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_add_admin.xml" value="0.176" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_add_new_nutritionist.xml" value="0.15234375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_profile.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_cardio_ins_add.xml" value="0.15234375" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_cardio_ins_list.xml" value="0.15234375" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_nutritionists_list.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_weight_trainer_home.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view.xml" value="0.176" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view_bmi_calculeter.xml" value="0.2" />
