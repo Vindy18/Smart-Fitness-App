@@ -61,5 +61,6 @@
     <string name="button10">DELETE</string>
     <string name="button">Add</string>
     <string name="editTextPhone">Contact Number</string>
+    <string name="textView22">Total No.of Trainers:</string>
 
 </resources>
