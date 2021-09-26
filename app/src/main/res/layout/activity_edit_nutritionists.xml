@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ntr3"
-    tools:context=".AdminNutritionists.Add_new_nutritionist">
+    tools:context=".AdminNutritionists.Edit_Nutritionists">
 
     <HorizontalScrollView
         android:id="@+id/horizontalMenuBar"
@@ -79,7 +79,8 @@
             android:layout_marginBottom="50dp">
 
             <Button
-                android:id="@+id/btn_ntr_cancel"
+
+                android:id="@+id/btn_ntr_editCancel"
                 android:layout_width="77dp"
                 android:layout_height="35dp"
                 android:layout_alignParentLeft="false"
@@ -95,7 +96,8 @@
                 app:backgroundTint="#04574F" />
 
             <Button
-                android:id="@+id/btn_ntr_save"
+
+                android:id="@+id/btn_ntr_editSave"
                 android:layout_width="77dp"
                 android:layout_height="35dp"
                 android:layout_alignParentLeft="true"
@@ -111,7 +113,8 @@
                 app:backgroundTint="#04574F" />
 
             <EditText
-                android:id="@+id/et_ntrName"
+
+                android:id="@+id/et_ntr_editName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -123,7 +126,8 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/et_ntrLocation"
+
+                android:id="@+id/et_ntr_editLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -135,7 +139,8 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/et_ntrContactNumber"
+
+                android:id="@+id/et_ntr_editContactNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -147,7 +152,8 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/et_ntrEmail"
+
+                android:id="@+id/et_ntr_editEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -159,7 +165,8 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/et_ntrDescription"
+
+                android:id="@+id/et_ntr_editDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -177,27 +184,17 @@
             android:layout_height="107dp"
             android:background="#BC646864">
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_alignParentBottom="true"
-                android:text="Upload Image"
-                android:textColor="@color/black"
-                android:textStyle="bold|italic" />
-
             <ImageView
-                android:id="@+id/btn_ntr_uploadImage"
-                android:layout_width="50dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:background="#00674545"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="0dp"
+                app:srcCompat="@drawable/person" />
         </RelativeLayout>
     </RelativeLayout>
 

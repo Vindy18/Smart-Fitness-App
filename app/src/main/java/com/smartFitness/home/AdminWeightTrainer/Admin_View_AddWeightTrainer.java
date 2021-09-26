@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.smartFitness.home.Admin.Add_admin_activity;
 import com.smartFitness.home.DataBase.DBHelper;
+import com.smartFitness.home.DataBase.DBHelperWeightTrainer;
 import com.smartFitness.home.R;
 
 public class Admin_View_AddWeightTrainer extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
     EditText et_about;
     Button btn_add;
 
-    DBHelper dbHelper;
+    DBHelperWeightTrainer dbHelperWeightTrainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
         // get intent object
         Intent weightTrainerIntent = getIntent();
 
-        dbHelper = new DBHelper(this);
+        dbHelperWeightTrainer = new DBHelperWeightTrainer(this);
         et_name = findViewById(R.id.et_wtName);
         et_address = findViewById(R.id.et_wtaddress);
         et_contactnumber = findViewById(R.id.et_wtContactnumber);
@@ -52,15 +53,16 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
                 String contactnumber = et_contactnumber.getText().toString();
                 String workinghours = et_workinghours.getText().toString();
                 String about = et_about.getText().toString();
-                //boolean val = dbHelper.AddWeightTrainer(name,address,contactnumber,workinghours,about);
+                boolean val;
+                val = dbHelperWeightTrainer.addWeightTrainer(name,address,contactnumber,workinghours,about);
 
-                //if(val == true){
+                if(val == true){
                     Toast.makeText(Admin_View_AddWeightTrainer.this,"Add Success",Toast.LENGTH_SHORT).show();
-                //}else{
+                }else{
                     Toast.makeText(Admin_View_AddWeightTrainer.this,"Add fail",Toast.LENGTH_SHORT).show();
                 }
 
-           // }
+            }
         });
     }
 }
