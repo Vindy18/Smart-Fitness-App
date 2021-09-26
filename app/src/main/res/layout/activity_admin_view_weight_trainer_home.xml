@@ -7,48 +7,55 @@
     android:background="@drawable/trainer"
     tools:context=".AdminWeightTrainer.Admin_View_WeightTrainer_Home">
 
-    <ImageView
-        android:id="@+id/imageView23"
-        android:layout_width="359dp"
-        android:layout_height="164dp"
-        app:layout_constraintBottom_toTopOf="@+id/button11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout3"
-        app:srcCompat="@drawable/box_container" />
-
     <TextView
         android:id="@+id/textView22"
         android:layout_width="269dp"
         android:layout_height="86dp"
-        android:text="Total No.of Trainers"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginRight="62dp"
+        android:layout_marginBottom="53dp"
+        android:background="#DFDED3"
+        android:text="@string/textView22"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView23"
-        app:layout_constraintEnd_toEndOf="@+id/imageView23"
-        app:layout_constraintStart_toStartOf="@+id/imageView23"
-        app:layout_constraintTop_toTopOf="@+id/imageView23" />
+        app:layout_constraintBottom_toTopOf="@+id/button11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout3" />
 
     <ImageView
         android:id="@+id/imageView19"
-        android:layout_width="178dp"
-        android:layout_height="153dp"
-        app:layout_constraintBottom_toTopOf="@+id/tabLayout3"
+        android:layout_width="177dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout3"
-        android:layout_width="401dp"
-        android:layout_height="55dp"
+        android:layout_width="387dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         android:background="@color/Tab_color"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView19"
         app:tabIndicatorColor="@color/black"
-        app:tabSelectedTextColor="#100F0F"
-        tools:layout_editor_absoluteY="174dp">
+        app:tabSelectedTextColor="#100F0F">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -70,7 +77,12 @@
         android:id="@+id/button11"
         android:layout_width="347dp"
         android:layout_height="85dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="360dp"
         android:hint="@string/button11"
         android:text="Add Trainer"
         android:textColor="@color/black"
@@ -78,40 +90,66 @@
         app:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        app:layout_constraintVertical_bias="0.583" />
 
     <Button
         android:id="@+id/button14"
         android:layout_width="347dp"
         android:layout_height="85dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         android:text="Modify Trainer Details"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:backgroundTint="@color/white"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="737dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button13"
+        app:layout_constraintVertical_bias="0.143" />
 
     <Button
         android:id="@+id/button12"
         android:layout_width="347dp"
         android:layout_height="85dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="16dp"
         android:text="Delete Trainer"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:backgroundTint="@color/white"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="915dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button14" />
 
     <Button
         android:id="@+id/button13"
         android:layout_width="347dp"
         android:layout_height="85dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         android:text="View Trainers"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:backgroundTint="@color/white"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="1065dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button11"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextTextPersonName23"
