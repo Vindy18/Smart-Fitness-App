@@ -8,7 +8,7 @@
     tools:context=".AdminWeightTrainer.Admin_View_Edit_WeightTrainer">
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/button_edit"
         android:layout_width="312dp"
         android:layout_height="52dp"
         android:background="@color/black"
@@ -20,7 +20,7 @@
         tools:layout_editor_absoluteY="1002dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName25"
+        android:id="@+id/et_about"
         android:layout_width="386dp"
         android:layout_height="138dp"
         android:background="@color/white"
@@ -29,11 +29,11 @@
         android:inputType="textPersonName"
         android:text="  About"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="201dp"
-        tools:layout_editor_absoluteY="774dp" />
+        tools:layout_editor_absoluteX="63dp"
+        tools:layout_editor_absoluteY="537dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName24"
+        android:id="@+id/et_WorkingHours"
         android:layout_width="382dp"
         android:layout_height="57dp"
         android:background="@color/white"
@@ -45,7 +45,7 @@
         tools:layout_editor_absoluteY="688dp" />
 
     <EditText
-        android:id="@+id/editTextPhone3"
+        android:id="@+id/et_contactNumber"
         android:layout_width="382dp"
         android:layout_height="57dp"
         android:background="@color/white"
@@ -58,7 +58,7 @@
         tools:layout_editor_absoluteY="574dp" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress4"
+        android:id="@+id/et_address"
         android:layout_width="382dp"
         android:layout_height="57dp"
         android:background="@color/white"
@@ -83,7 +83,7 @@
         tools:layout_editor_absoluteY="357dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName19"
+        android:id="@+id/et_name"
         android:layout_width="382dp"
         android:layout_height="57dp"
         android:background="@color/white"
@@ -96,10 +96,10 @@
         tools:layout_editor_absoluteY="268dp" />
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/btn_ImageView"
         android:layout_width="178dp"
         android:layout_height="153dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
