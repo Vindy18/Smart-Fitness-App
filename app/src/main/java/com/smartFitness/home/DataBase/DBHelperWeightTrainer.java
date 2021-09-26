@@ -2,12 +2,9 @@ package com.smartFitness.home.DataBase;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.widget.EditText;
 
 public class DBHelperWeightTrainer extends SQLiteOpenHelper {
 
@@ -60,47 +57,21 @@ public class DBHelperWeightTrainer extends SQLiteOpenHelper {
         }
 
     }
+    public void updateWeightTrainer(EditText name, EditText address, EditText contactnumber, EditText workinghours, EditText about){
+        SQLiteDatabase db= getReadableDatabase();
+        ContentValues values = new ContentValues();
+        //values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_NAME,name);
+        //values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ADDRESS,address);
+        //values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_CONTACTNUMBER,contactnumber);
+        //values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_WORKINGHOURS,workinghours);
+       //  values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ABOUT,about);
 
-    public void readAllWeightTrainerInfo(String req) {
+        //int count = db.update(AdminMaster.Admins.TABLE_NAME,values, sql,selectionArgs);
 
-        SQLiteDatabase db = getReadableDatabase();
+       // return count;
+    }
 
-        String[] projection = {
-                WeightTrainerMaster.WeightTrainer._ID,
-                WeightTrainerMaster.WeightTrainer.COLUMN_NAME_NAME,
-                WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ADDRESS,
-                WeightTrainerMaster.WeightTrainer.COLUMN_NAME_CONTACTNUMBER,
-                WeightTrainerMaster.WeightTrainer.COLUMN_NAME_WORKINGHOURS,
-                WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ABOUT
 
-        };
 
-        //String sortOder = AdminMaster.Admins.COLUMN_NAME_FIRSTNAME+" ASC";
-
-        Cursor cursor = db.query(
-                WeightTrainerMaster.WeightTrainer.TABLE_NAME,
-                projection,
-                null,
-                null,
-                null,
-                null,
-                null
-        );
-
-        List Name = new ArrayList();
-        List Address = new ArrayList();
-        List ContactNumber = new ArrayList();
-        List WorkingHours = new ArrayList();
-        List About = new ArrayList();
-
-        while (cursor.moveToNext()) {
-
-            String name = cursor.getString(cursor.getColumnIndexOrThrow(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_NAME));
-            String address = cursor.getString(cursor.getColumnIndexOrThrow(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ADDRESS));
-            String contactnumber = cursor.getString(cursor.getColumnIndexOrThrow(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_CONTACTNUMBER));
-            String workinghours = cursor.getString(cursor.getColumnIndexOrThrow(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_WORKINGHOURS));
-            String about = cursor.getString(cursor.getColumnIndexOrThrow(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ABOUT));
-        }
-    };
 }
 

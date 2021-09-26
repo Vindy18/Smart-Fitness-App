@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.smartFitness.home.Admin.Admin_profile_activity;
 import com.smartFitness.home.Admin.Edit_admin_activity;
 import com.smartFitness.home.DataBase.DBHelper;
+import com.smartFitness.home.DataBase.DBHelperWeightTrainer;
 import com.smartFitness.home.Model.Admin;
 import com.smartFitness.home.R;
 
@@ -28,7 +29,7 @@ public class Admin_View_Edit_WeightTrainer extends AppCompatActivity {
     EditText et_about;
     Button btn_save;
 
-    DBHelper dbHelper;
+    DBHelperWeightTrainer dbHelperWeightTrainer;
     Admin admin;
 
     @Override
@@ -40,7 +41,7 @@ public class Admin_View_Edit_WeightTrainer extends AppCompatActivity {
         emailExtra = adminPageIntent.getStringExtra("emailaddress");
 
         btn_ImageView= findViewById(R.id.btn_imageAdminEdit);
-        dbHelper = new DBHelper(this);
+        dbHelperWeightTrainer = new DBHelperWeightTrainer(this);
         et_name = findViewById(R.id.et_name);
         et_address = findViewById(R.id.et_address);
         et_contactNumber= findViewById(R.id.et_contactNumber);
@@ -48,12 +49,7 @@ public class Admin_View_Edit_WeightTrainer extends AppCompatActivity {
         et_about = findViewById(R.id.et_about);
         btn_save= findViewById(R.id.button_edit);
 
-        admin = dbHelper.getAdmin(emailExtra);
-        et_name.setText(admin.firstName);
-        et_address.setText(admin.lastName);
-        et_contactNumber.setText(admin.city);
-        et_workingHours.setText(admin.email);
-        et_about.setText(admin.mobileNumber);
+
 
 
     }
@@ -81,7 +77,7 @@ public class Admin_View_Edit_WeightTrainer extends AppCompatActivity {
                 String about = et_about.getText().toString();
             }
 
-            //int val = dbHelper.updateAdmin(emailExtra,et_name,et_address,et_contactNumber,et_workingHours,et_about);
+            //int val = dbHelperWeightTrainer.updateWeightTrainer(et_name,et_address,et_contactNumber,et_workingHours,et_about);
 
             // if (val > 0){
             // Context context = getApplicationContext();
