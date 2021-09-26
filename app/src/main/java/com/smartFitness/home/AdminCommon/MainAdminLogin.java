@@ -37,6 +37,7 @@ public class MainAdminLogin extends AppCompatActivity {
         et_password = findViewById(R.id.et_password);
         btn_login = findViewById(R.id.btn_login);
 
+
         boolean val = dbHelper.addAdmin("Harsha","Prabhath","Kaduwela","admin@gmail.com","0716258847","pass@123!");
     }
 

@@ -1,5 +1,6 @@
 package com.smartFitness.home.DataBase;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -22,6 +23,7 @@ public class DBHelperWeightTrainer extends SQLiteOpenHelper{
                 WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ADDRESS+ " TEXT NOT NULL," +
                 WeightTrainerMaster.WeightTrainer.COLUMN_NAME_CONTACTNUMBER+ " TEXT NOT NULL," +
                 WeightTrainerMaster.WeightTrainer.COLUMN_NAME_WORKINGHOURS+ " TEXT NOT NULL," +
+                WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ABOUT+ " TEXT NOT NULL," +
                 WeightTrainerMaster.WeightTrainer.COLUMN_NAME_PHOTO  + " BLOB )" ;
         db.execSQL(SQL_CREATE_ENTRIES);
 
@@ -30,6 +32,27 @@ public class DBHelperWeightTrainer extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+    public boolean AddWeightTrainer(String name, String address, String contactnumber,String workinghours,String about){
+
+        //Get all date repository write mode
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_NAME,name);
+        values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ADDRESS,address);
+        values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_CONTACTNUMBER,contactnumber);
+        values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_WORKINGHOURS,workinghours);
+        values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ABOUT,about);
+
+        long newRowId = (db.insert(WeightTrainerMaster.WeightTrainer.TABLE_NAME,null, values));
+
+        if(newRowId > 0){
+            return true;
+        }else{
+            return false;
+        }
 
     }
 }

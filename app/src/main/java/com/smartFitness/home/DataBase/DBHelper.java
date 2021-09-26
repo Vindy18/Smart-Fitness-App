@@ -137,6 +137,7 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
 
             // Get imageData in byte[]. Easy, right?
+            admin.id = cursor.getInt(cursor.getColumnIndex(AdminMaster.Admins._ID));
             admin.firstName = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_FIRSTNAME));
             admin.lastName = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_LASTNAME));
             admin.city = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_CITY));
@@ -151,19 +152,38 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+
+    public void deleteAdmin(String Email) {
+        SQLiteDatabase db= getReadableDatabase();
+        //deleting admin
+        String sql = AdminMaster.Admins.COLUMN_NAME_EMAIL + " LIKE ?";
+        String[] selectionArgs = {Email};
+        db.delete(AdminMaster.Admins.TABLE_NAME, sql ,selectionArgs );
+
+    }
+
+    public int updateAdmin(String keyEmail,String firstName, String lastName, String city, String email, String mobileNumber, String password){
+        SQLiteDatabase db= getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(AdminMaster.Admins.COLUMN_NAME_FIRSTNAME,firstName);
+        values.put(AdminMaster.Admins.COLUMN_NAME_LASTNAME,lastName);
+        values.put(AdminMaster.Admins.COLUMN_NAME_CITY,city);
+        values.put(AdminMaster.Admins.COLUMN_NAME_EMAIL,email);
+        values.put(AdminMaster.Admins.COLUMN_NAME_MOBILENUMBER,mobileNumber);
+        values.put(AdminMaster.Admins.COLUMN_NAME_PASSWORD,password);
+
+        String sql = AdminMaster.Admins.COLUMN_NAME_EMAIL + " LIKE ?";
+        String[]  selectionArgs = {keyEmail};
+
+        int count = db.update(AdminMaster.Admins.TABLE_NAME,values, sql,selectionArgs);
+
+        return count;
+    }
+
+    //for debug dont copy that delete other 3 members
     public void delete() {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        //deleting rows
-        sqLiteDatabase.delete(AdminMaster.Admins.TABLE_NAME, null, null);
-        sqLiteDatabase.close();
+        SQLiteDatabase db= getReadableDatabase();
+        db.execSQL("delete from "+ AdminMaster.Admins.TABLE_NAME);
     }
-
-    public void deleteAdmin() {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        //deleting rows
-        sqLiteDatabase.delete(AdminMaster.Admins.TABLE_NAME, null, null);
-        sqLiteDatabase.close();
-    }
-
 
 }

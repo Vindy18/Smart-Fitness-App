@@ -41,6 +41,7 @@ public class Admin_view_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Admin_view_Activity.this, Add_admin_activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);
 
                 Context context = getApplicationContext();

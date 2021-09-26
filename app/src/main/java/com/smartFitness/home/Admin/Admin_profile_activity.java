@@ -26,12 +26,13 @@ public class Admin_profile_activity extends AppCompatActivity {
     Button btn_edit;
     Button btn_delete;
     Button btn_menu;
+    Button btn_changePassword;
     TextView tv_adminName;
     TextView tv_adminCity;
     TextView tv_adminEmail;
     TextView tv_adminMobileNumber;
     DBHelper dbHelper;
-
+    String emailExtra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class Admin_profile_activity extends AppCompatActivity {
 
         // get intent object
         Intent adminMenuIntent = getIntent();
-        String emailExtra = adminMenuIntent.getStringExtra("emailaddress");
+        emailExtra = adminMenuIntent.getStringExtra("emailaddress");
 
         dbHelper = new DBHelper(this);
         btn_logout = findViewById(R.id.btn_logOut);
@@ -51,11 +52,12 @@ public class Admin_profile_activity extends AppCompatActivity {
         tv_adminCity = findViewById(R.id.tv_admin_city);
         tv_adminEmail = findViewById(R.id.tv_admin_email);
         tv_adminMobileNumber = findViewById(R.id.tv_admin_mobile);
+        btn_changePassword = findViewById(R.id.btn_changePass);
 
         Admin admin = dbHelper.getAdmin(emailExtra);
-        String fulname = admin.firstName +" "+admin.lastName;
+        String fullname = admin.firstName +" "+admin.lastName;
 
-        tv_adminName.setText(fulname);
+        tv_adminName.setText(fullname);
         tv_adminCity.setText(admin.city);
         tv_adminEmail.setText(admin.email);
         tv_adminMobileNumber.setText(admin.mobileNumber);
@@ -84,6 +86,7 @@ public class Admin_profile_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Admin_profile_activity.this, Edit_admin_activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);
 
                 Context context = getApplicationContext();
@@ -96,6 +99,7 @@ public class Admin_profile_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Admin_profile_activity.this, Admin_view_Activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);
 
                 Context context = getApplicationContext();
@@ -107,10 +111,24 @@ public class Admin_profile_activity extends AppCompatActivity {
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Admin admin = dbHelper.getAdmin("admin@gmail.com");
-                String x = admin.firstName;
+                dbHelper.deleteAdmin(emailExtra);
+                Context context = getApplicationContext();
+                Toast.makeText(context,"Deleting..",Toast.LENGTH_SHORT).show();
 
-                tv_adminName.setText(x);
+                Intent intent = new Intent(Admin_profile_activity.this, MainAdminLogin.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_changePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Admin_profile_activity.this, Edit_admin_pass_activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
+                startActivity(intent);
+
+                Context context = getApplicationContext();
+                Toast.makeText(context,"You Can Change Password",Toast.LENGTH_SHORT).show();
             }
         });
 
