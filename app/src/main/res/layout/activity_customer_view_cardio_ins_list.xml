@@ -92,7 +92,7 @@
         tools:layout_editor_absoluteY="724dp" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/btn_ntr_uploadImage"
         android:layout_width="376dp"
         android:layout_height="149dp"
         android:layout_marginTop="12dp"
@@ -144,7 +144,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ntr_uploadImage"
         app:srcCompat="@drawable/box_container" />
 
     <ImageView
