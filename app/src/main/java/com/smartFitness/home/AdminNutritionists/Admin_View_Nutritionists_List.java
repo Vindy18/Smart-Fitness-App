@@ -1,11 +1,16 @@
 package com.smartFitness.home.AdminNutritionists;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -21,6 +26,11 @@ public class Admin_View_Nutritionists_List extends AppCompatActivity {
     Button btn_add;
     Button btn_delete;
     String emailExtra;
+
+    String ntr_name[] = {"John", "smith"};
+    String ntr_location[] = {"Kandy", "Colombo"};
+    String ntr_phone[] = {"0714186616","0765509315"};
+    int person_image[] = {R.drawable.person,R.drawable.person};
 
     DBHelperNutritionist dbHelper;
 
@@ -66,4 +76,21 @@ public class Admin_View_Nutritionists_List extends AppCompatActivity {
             }
         });
     }
-}
+    class CustomeAdapter extends ArrayAdapter<String>{
+        Context context;
+
+        CustomeAdapter(Context context, String[] ntr_name) {
+            super(context,R.layout.single_row_n,R.id.ntr_name,ntr_name);
+            this.context  = context;
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+           /* inflater.inflate(R.layout.single_row_n,parent,attachToRoot, false);*/
+            return super.getView(position, convertView, parent);
+        }
+    }
+    }
