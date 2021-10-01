@@ -34,7 +34,7 @@ public class Admin_view_Activity extends AppCompatActivity {
         // get elements by id
         btn_addAdmin = findViewById(R.id.btn_addAdmin);
         btn_adminProfile = findViewById(R.id.btn_adminProfile);
-        btn_avNutritionist = findViewById(R.id.btn_av_nut);
+        btn_avNutritionist = findViewById(R.id.btn_avmenu_nut);
 
         // event Listener for Add admin button
         btn_addAdmin.setOnClickListener(new View.OnClickListener() {
@@ -72,9 +72,5 @@ public class Admin_view_Activity extends AppCompatActivity {
                 Toast.makeText(context,"Find Nutritionists here!!",Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
-
-
 }

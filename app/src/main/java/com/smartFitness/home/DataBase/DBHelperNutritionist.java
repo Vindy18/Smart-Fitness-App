@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 public class DBHelperNutritionist extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "smartfitness.db";
+    public static final String DATABASE_NAME = "smartFitness.db";
 
     public DBHelperNutritionist(Context context)  { super(context, DATABASE_NAME, null, 1); }
 
@@ -41,6 +41,8 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
+
+        // Assign all the parameter to "values" variable
         values.put(NutritionistMaster.Nutritionists.COLUMN_NAME_NAME,name);
         values.put(NutritionistMaster.Nutritionists.COLUMN_NAME_LOCATION,location);
         values.put(NutritionistMaster.Nutritionists.COLUMN_NAME_EMAIL,email);
@@ -48,8 +50,10 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
         values.put(NutritionistMaster.Nutritionists.COLUMN_NAME_DESCRIPTION,description);
         //values.put(NutritionistMaster.Nutritionists.COLUMN_NAME_PHOTO,photo);
 
-        long newRowId = (db.insert(NutritionistMaster.Nutritionists.TABLE_NAME,null, values));
+         //insert quarry
+         long  newRowId = (db.insert(NutritionistMaster.Nutritionists.TABLE_NAME, null, values));
 
+        //Check "newRowId" if success return grater than 0 value
         if(newRowId > 0){
             return true;
         }else{
@@ -84,4 +88,6 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
         db.delete(NutritionistMaster.Nutritionists.TABLE_NAME, sql ,selectionArgs );
 
     }
+
+
 }
