@@ -3,10 +3,14 @@ package com.smartFitness.home.DataBase;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import com.smartFitness.home.Model.Admin;
+import com.smartFitness.home.Model.Nutritionists;
 
 public class DBHelperNutritionist extends SQLiteOpenHelper {
 
@@ -36,10 +40,12 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
 
     }
 
+    //add Nutritionist
     public boolean addNutritionist(String name, String location, String email, String mobileNumber, String description){
         //Get all date repository write mode
         SQLiteDatabase db = getWritableDatabase();
 
+        //declare "values"
         ContentValues values = new ContentValues();
 
         // Assign all the parameter to "values" variable
@@ -50,8 +56,8 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
         values.put(NutritionistMaster.Nutritionists.COLUMN_NAME_DESCRIPTION,description);
         //values.put(NutritionistMaster.Nutritionists.COLUMN_NAME_PHOTO,photo);
 
-         //insert quarry
-         long  newRowId = (db.insert(NutritionistMaster.Nutritionists.TABLE_NAME, null, values));
+        //insert quarry
+        long  newRowId = (db.insert(NutritionistMaster.Nutritionists.TABLE_NAME, null, values));
 
         //Check "newRowId" if success return grater than 0 value
         if(newRowId > 0){
@@ -62,9 +68,45 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
 
     }
 
+    //Get Nutritionist
+    public Nutritionists getNutritionist(String Email) {
+        //Get all date repository write mode
+        SQLiteDatabase db = getReadableDatabase();
+
+        //Get all date repository write mode
+        String sql = "select * from nutritionists where email=?";
+        Cursor cursor = db.rawQuery(sql , new String[]{Email});
+
+        // create nutritionists
+        Nutritionists nutritionists = new Nutritionists ();
+
+        // Read data, I simplify cursor in one line
+        if (cursor.moveToFirst()) {
+
+            // Get imageData in byte[]. Easy, right?
+            nutritionists.id = cursor.getInt(cursor.getColumnIndex(NutritionistMaster.Nutritionists._ID));
+            nutritionists.name = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_NAME));
+            nutritionists.location = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_LOCATION));
+            nutritionists.email = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_EMAIL));
+            nutritionists.mobileNumber = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_MOBILENUMBER));
+            nutritionists.description = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_DESCRIPTION));
+        }
+
+        cursor.close();
+        db.close();
+
+        return nutritionists;
+    }
+
+    //update Nutritionist
     public int updateNutritionist(String keyEmail,String name, String location, String email, String mobileNumber, String description){
+        //Get all date repository read mode
         SQLiteDatabase db= getReadableDatabase();
+
+        // declare "values"
         ContentValues values = new ContentValues();
+
+        // Assign all the parameter to "values" variable
         values.put(NutritionistMaster.Nutritionists.COLUMN_NAME_NAME,name);
         values.put(NutritionistMaster.Nutritionists.COLUMN_NAME_LOCATION,location);
         values.put(NutritionistMaster.Nutritionists.COLUMN_NAME_EMAIL,email);
@@ -75,19 +117,20 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
         String sql = NutritionistMaster.Nutritionists.COLUMN_NAME_EMAIL + " LIKE ?";
         String[]  selectionArgs = {keyEmail};
 
+        //update and return the row count
         int count = db.update(NutritionistMaster.Nutritionists.TABLE_NAME,values, sql,selectionArgs);
 
         return count;
     }
 
+    //deleting nutritionists
     public void deleteNutritionists(String Email) {
+        //Get all date repository read mode
         SQLiteDatabase db= getReadableDatabase();
-        //deleting nutritionists
+
+        // Delete quarry
         String sql = NutritionistMaster.Nutritionists.COLUMN_NAME_EMAIL + " LIKE ?";
         String[] selectionArgs = {Email};
         db.delete(NutritionistMaster.Nutritionists.TABLE_NAME, sql ,selectionArgs );
-
     }
-
-
 }

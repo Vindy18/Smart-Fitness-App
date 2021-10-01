@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.smartFitness.home.Admin.Edit_admin_activity;
 import com.smartFitness.home.DataBase.DBHelperNutritionist;
+import com.smartFitness.home.Model.Nutritionists;
 import com.smartFitness.home.R;
 
 public class Edit_Nutritionists extends AppCompatActivity {
@@ -26,6 +27,7 @@ public class Edit_Nutritionists extends AppCompatActivity {
     Button btn_save;
     Button btn_cancel;
     String emailExtra;
+    Nutritionists nutritionists;
 
     DBHelperNutritionist dbHelper;
 
@@ -48,6 +50,13 @@ public class Edit_Nutritionists extends AppCompatActivity {
         //btn_add_photo = findViewById(R.id.btn_ntr_uploadImage);
         btn_save = findViewById(R.id.btn_ntr_editSave);
         btn_cancel = findViewById(R.id.btn_ntr_editCancel);
+
+        nutritionists = dbHelper.getNutritionist(emailExtra);
+        et_Name.setText(nutritionists.name);
+        et_location.setText(nutritionists.location);
+        et_email.setText(nutritionists.email);
+        et_mobileNumber.setText(nutritionists.mobileNumber);
+        et_description.setText(nutritionists.description);
     }
 
     @Override
@@ -76,7 +85,7 @@ public class Edit_Nutritionists extends AppCompatActivity {
                 if (val > 0){
                     Context context = getApplicationContext();
                     Toast.makeText(context,"Update Successful",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Edit_Nutritionists.this, Edit_admin_activity.class);
+                    Intent intent = new Intent(Edit_Nutritionists.this, Edit_Nutritionists.class);
                     intent.putExtra ("emailaddress",email);
                     startActivity(intent);
                 }
