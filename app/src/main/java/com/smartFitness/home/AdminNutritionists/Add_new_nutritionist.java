@@ -67,21 +67,29 @@ public class Add_new_nutritionist extends AppCompatActivity {
             }
         });
 
-
+        // save new nutrition
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // tack tha values from view activity_add_new_nutritionist.xml file
                 String Name = et_Name.getText().toString();
                 String location = et_location.getText().toString();
                 String mobileNumber = et_mobileNumber.getText().toString();
                 String email = et_email.getText().toString() ;
                 String description = et_description.getText().toString() ;
 
+                //pass data to DataBase/DbHelpernutritionist and return "val"
                 boolean val = dbHelper.addNutritionist(Name,location ,email,mobileNumber,description);
 
+                //check "val" variable if addNutritionist() Success return true
                 if(val == true){
+                    Intent intent = new Intent(Add_new_nutritionist.this, Add_new_nutritionist.class);
+                    startActivity(intent);
+
                     Toast.makeText(Add_new_nutritionist.this,"Add Success",Toast.LENGTH_SHORT).show();
+
                 }else{
+
                     Toast.makeText(Add_new_nutritionist.this,"Add fail",Toast.LENGTH_SHORT).show();
                 }
 

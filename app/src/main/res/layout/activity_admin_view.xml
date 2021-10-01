@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_av_CI" />
 
     <Button
-        android:id="@+id/btn_av_nut"
+        android:id="@+id/btn_avmenu_nut"
         android:layout_width="250dp"
         android:layout_height="65dp"
         android:layout_marginTop="30dp"

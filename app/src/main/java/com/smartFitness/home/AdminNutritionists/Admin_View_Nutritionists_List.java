@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.smartFitness.home.Admin.Admin_profile_activity;
 import com.smartFitness.home.AdminCommon.Admin_view_Activity;
 import com.smartFitness.home.AdminCommon.MainAdminLogin;
@@ -18,7 +19,7 @@ import com.smartFitness.home.R;
 
 public class Admin_View_Nutritionists_List extends AppCompatActivity {
 
-    Button btn_add;
+    FloatingActionButton btn_add;
     Button btn_delete;
     String emailExtra;
 
