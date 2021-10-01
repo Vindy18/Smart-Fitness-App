@@ -20,7 +20,7 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
 
 
     @Override
-    public void onCreate(SQLiteDatabase db){
+    public void onCreate(SQLiteDatabase db) {
 
         String SQL_CREATE_ENTRIES = "CREATE TABLE " + NutritionistMaster.Nutritionists.TABLE_NAME +" (" +
                 NutritionistMaster.Nutritionists._ID + " INTEGER PRIMARY KEY," +
