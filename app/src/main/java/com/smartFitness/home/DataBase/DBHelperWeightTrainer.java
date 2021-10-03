@@ -125,8 +125,8 @@ public class DBHelperWeightTrainer extends SQLiteOpenHelper {
                 weightTrainer.id = cursor.getInt(cursor.getColumnIndex(WeightTrainerMaster.WeightTrainer._ID));
                 weightTrainer.name = cursor.getString(cursor.getColumnIndex(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_NAME));
                 weightTrainer.location = cursor.getString(cursor.getColumnIndex(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_LOCATION));
-                weightTrainer.email = cursor.getString(cursor.getColumnIndex(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_EMAIL));
-                weightTrainer.contactNumber = cursor.getString(cursor.getColumnIndex(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_CONTACTNUMBER));
+                weightTrainer.contactNumber = cursor.getString(cursor.getColumnIndex(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_EMAIL));
+                weightTrainer.email = cursor.getString(cursor.getColumnIndex(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_CONTACTNUMBER));
                 weightTrainer.about = cursor.getString(cursor.getColumnIndex(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ABOUT));
 
                 // add nut Nutritionist to list
