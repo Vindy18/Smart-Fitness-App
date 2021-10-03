@@ -1,8 +1,10 @@
-package com.smartFitness.home;
+package com.smartFitness.home.AdminCardioInstructor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.smartFitness.home.R;
 
 public class Admin_view_cardio_home extends AppCompatActivity {
 

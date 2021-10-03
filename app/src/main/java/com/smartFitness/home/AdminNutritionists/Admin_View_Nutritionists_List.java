@@ -10,8 +10,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,19 +24,19 @@ import com.smartFitness.home.AdminCommon.Admin_view_Activity;
 import com.smartFitness.home.AdminCommon.MainAdminLogin;
 import com.smartFitness.home.AppCommon.MainActivity;
 import com.smartFitness.home.DataBase.DBHelperNutritionist;
+import com.smartFitness.home.Model.Nutritionist;
 import com.smartFitness.home.R;
+
+import java.util.List;
 
 public class Admin_View_Nutritionists_List extends AppCompatActivity {
 
     FloatingActionButton btn_add;
-    Button btn_delete;
-    Button btn_edit;
+    Button btn_nut_menu;
     String emailExtra;
+    ListView listView;
 
-    String ntr_name[] = {"John", "smith"};
-    String ntr_location[] = {"Kandy", "Colombo"};
-    String ntr_phone[] = {"0714186616","0765509315"};
-    int person_image[] = {R.drawable.person,R.drawable.person};
+    List<Nutritionist> nutritionist;
 
     DBHelperNutritionist dbHelper;
 
@@ -43,24 +46,33 @@ public class Admin_View_Nutritionists_List extends AppCompatActivity {
         setContentView(R.layout.activity_admin_view_nutritionists_list);
 
         Intent avIntent = getIntent();
-        String emailextra = avIntent.getStringExtra("emailaddress");
-        emailExtra = "harsha@gmail.com";
+        emailExtra = avIntent.getStringExtra("emailaddress");
 
+        // db connection
         dbHelper = new DBHelperNutritionist(this);
+
+        // Get nutrition form data base
+        nutritionist = dbHelper.getAllNutritionists();
+
         btn_add= findViewById(R.id.btn_ntr_AddNew);
-        btn_delete= findViewById(R.id.btn_delete1);
-        btn_edit = findViewById(R.id.btn_edit1);
+        btn_nut_menu= findViewById(R.id.btn_nut_menu);
+
+        listView = findViewById(R.id.lv_Nutrition);
+        NutritionistListView  adapter = new NutritionistListView (Admin_View_Nutritionists_List.this,nutritionist,emailExtra);
+        listView.setAdapter(adapter);
+
     }
+
 
     protected void onResume() {
         super.onResume();
-
 
         //add button
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Admin_View_Nutritionists_List.this, Add_new_nutritionist.class);
+                intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);
 
                 Context context = getApplicationContext();
@@ -68,48 +80,18 @@ public class Admin_View_Nutritionists_List extends AppCompatActivity {
             }
         });
 
-        //delete button
-        btn_delete.setOnClickListener(new View.OnClickListener() {
+        //Menu button
+        btn_nut_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dbHelper.deleteNutritionists(emailExtra);
                 Context context = getApplicationContext();
-                Toast.makeText(context,"Deleting..",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"Menu Loading",Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(Admin_View_Nutritionists_List.this, Admin_View_Nutritionists_List.class);
+                Intent intent = new Intent(Admin_View_Nutritionists_List.this, Admin_view_Activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);
             }
         });
-
-        //delete button
-        //move edit page
-        btn_edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Admin_View_Nutritionists_List.this, Edit_Nutritionists.class);
-                intent.putExtra ("emailaddress","harsha@gmail.com");
-                startActivity(intent);
-
-                Context context = getApplicationContext();
-                Toast.makeText(context,"Edit page is Loading",Toast.LENGTH_SHORT).show();
-            }
-        });
     }
-    class CustomeAdapter extends ArrayAdapter<String>{
-        Context context;
 
-        CustomeAdapter(Context context, String[] ntr_name) {
-            super(context,R.layout.single_row_n,R.id.ntr_name,ntr_name);
-            this.context  = context;
-        }
-
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-           /* inflater.inflate(R.layout.single_row_n,parent,attachToRoot, false);*/
-            return super.getView(position, convertView, parent);
-        }
-    }
-    }
+}

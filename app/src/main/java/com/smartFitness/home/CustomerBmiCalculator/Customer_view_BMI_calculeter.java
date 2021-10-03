@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.smartFitness.home.Admin.Add_admin_activity;
+import com.smartFitness.home.CustomerCommon.Customer_view_Activity;
 import com.smartFitness.home.R;
 
 import java.text.DecimalFormat;
@@ -18,6 +20,7 @@ import java.text.DecimalFormat;
 public class Customer_view_BMI_calculeter extends AppCompatActivity {
     // variables
     Button btn_calculate;
+    Button btn_BMIcancel;
     EditText et_height;
     EditText et_weight;
     TextView tv_result;
@@ -32,6 +35,7 @@ public class Customer_view_BMI_calculeter extends AppCompatActivity {
 
         // get elements by id
         btn_calculate = findViewById(R.id.btn_bmi_cal);
+        btn_BMIcancel = findViewById(R.id.btn_BMIcancel);
         et_height =  findViewById(R.id.et_height);
         et_weight = findViewById(R.id.et_weight);
         tv_result = findViewById(R.id.tv_bmiCalResult);
@@ -39,6 +43,15 @@ public class Customer_view_BMI_calculeter extends AppCompatActivity {
 
     protected void onResume() {
         super.onResume();
+
+        btn_BMIcancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Customer_view_BMI_calculeter.this, Customer_view_Activity.class);
+                startActivity(intent);
+            }
+
+        });
 
         btn_calculate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +74,7 @@ public class Customer_view_BMI_calculeter extends AppCompatActivity {
             String result  = "0.0 kg/m^2";
 
             tv_result.setText(result);
+
         }else{
 
             Double height = Double.parseDouble(temp_height);

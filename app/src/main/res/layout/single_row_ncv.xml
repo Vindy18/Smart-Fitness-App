@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/relativeLayoutPerson"
-        android:layout_width="300dp"
-        android:layout_height="146dp"
+        android:id="@+id/relativeLayoutPersonCV"
+        android:layout_width="291dp"
+        android:layout_height="171dp"
         android:background="@drawable/card1"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayoutPerson"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayoutPersonCV"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="NotSibling">
 
         <TextView
-            android:id="@+id/ntr_phone"
+            android:id="@+id/ntr_CVphone"
             android:layout_width="181dp"
             android:layout_height="30dp"
             android:layout_marginStart="80dp"
@@ -27,7 +27,7 @@
             android:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/ntr_name"
+            android:id="@+id/ntr_CVname"
             android:layout_width="181dp"
             android:layout_height="30dp"
             android:layout_marginStart="80dp"
@@ -37,14 +37,14 @@
             android:textColor="@color/black" />
 
         <ImageView
-            android:id="@+id/person_image"
+            android:id="@+id/person_CVimage"
             android:layout_width="67dp"
             android:layout_height="83dp"
             android:contentDescription="@string/person_image"
             app:srcCompat="@drawable/person" />
 
         <TextView
-            android:id="@+id/ntr_location"
+            android:id="@+id/ntr_CVlocation"
             android:layout_width="181dp"
             android:layout_height="30dp"
             android:layout_marginStart="80dp"
@@ -54,31 +54,19 @@
             android:textColor="@color/black" />
 
         <Button
-            android:id="@+id/btn_edit"
-            android:layout_width="67dp"
-            android:layout_height="35dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="17dp"
-            android:text="@string/edit_btn"
-            android:textSize="12sp"
-            app:backgroundTint="@color/teal_700" />
-
-        <Button
-            android:id="@+id/btn_delete"
-            android:layout_width="45dp"
-            android:layout_height="32dp"
+            android:id="@+id/btn_cvNutView"
+            android:layout_width="70dp"
+            android:layout_height="36dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginRight="22dp"
-            android:layout_marginBottom="20dp"
-            android:text="@string/btn_delete"
-            android:textColor="#85130A"
+            android:layout_marginRight="23dp"
+            android:layout_marginBottom="21dp"
+            android:text="VIEW"
+            android:textColor="#050505"
             android:textSize="12sp"
             app:backgroundTint="@color/teal_700" />
 
+
     </RelativeLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

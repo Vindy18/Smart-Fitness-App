@@ -1,6 +1,6 @@
 package com.smartFitness.home.Model;
 
-public class Nutritionists {
+public class Nutritionist {
 
     public int id;
     public String name;

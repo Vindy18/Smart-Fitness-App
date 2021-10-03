@@ -18,14 +18,17 @@ import com.smartFitness.home.R;
 public class Edit_admin_pass_activity extends AppCompatActivity {
 
     ImageButton btn_adminProfile;
-    String emailExtra;
+    Button btn_change;
+
     EditText et_oldPass;
     EditText et_pass;
     EditText et_confirmPass;
-    Button btn_change;
+
+    String emailExtra;
 
     DBHelper dbHelper;
     Admin admin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +37,13 @@ public class Edit_admin_pass_activity extends AppCompatActivity {
         Intent adminProfileIntent = getIntent();
         emailExtra = adminProfileIntent.getStringExtra("emailaddress");
 
-        dbHelper = new DBHelper(this);
         btn_adminProfile= findViewById(R.id.btn_imageAdminChegepass);
         et_oldPass = findViewById(R.id.et_adminOldPass);
         et_pass = findViewById(R.id.et_adminChangepass);
         et_confirmPass = findViewById(R.id.et_adminChangeconfermpass);
         btn_change = findViewById(R.id.btn_passwordChange);
 
+        dbHelper = new DBHelper(this);
         admin = dbHelper.getAdmin(emailExtra);
 
     }
@@ -61,6 +64,7 @@ public class Edit_admin_pass_activity extends AppCompatActivity {
 
         btn_change.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
+
                 String firstName = admin.firstName;
                 String lastName = admin.lastName;
                 String city = admin.city;
@@ -76,27 +80,33 @@ public class Edit_admin_pass_activity extends AppCompatActivity {
                         int val = dbHelper.updateAdmin(emailExtra, firstName, lastName, city, email, mobileNumber, confirmPassword);
 
                         if (val > 0) {
+
                             Context context = getApplicationContext();
                             Toast.makeText(context, "Password Change Successful", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(Edit_admin_pass_activity.this, Admin_profile_activity.class);
                             intent.putExtra("emailaddress", emailExtra);
                             startActivity(intent);
+
                         } else {
+
                             Context context = getApplicationContext();
                             Toast.makeText(context, "Password Change Fail", Toast.LENGTH_SHORT).show();
+
                         }
                     } else {
+
                         Context context = getApplicationContext();
                         Toast.makeText(context, "Confirm Password Miss Match", Toast.LENGTH_SHORT).show();
+
                     }
 
                 } else{
+
                     Context context = getApplicationContext();
                     Toast.makeText(context, "Old Password is incorrect", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
-
-
     }
 }

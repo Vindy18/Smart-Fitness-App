@@ -18,13 +18,15 @@ import com.smartFitness.home.R;
 public class Add_admin_activity extends AppCompatActivity {
 
     ImageButton btn_adminProfile;
+    Button btn_add;
+    Button btn_Cancel;
     EditText et_firstName;
     EditText et_lastName;
     EditText et_city;
     EditText et_mobileNumber;
     EditText et_email;
     EditText et_password;
-    Button btn_add;
+
     String emailExtra;
 
     DBHelper dbHelper;
@@ -47,6 +49,7 @@ public class Add_admin_activity extends AppCompatActivity {
         et_email = findViewById(R.id.et_addEmail);
         et_password = findViewById(R.id.et_addpassword);
         btn_add= findViewById(R.id.btn_addNewAdmin);
+        btn_Cancel= findViewById(R.id.btn_CancelNewAdmin);
 
     }
 
@@ -65,26 +68,44 @@ public class Add_admin_activity extends AppCompatActivity {
             }
         });
 
+        btn_Cancel.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent intent = new Intent(Add_admin_activity.this, Admin_view_Activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
+                startActivity(intent);
+
+                Context context = getApplicationContext();
+                Toast.makeText(context,"Menu Loading",Toast.LENGTH_SHORT).show();
+            }
+        });
+
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String firstName = et_firstName.getText().toString();
                 String lastName = et_lastName.getText().toString();
                 String city = et_city.getText().toString();
                 String mobileNumber = et_mobileNumber.getText().toString();
                 String email = et_email.getText().toString() ;
-                String password = et_email.getText().toString() ;
+                String password = et_password.getText().toString() ;
 
              boolean val = dbHelper.addAdmin(firstName,lastName,city,email,mobileNumber,password);
 
                 if(val == true){
-                    Toast.makeText(Add_admin_activity.this,"Add Success",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(Add_admin_activity.this,"Add fail",Toast.LENGTH_SHORT).show();
-                }
 
+                    Intent intent = new Intent(Add_admin_activity.this, Add_admin_activity.class);
+                    intent.putExtra ("emailaddress",emailExtra);
+                    startActivity(intent);
+
+                    Toast.makeText(Add_admin_activity.this,"Add Success",Toast.LENGTH_SHORT).show();
+
+                }else{
+
+                    Toast.makeText(Add_admin_activity.this,"Add fail",Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
     }
-
 }

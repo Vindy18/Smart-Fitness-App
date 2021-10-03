@@ -7,10 +7,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
+import com.smartFitness.home.Model.Nutritionist;
 
-import com.smartFitness.home.Model.Admin;
-import com.smartFitness.home.Model.Nutritionists;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelperNutritionist extends SQLiteOpenHelper {
 
@@ -21,7 +21,7 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        //Create a table
         String SQL_CREATE_ENTRIES = "CREATE TABLE " + NutritionistMaster.Nutritionists.TABLE_NAME +" (" +
                 NutritionistMaster.Nutritionists._ID + " INTEGER PRIMARY KEY," +
                 NutritionistMaster.Nutritionists.COLUMN_NAME_NAME  + " TEXT NOT NULL," +
@@ -69,7 +69,7 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
     }
 
     //Get Nutritionist
-    public Nutritionists getNutritionist(String Email) {
+    public Nutritionist getNutritionist(String Email) {
         //Get all date repository write mode
         SQLiteDatabase db = getReadableDatabase();
 
@@ -78,24 +78,24 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(sql , new String[]{Email});
 
         // create nutritionists
-        Nutritionists nutritionists = new Nutritionists ();
+        Nutritionist nutritionist = new Nutritionist ();
 
         // Read data, I simplify cursor in one line
         if (cursor.moveToFirst()) {
 
             // Get imageData in byte[]. Easy, right?
-            nutritionists.id = cursor.getInt(cursor.getColumnIndex(NutritionistMaster.Nutritionists._ID));
-            nutritionists.name = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_NAME));
-            nutritionists.location = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_LOCATION));
-            nutritionists.email = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_EMAIL));
-            nutritionists.mobileNumber = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_MOBILENUMBER));
-            nutritionists.description = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_DESCRIPTION));
+            nutritionist.id = cursor.getInt(cursor.getColumnIndex(NutritionistMaster.Nutritionists._ID));
+            nutritionist.name = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_NAME));
+            nutritionist.location = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_LOCATION));
+            nutritionist.email = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_EMAIL));
+            nutritionist.mobileNumber = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_MOBILENUMBER));
+            nutritionist.description = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_DESCRIPTION));
         }
 
         cursor.close();
         db.close();
 
-        return nutritionists;
+        return nutritionist;
     }
 
     //update Nutritionist
@@ -125,6 +125,7 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
 
     //deleting nutritionists
     public void deleteNutritionists(String Email) {
+
         //Get all date repository read mode
         SQLiteDatabase db= getReadableDatabase();
 
@@ -132,5 +133,47 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
         String sql = NutritionistMaster.Nutritionists.COLUMN_NAME_EMAIL + " LIKE ?";
         String[] selectionArgs = {Email};
         db.delete(NutritionistMaster.Nutritionists.TABLE_NAME, sql ,selectionArgs );
+    }
+
+    //Get all nutritionists
+    public List<Nutritionist> getAllNutritionists() {
+
+        //Get all date repository read mode
+        SQLiteDatabase db = getReadableDatabase();
+
+        // declare a array list
+        List NutritionistList = new ArrayList();
+
+        //SQl quarry for get all nutritionists
+        String sql = "select * from nutritionists";
+
+        //Get row details to cursor object
+        Cursor cursor = db.rawQuery(sql ,null);
+
+
+        // Read data Row by Row (cursor in one line)
+            if (cursor.moveToFirst()) {
+                do {
+                    // create nutritionists
+                    Nutritionist nutritionist = new Nutritionist ();
+
+                    // Get one nutritionist details
+                    nutritionist.id = cursor.getInt(cursor.getColumnIndex(NutritionistMaster.Nutritionists._ID));
+                    nutritionist.name = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_NAME));
+                    nutritionist.location = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_LOCATION));
+                    nutritionist.email = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_EMAIL));
+                    nutritionist.mobileNumber = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_MOBILENUMBER));
+                    nutritionist.description = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_DESCRIPTION));
+
+                    // add nut Nutritionist to list
+                    NutritionistList.add(nutritionist);
+
+                }while (cursor.moveToNext());
+            }
+
+        cursor.close();
+        db.close();
+
+        return NutritionistList;
     }
 }
