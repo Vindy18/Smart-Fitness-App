@@ -13,8 +13,9 @@ import android.widget.Toast;
 
 import com.smartFitness.home.Admin.Admin_profile_activity;
 import com.smartFitness.home.Admin.Edit_admin_activity;
-import com.smartFitness.home.DataBase.DBHelper;
 import com.smartFitness.home.DataBase.DBHelperWeightTrainer;
+import com.smartFitness.home.DataBase.WeightTrainerMaster;
+import com.smartFitness.home.DataBase.WeightTrainerMaster.WeightTrainer;
 import com.smartFitness.home.Model.Admin;
 import com.smartFitness.home.R;
 
@@ -23,14 +24,19 @@ public class Admin_View_Edit_WeightTrainer<name> extends AppCompatActivity {
     ImageButton btn_ImageView;
     String emailExtra;
     EditText et_name;
-    EditText et_address;
+    EditText et_location;
     EditText et_contactNumber;
-    EditText et_workingHours;
+    EditText et_email;
     EditText et_about;
     Button btn_save;
+    Button btn_cancel;
 
+    //String emailExtra;
+    String WeightTraineremail;
+
+    //WeightTrainer
     DBHelperWeightTrainer dbHelperWeightTrainer;
-    Admin admin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +45,26 @@ public class Admin_View_Edit_WeightTrainer<name> extends AppCompatActivity {
         // get intent object
         Intent adminPageIntent = getIntent();
         emailExtra = adminPageIntent.getStringExtra("emailaddress");
+        //WeightTraineremail = WeightTrainerListIntent.getStringExtra("nutritionistemail");
 
-        btn_ImageView= findViewById(R.id.btn_imageAdminEdit);
         dbHelperWeightTrainer = new DBHelperWeightTrainer(this);
-        et_name = findViewById(R.id.et_name);
-        et_address = findViewById(R.id.et_address);
-        et_contactNumber= findViewById(R.id.et_contactNumber);
-        et_workingHours = findViewById(R.id.et_workinghours);
-        et_about = findViewById(R.id.et_about);
-        btn_save= findViewById(R.id.button_edit);
 
+        et_name = findViewById(R.id.et_name);
+        et_location= findViewById(R.id.et_location);
+        et_contactNumber= findViewById(R.id.et_contactNumber);
+        et_email=findViewById(R.id.et_email);
+        et_about = findViewById(R.id.et_about);
+
+        btn_save = findViewById(R.id.btn_save);
+        btn_cancel = findViewById(R.id.btn_cancel);
+
+        //get current weightTrainer details to Edit texts
+        //nutritionist = dbHelper.getNutritionist(nutritionistEmail);
+       // et_name.setText(nutritionist.name);
+        //et_location.setText(nutritionist.location);
+       // et_email.setText(nutritionist.email);
+        //et_mobileNumber.setText(nutritionist.mobileNumber);
+        //et_description.setText(nutritionist.description);
 
 
     }
@@ -71,14 +87,14 @@ public class Admin_View_Edit_WeightTrainer<name> extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 String Name = et_name.getText().toString();
-                String Address = et_address.getText().toString();
+               // String Address = et_address.getText().toString();
                 String ContactNumber = et_contactNumber.getText().toString();
-                String email = et_workingHours.getText().toString();
+                //String email = et_workingHours.getText().toString();
                 String about = et_about.getText().toString();
             }
 
 
-            int val = dbHelperWeightTrainer.updateWeightTrainer(et_name,et_address,et_contactNumber,et_workingHours,et_about);
+            //int val = dbHelperWeightTrainer.updateWeightTrainer(et_name,et_address,et_contactNumber,et_workingHours,et_about);
 
              //if (val > 0)
              {

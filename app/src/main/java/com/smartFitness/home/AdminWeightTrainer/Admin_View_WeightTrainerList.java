@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.smartFitness.home.R;
 
-public class Admin_View_DeleteWeightTrainer extends AppCompatActivity {
+public class Admin_View_WeightTrainerList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_view_delete_weight_trainer);
+        setContentView(R.layout.activity_admin_view_weight_trainer_list);
     }
 }

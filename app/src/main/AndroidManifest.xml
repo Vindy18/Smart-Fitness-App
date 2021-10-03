@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Home">
-        <activity android:name=".AdminNutritionists.Edit_Nutritionists"></activity>
-        <activity android:name=".Admin.Edit_admin_pass_activity" android:exported="true" />
+        <activity
+            android:name=".AdminWeightTrainer.Admin_View_WeightTrainerList"
+            android:exported="true" />
+        <activity android:name=".AdminNutritionists.Edit_Nutritionists" />
+        <activity
+            android:name=".Admin.Edit_admin_pass_activity"
+            android:exported="true" />
         <activity android:name=".CustomerNutritionists.Customer_View_Nutritionist_Profile_View" />
         <activity android:name=".CustomerNutritionists.Customer_View_Nutritionists_List" />
         <activity android:name=".AdminNutritionists.Admin_View_Nutritionists_List" />
@@ -18,7 +23,6 @@
         <activity android:name=".Admin.Admin_profile_activity" />
         <activity android:name=".AdminWeightTrainer.Admin_View_WeightTrainer_Home" />
         <activity android:name=".AdminWeightTrainer.Admin_View_Edit_WeightTrainer" />
-        <activity android:name=".AdminWeightTrainer.Admin_View_DeleteWeightTrainer" />
         <activity android:name=".CustomerWeightTrainer.Customer_View_WeightTrainerList" />
         <activity android:name=".AdminWeightTrainer.Admin_View_AddWeightTrainer" />
         <activity android:name=".CustomerCardioInstructor.Customer_view_cardio_ins_profile" />

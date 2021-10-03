@@ -82,7 +82,7 @@
             <Button
 
 
-                android:id="@+id/btn_wt_EditCancel"
+                android:id="@+id/btn_cancel"
                 android:layout_width="77dp"
                 android:layout_height="35dp"
                 android:layout_alignParentLeft="false"
@@ -99,7 +99,7 @@
 
             <Button
 
-                android:id="@+id/btn_ntr_editSave"
+                android:id="@+id/btn_save"
                 android:layout_width="77dp"
                 android:layout_height="35dp"
                 android:layout_alignParentLeft="true"
@@ -116,11 +116,10 @@
 
             <EditText
 
-                android:id="@+id/et_ntr_editName"
+                android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
                 android:layout_marginTop="60dp"
                 android:layout_marginBottom="60dp"
                 android:ems="10"
@@ -129,7 +128,7 @@
 
             <EditText
 
-                android:id="@+id/et_ntr_editLocation"
+                android:id="@+id/et_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -142,7 +141,7 @@
 
             <EditText
 
-                android:id="@+id/et_ntr_editContactNumber"
+                android:id="@+id/et_contactNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -155,7 +154,7 @@
 
             <EditText
 
-                android:id="@+id/et_ntr_editEmail"
+                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -168,7 +167,7 @@
 
             <EditText
 
-                android:id="@+id/et_ntr_editDescription"
+                android:id="@+id/et_about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -176,7 +175,7 @@
                 android:layout_marginTop="236dp"
                 android:layout_marginBottom="60dp"
                 android:ems="10"
-                android:hint="Description"
+                android:hint="About"
                 android:inputType="textPersonName" />
 
         </RelativeLayout>
@@ -187,16 +186,10 @@
             android:background="#BC646864">
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/trainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="3dp"
-                android:layout_marginLeft="3dp"
-                android:layout_marginBottom="0dp"
-                app:srcCompat="@drawable/person" />
+                app:srcCompat="@drawable/trainerlogo" />
         </RelativeLayout>
     </RelativeLayout>
 

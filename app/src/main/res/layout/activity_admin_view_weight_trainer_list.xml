@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/trainer"
-    tools:context=".CustomerWeightTrainer.Customer_View_WeightTrainerList">
+    tools:context=".AdminWeightTrainer.Admin_View_WeightTrainerList">
 
     <HorizontalScrollView
         android:id="@+id/horizontalMenuBar"
@@ -33,8 +33,8 @@
 
             <TextView
                 android:id="@+id/menu_tab2"
-                android:layout_width="136dp"
-                android:layout_height="43dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#04574F"
                 android:text="@string/ntr_tab2"
@@ -50,8 +50,7 @@
                 android:text="@string/ntr_tab3"
                 android:textColor="@color/black"
                 android:textColorHint="#050505"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -69,22 +68,16 @@
         android:id="@+id/relativeLayoutSearchName"
         android:layout_width="190dp"
         android:layout_height="29dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalMenuBar">
 
         <TextView
             android:id="@+id/search_name"
-            android:layout_width="155dp"
+            android:layout_width="161dp"
             android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="0dp"
             android:background="@color/Tab_color"
             android:hint="   NAME"
             android:textColor="@color/black"
@@ -103,17 +96,18 @@
         android:id="@+id/relativeLayoutSearchLocation"
         android:layout_width="189dp"
         android:layout_height="29dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/relativeLayoutSearchName"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalMenuBar">
 
         <TextView
             android:id="@+id/search_location"
-            android:layout_width="160dp"
+            android:layout_width="161dp"
             android:layout_height="match_parent"
             android:background="@color/Tab_color"
-            android:hint="  LOCATION"
+            android:hint="   LOCATION"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="italic" />
@@ -126,22 +120,36 @@
             android:gravity="right" />
     </RelativeLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_ntr_AddNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="false"
+        android:contentDescription="@string/add_new"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
     <ListView
-        android:id="@+id/lv_CvNutrition"
-        android:layout_width="406dp"
-        android:layout_height="514dp"
+        android:id="@+id/lv_Nutrition"
+        android:layout_width="409dp"
+        android:layout_height="528dp"
         android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayoutSearchName"
         tools:layout_editor_absoluteX="1dp" />
 
     <Button
-        android:id="@+id/btn_Menu"
+        android:id="@+id/btn_nut_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:text="Menu"
+        android:text="MENU"
         android:textColor="@color/black"
         app:backgroundTint="@color/lite_grean"
         app:layout_constraintStart_toStartOf="parent"

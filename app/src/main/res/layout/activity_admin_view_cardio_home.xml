@@ -78,7 +78,7 @@
         tools:layout_editor_absoluteY="577dp" />
 
     <ImageView
-        android:id="@+id/btn_ntr_uploadImage"
+        android:id="@+id/btn_wt_uploadImage"
         android:layout_width="376dp"
         android:layout_height="149dp"
         app:layout_constraintEnd_toEndOf="parent"
