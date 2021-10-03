@@ -38,9 +38,9 @@
                 android:layout_width="136dp"
                 android:layout_height="43dp"
                 android:layout_weight="1"
-                android:background="#009688"
+                android:background="#04574F"
                 android:text="@string/ntr_tab2"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
@@ -50,7 +50,7 @@
                 android:layout_weight="1"
                 android:background="#04574F"
                 android:text="@string/ntr_tab3"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textColorHint="#050505"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -62,7 +62,7 @@
         android:layout_width="322dp"
         android:layout_height="474dp"
         android:layout_marginBottom="64dp"
-        android:background="@android:color/holo_purple"
+        android:background="@color/custemer_view_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
