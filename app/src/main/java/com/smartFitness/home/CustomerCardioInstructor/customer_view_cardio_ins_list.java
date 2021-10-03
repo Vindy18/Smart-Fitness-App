@@ -1,8 +1,10 @@
-package com.smartFitness.home;
+package com.smartFitness.home.CustomerCardioInstructor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.smartFitness.home.R;
 
 public class customer_view_cardio_ins_list extends AppCompatActivity {
 

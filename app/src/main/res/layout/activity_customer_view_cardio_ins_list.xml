@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cardio_wall"
-    tools:context=".customer_view_cardio_ins_list">
+    tools:context=".CustomerCardioInstructor.customer_view_cardio_ins_list">
 
     <ImageView
         android:id="@+id/imageView5"
