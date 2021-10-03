@@ -36,9 +36,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#04574F"
+                android:background="#009688"
                 android:text="@string/ntr_tab2"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
 
             <TextView
@@ -46,9 +46,9 @@
                 android:layout_width="136dp"
                 android:layout_height="43dp"
                 android:layout_weight="1"
-                android:background="@color/teal_700"
+                android:background="#04574F"
                 android:text="@string/ntr_tab3"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textColorHint="#050505"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -121,7 +121,7 @@
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_ntr_AddNew"
+        android:id="@+id/btn_wt_AddNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -143,7 +143,7 @@
         tools:layout_editor_absoluteX="1dp" />
 
     <Button
-        android:id="@+id/btn_nut_menu"
+        android:id="@+id/btn_wt_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"

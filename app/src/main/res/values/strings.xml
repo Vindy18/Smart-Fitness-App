@@ -61,5 +61,17 @@
     <string name="button10">DELETE</string>
     <string name="button">Add</string>
     <string name="textView22">Total No.of Trainers:</string>
+    <string name="et_name">Name</string>
+    <string name="et_Location">Location</string>
+    <string name="et_contactNumber">Contact Number</string>
+    <string name="et_email">E-mail</string>
+    <string name="et_about">About</string>
+    <string name="et_editName">Name</string>
+    <string name="et_editLocation">Location</string>
+    <string name="et_editContactNumber">Contact Number</string>
+    <string name="et_editEmail">Email</string>
+    <string name="et_editAbout">About</string>
+    <string name="btn_editSave">Save</string>
+    <string name="btn_editCancel">Cancel</string>
 
 </resources>
