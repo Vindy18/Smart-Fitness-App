@@ -80,10 +80,10 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
         // create nutritionists
         Nutritionist nutritionist = new Nutritionist ();
 
-        // Read data, I simplify cursor in one line
+        // Read data fist match row details
         if (cursor.moveToFirst()) {
 
-            // Get imageData in byte[]. Easy, right?
+            // Get one nutritionist details
             nutritionist.id = cursor.getInt(cursor.getColumnIndex(NutritionistMaster.Nutritionists._ID));
             nutritionist.name = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_NAME));
             nutritionist.location = cursor.getString(cursor.getColumnIndex(NutritionistMaster.Nutritionists.COLUMN_NAME_LOCATION));

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutPerson"
+        android:layout_width="301dp"
+        android:layout_height="163dp"
+        android:background="@drawable/card1"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayoutPerson"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="NotSibling">
+
+        <TextView
+            android:id="@+id/wt_phone"
+            android:layout_width="181dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="90dp"
+            android:text="@string/ntr_phone"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/wt_name"
+            android:layout_width="181dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/ntr_name"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/person_image"
+            android:layout_width="67dp"
+            android:layout_height="83dp"
+            android:contentDescription="@string/person_image"
+            app:srcCompat="@drawable/trainerlogo" />
+
+        <TextView
+            android:id="@+id/wt_location"
+            android:layout_width="181dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="55dp"
+            android:text="@string/ntr_district"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btn_wedit"
+            android:layout_width="67dp"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="17dp"
+            android:text="@string/edit_btn"
+            android:textSize="12sp"
+            app:backgroundTint="@color/teal_700" />
+
+        <Button
+            android:id="@+id/btn_wdelete"
+            android:layout_width="45dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/btn_delete"
+            android:textColor="#85130A"
+            android:textSize="12sp"
+            app:backgroundTint="@color/teal_700" />
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
