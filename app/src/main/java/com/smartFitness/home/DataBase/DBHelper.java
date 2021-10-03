@@ -45,6 +45,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public boolean addAdmin(String firstName, String lastName, String city, String email, String mobileNumber, String password ){
+
         //Get all date repository write mode
         SQLiteDatabase db = getWritableDatabase();
 
@@ -63,11 +64,11 @@ public class DBHelper extends SQLiteOpenHelper {
         }else{
             return false;
         }
-
     }
 
     public List readAllAdminInfo(String req){
 
+        //Get all date repository write mode
         SQLiteDatabase db = getReadableDatabase();
 
         String[] projection = {
@@ -80,8 +81,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 AdminMaster.Admins.COLUMN_NAME_PASSWORD
         };
 
-        //String sortOder = AdminMaster.Admins.COLUMN_NAME_FIRSTNAME+" ASC";
-
+        // Read data Row by Row (cursor in one line)
         Cursor cursor = db.query(
                 AdminMaster.Admins.TABLE_NAME,
                 projection,
@@ -110,9 +110,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
             emails.add(email);
             passwords.add(password);
-
-
         }
+
         cursor.close();
 
         if(req == "email"){
@@ -126,6 +125,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Admin getAdmin(String Email) {
 
+        //Get all date repository Read mode
         SQLiteDatabase db = getReadableDatabase();
 
         String sql = "select * from admins where email=?";
@@ -133,10 +133,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
         Admin admin = new Admin();
 
-        // Read data, I simplify cursor in one line
+        // Read data Row by Row (cursor in one line)
         if (cursor.moveToFirst()) {
 
-            // Get imageData in byte[]. Easy, right?
             admin.id = cursor.getInt(cursor.getColumnIndex(AdminMaster.Admins._ID));
             admin.firstName = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_FIRSTNAME));
             admin.lastName = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_LASTNAME));
@@ -154,8 +153,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     public void deleteAdmin(String Email) {
+
+        //Get all date repository Read mode
         SQLiteDatabase db= getReadableDatabase();
         //deleting admin
+
         String sql = AdminMaster.Admins.COLUMN_NAME_EMAIL + " LIKE ?";
         String[] selectionArgs = {Email};
         db.delete(AdminMaster.Admins.TABLE_NAME, sql ,selectionArgs );
@@ -163,8 +165,12 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public int updateAdmin(String keyEmail,String firstName, String lastName, String city, String email, String mobileNumber, String password){
+
+        //Get all date repository Read mode
         SQLiteDatabase db= getReadableDatabase();
+
         ContentValues values = new ContentValues();
+
         values.put(AdminMaster.Admins.COLUMN_NAME_FIRSTNAME,firstName);
         values.put(AdminMaster.Admins.COLUMN_NAME_LASTNAME,lastName);
         values.put(AdminMaster.Admins.COLUMN_NAME_CITY,city);
@@ -180,10 +186,9 @@ public class DBHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    //for debug dont copy that delete other 3 members
+    //for debug
     public void delete() {
         SQLiteDatabase db= getReadableDatabase();
         db.execSQL("delete from "+ AdminMaster.Admins.TABLE_NAME);
     }
-
 }

@@ -18,13 +18,15 @@ import com.smartFitness.home.R;
 public class Edit_admin_activity extends AppCompatActivity {
 
     ImageButton btn_adminProfile;
-    String emailExtra;
+    Button btn_save;
+
     EditText et_firstName;
     EditText et_lastName;
     EditText et_city;
     EditText et_mobileNumber;
     EditText et_email;
-    Button btn_save;
+
+    String emailExtra;
 
     DBHelper dbHelper;
     Admin admin;
@@ -39,7 +41,6 @@ public class Edit_admin_activity extends AppCompatActivity {
         emailExtra = adminPageIntent.getStringExtra("emailaddress");
 
         btn_adminProfile = findViewById(R.id.btn_imageAdminEdit);
-        dbHelper = new DBHelper(this);
         et_firstName = findViewById(R.id.et_admineditFirstName);
         et_lastName = findViewById(R.id.et_adminEditLastName);
         et_city = findViewById(R.id.et_adminEditCity);
@@ -47,7 +48,9 @@ public class Edit_admin_activity extends AppCompatActivity {
         et_email = findViewById(R.id.et_adminEditEmail);
         btn_save= findViewById(R.id.btn_editAdmin);
 
+        dbHelper = new DBHelper(this);
         admin = dbHelper.getAdmin(emailExtra);
+
         et_firstName.setText(admin.firstName);
         et_lastName.setText(admin.lastName);
         et_city.setText(admin.city);
@@ -73,24 +76,30 @@ public class Edit_admin_activity extends AppCompatActivity {
 
         btn_save.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
+
                 String firstName = et_firstName.getText().toString();
                 String lastName = et_lastName.getText().toString();
                 String city = et_city.getText().toString();
                 String mobileNumber = et_mobileNumber.getText().toString();
                 String email = et_email.getText().toString() ;
                 String password = admin.Password;
+
                 int val = dbHelper.updateAdmin(emailExtra,firstName,lastName,city,email,mobileNumber,password);
 
                 if (val > 0){
+
                     Context context = getApplicationContext();
                     Toast.makeText(context,"Update Successful",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Edit_admin_activity.this, Edit_admin_activity.class);
+                    Intent intent = new Intent(Edit_admin_activity.this, Admin_profile_activity.class);
                     intent.putExtra ("emailaddress",email);
                     startActivity(intent);
+
                 }
                 else{
+
                     Context context = getApplicationContext();
                     Toast.makeText(context,"Update Fail",Toast.LENGTH_SHORT).show();
+
                 }
 
             }

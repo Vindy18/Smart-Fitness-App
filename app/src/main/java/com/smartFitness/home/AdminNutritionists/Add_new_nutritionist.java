@@ -30,6 +30,7 @@ public class Add_new_nutritionist extends AppCompatActivity {
     Button btn_save;
     Button btn_cancel;
 
+    String emailExtra;
 
     DBHelperNutritionist dbHelper;
 
@@ -40,7 +41,7 @@ public class Add_new_nutritionist extends AppCompatActivity {
 
         // get intent object
         Intent nutritionistsListIntent = getIntent();
-
+        emailExtra = nutritionistsListIntent.getStringExtra("emailaddress");
 
 
         dbHelper = new DBHelperNutritionist(this);
@@ -63,6 +64,7 @@ public class Add_new_nutritionist extends AppCompatActivity {
         btn_cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 Intent intent = new Intent(Add_new_nutritionist.this, Admin_View_Nutritionists_List.class);
+                intent.putExtra("emailaddress",emailExtra);
                 startActivity(intent);
             }
         });
@@ -78,18 +80,22 @@ public class Add_new_nutritionist extends AppCompatActivity {
                 String email = et_email.getText().toString() ;
                 String description = et_description.getText().toString() ;
 
-                //pass data to DataBase/DbHelpernutritionist and return "val"
+                //pass data to DataBase/DBHelperNutritionist and return "val"
                 boolean val = dbHelper.addNutritionist(Name,location ,email,mobileNumber,description);
 
-                //check "val" variable if addNutritionist() Success return true
+                //check "val" variable, if addNutritionist() Success return true
                 if(val == true){
+
+                    //pass intent to same page
                     Intent intent = new Intent(Add_new_nutritionist.this, Add_new_nutritionist.class);
+                    intent.putExtra("emailaddress",emailExtra);
                     startActivity(intent);
 
+                    //Toast massage
                     Toast.makeText(Add_new_nutritionist.this,"Add Success",Toast.LENGTH_SHORT).show();
 
                 }else{
-
+                    //Toast massage
                     Toast.makeText(Add_new_nutritionist.this,"Add fail",Toast.LENGTH_SHORT).show();
                 }
 

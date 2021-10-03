@@ -27,11 +27,14 @@ public class Admin_profile_activity extends AppCompatActivity {
     Button btn_delete;
     Button btn_menu;
     Button btn_changePassword;
+
     TextView tv_adminName;
     TextView tv_adminCity;
     TextView tv_adminEmail;
     TextView tv_adminMobileNumber;
+
     DBHelper dbHelper;
+
     String emailExtra;
 
     @Override
@@ -43,7 +46,8 @@ public class Admin_profile_activity extends AppCompatActivity {
         Intent adminMenuIntent = getIntent();
         emailExtra = adminMenuIntent.getStringExtra("emailaddress");
 
-        dbHelper = new DBHelper(this);
+
+
         btn_logout = findViewById(R.id.btn_logOut);
         btn_edit = findViewById(R.id.btn_adminEdit);
         btn_delete = findViewById(R.id.btn_admindelete);
@@ -54,7 +58,9 @@ public class Admin_profile_activity extends AppCompatActivity {
         tv_adminMobileNumber = findViewById(R.id.tv_admin_mobile);
         btn_changePassword = findViewById(R.id.btn_changePass);
 
+        dbHelper = new DBHelper(this);
         Admin admin = dbHelper.getAdmin(emailExtra);
+
         String fullname = admin.firstName +" "+admin.lastName;
 
         tv_adminName.setText(fullname);
@@ -66,8 +72,6 @@ public class Admin_profile_activity extends AppCompatActivity {
 
     protected void onResume() {
         super.onResume();
-
-
 
         //Log out
         btn_logout.setOnClickListener(new View.OnClickListener() {
@@ -120,6 +124,7 @@ public class Admin_profile_activity extends AppCompatActivity {
             }
         });
 
+        //move Change password page
         btn_changePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,10 +136,5 @@ public class Admin_profile_activity extends AppCompatActivity {
                 Toast.makeText(context,"You Can Change Password",Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
     }
-
-
 }
