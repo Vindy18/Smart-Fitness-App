@@ -48,9 +48,9 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
 
         btn_cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
-                Intent intent = new Intent(Admin_View_AddWeightTrainer.this, Admin_View_WeightTrainerList.class);
-                intent.putExtra("emailaddress",emailExtra);
-                startActivity(intent);
+                //Intent intent = new Intent(Admin_View_AddWeightTrainer.this, Admin_View_WeightTrainerList.class);
+                //intent.putExtra("emailaddress",emailExtra);
+                //startActivity(intent);
             }
         });
 

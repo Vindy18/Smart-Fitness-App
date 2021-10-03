@@ -72,20 +72,7 @@ public class NutritionistListView extends ArrayAdapter<Nutritionist> {
             }
         });
 
-        //button -> move "Customer_View_Nutritionist_Profile_View" page
-        btn_edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // pass intent
-                Intent intent = new Intent(context, Edit_Nutritionists.class);
-                intent.putExtra("emailaddress",emailExtra);
-                intent.putExtra("nutritionistemail",nutritionist.email);
-                context.startActivity(intent);
 
-                //Toast massage
-                Toast.makeText(context, "Nutritionist Loading", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         //Delete row
         btn_delete.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +84,7 @@ public class NutritionistListView extends ArrayAdapter<Nutritionist> {
                 Toast.makeText(context,"Deleting..",Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(context, Admin_View_Nutritionists_List.class);
+                intent.putExtra("emailaddress",emailExtra);
                 context.startActivity(intent);
             }
         });
