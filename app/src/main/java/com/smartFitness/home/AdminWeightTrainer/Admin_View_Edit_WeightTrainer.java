@@ -18,7 +18,7 @@ import com.smartFitness.home.DataBase.DBHelperWeightTrainer;
 import com.smartFitness.home.Model.Admin;
 import com.smartFitness.home.R;
 
-public class Admin_View_Edit_WeightTrainer extends AppCompatActivity {
+public class Admin_View_Edit_WeightTrainer<name> extends AppCompatActivity {
 
     ImageButton btn_ImageView;
     String emailExtra;
@@ -51,11 +51,11 @@ public class Admin_View_Edit_WeightTrainer extends AppCompatActivity {
 
 
 
-
     }
     @Override
     protected void onResume() {
         super.onResume();
+
 
         btn_save.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
@@ -77,21 +77,24 @@ public class Admin_View_Edit_WeightTrainer extends AppCompatActivity {
                 String about = et_about.getText().toString();
             }
 
-            //int val = dbHelperWeightTrainer.updateWeightTrainer(et_name,et_address,et_contactNumber,et_workingHours,et_about);
 
-            // if (val > 0){
-            // Context context = getApplicationContext();
-            // Toast.makeText(context,"Update Successful",Toast.LENGTH_SHORT).show();
-            // Intent intent = new Intent(Admin_View_Edit_WeightTrainer.this, Edit_admin_activity.class);
-            // intent.putExtra ("emailaddress",email);
-            // startActivity(intent);
-            //}
-            // else{
-            // Context context = getApplicationContext();)
-            //Toast.makeText(context,"Update Fail",Toast.LENGTH_SHORT).show();
-            //}
+            int val = dbHelperWeightTrainer.updateWeightTrainer(et_name,et_address,et_contactNumber,et_workingHours,et_about);
 
-            // }
+             //if (val > 0)
+             {
+             Context context = getApplicationContext();
+            Toast.makeText(context,"Update Successful",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Admin_View_Edit_WeightTrainer.this, Edit_admin_activity.class);
+            intent.putExtra ("id",emailExtra);
+            startActivity(intent);
+            }
+           // else
+                {
+             Context context = getApplicationContext();
+            Toast.makeText(context,"Update Fail",Toast.LENGTH_SHORT).show();
+            }
+
+
             });
 
         };

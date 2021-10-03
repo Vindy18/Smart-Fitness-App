@@ -57,18 +57,28 @@ public class DBHelperWeightTrainer extends SQLiteOpenHelper {
         }
 
     }
-    public void updateWeightTrainer(EditText name, EditText address, EditText contactnumber, EditText workinghours, EditText about){
+    public int updateWeightTrainer(EditText name, EditText address, EditText contactnumber, EditText workinghours, EditText about){
         SQLiteDatabase db= getReadableDatabase();
         ContentValues values = new ContentValues();
-        //values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_NAME,name);
-        //values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ADDRESS,address);
-        //values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_CONTACTNUMBER,contactnumber);
-        //values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_WORKINGHOURS,workinghours);
-       //  values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ABOUT,about);
+        values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_NAME, String.valueOf(name));
+        values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ADDRESS, String.valueOf(address));
+        values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_CONTACTNUMBER, String.valueOf(contactnumber));
+        values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_WORKINGHOURS, String.valueOf(workinghours));
+        values.put(WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ABOUT, String.valueOf(about));
 
-        //int count = db.update(AdminMaster.Admins.TABLE_NAME,values, sql,selectionArgs);
+        String sql = WeightTrainerMaster.WeightTrainer._ID+ " LIKE ?";
+        String[]  selectionArgs = {};
+        int count = db.update(WeightTrainerMaster.WeightTrainer.TABLE_NAME,values,sql ,selectionArgs);
 
-       // return count;
+       return count;
+    }
+    public void deleteWeightTrainer(String ID) {
+        SQLiteDatabase db= getReadableDatabase();
+        //deleting weightTrainer
+        String sql = WeightTrainerMaster.WeightTrainer._ID + " LIKE ?";
+        String[] selectionArgs = {ID};
+        db.delete(WeightTrainerMaster.WeightTrainer.TABLE_NAME, sql ,selectionArgs );
+
     }
 
 
