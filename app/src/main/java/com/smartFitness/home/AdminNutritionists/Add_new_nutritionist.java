@@ -2,19 +2,14 @@ package com.smartFitness.home.AdminNutritionists;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 
-import com.smartFitness.home.Admin.Admin_profile_activity;
-import com.smartFitness.home.AdminCommon.Admin_view_Activity;
-import com.smartFitness.home.DataBase.DBHelper;
 import com.smartFitness.home.DataBase.DBHelperNutritionist;
 import com.smartFitness.home.R;
 
@@ -45,14 +40,14 @@ public class Add_new_nutritionist extends AppCompatActivity {
 
 
         dbHelper = new DBHelperNutritionist(this);
-        et_Name = findViewById(R.id.et_ntrName);
-        et_location = findViewById(R.id.et_ntrLocation);
-        et_mobileNumber = findViewById(R.id.et_ntrContactNumber);
-        et_email = findViewById(R.id.et_ntrEmail);
-        et_description = findViewById(R.id.et_ntrDescription);
+        et_Name = findViewById(R.id.et_name);
+        et_location = findViewById(R.id.et_location);
+        et_mobileNumber = findViewById(R.id.et_ContactNumber);
+        et_email = findViewById(R.id.et_email);
+        et_description = findViewById(R.id.et_about);
         //btn_add_photo = findViewById(R.id.btn_ntr_uploadImage);
-        btn_save = findViewById(R.id.btn_ntr_save);
-        btn_cancel = findViewById(R.id.btn_ntr_cancel);
+        btn_save = findViewById(R.id.btn_save);
+        btn_cancel = findViewById(R.id.btn_cancel);
 
 
     }

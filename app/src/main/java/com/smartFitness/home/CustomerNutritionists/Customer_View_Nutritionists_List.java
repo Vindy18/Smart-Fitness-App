@@ -10,9 +10,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.smartFitness.home.AdminCommon.Admin_view_Activity;
-import com.smartFitness.home.AdminNutritionists.Admin_View_Nutritionists_List;
-import com.smartFitness.home.AdminNutritionists.NutritionistListView;
 import com.smartFitness.home.CustomerCommon.Customer_view_Activity;
 import com.smartFitness.home.DataBase.DBHelperNutritionist;
 import com.smartFitness.home.Model.Nutritionist;
@@ -39,7 +36,7 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
         Intent Intent = getIntent();
 
         //get element by ID
-        btn_nutCV_Menu = findViewById(R.id.btn_nutCV_Menu);
+        btn_nutCV_Menu = findViewById(R.id.btn_Menu);
 
         //Database Connection
         dbHelper = new DBHelperNutritionist(this);

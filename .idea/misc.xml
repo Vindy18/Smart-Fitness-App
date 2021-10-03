@@ -7,26 +7,32 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_add_new_nutritionist.xml" value="0.15234375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_profile.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view.xml" value="0.2" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_cardio_home.xml" value="0.11031420765027322" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_cardio_ins_add.xml" value="0.15234375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_cardio_ins_list.xml" value="0.15234375" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_cardio_ins_profile.xml" value="0.10484972677595629" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_edit_weight_trainer.xml" value="0.11577868852459017" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_nutritionists_list.xml" value="0.152" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_nutritionists_list.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_weight_trainer_home.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_chenge_password.xml" value="0.128515625" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view.xml" value="0.176" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view_bmi_calculeter.xml" value="0.2" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view_cardio_ins_profile.xml" value="0.10484972677595629" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view_nutritionist_profile_view.xml" value="0.2" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view_nutritionists_list.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view_nutritionist_profile_view.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view_nutritionists_list.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_edit_admin.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_edit_admin_pass.xml" value="0.1413934426229508" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_edit_nutritionists.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_main.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_main_admin_login.xml" value="0.16394927536231885" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/single_row_n.xml" value="0.264" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/single_row_ncv.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_add_new_nutritionist.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_add_weight_trainer.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_delete_weight_trainer.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_edit_weight_trainer.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_nutritionists_list.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_weight_trainer_home.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_admin_view_weight_trainer_list.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view_nutritionist_profile_view.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view_nutritionists_list.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_customer_view_weight_trainer_list.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Smart-Fitness/app/src/main/res/layout/activity_edit_nutritionists.xml" value="0.1638888888888889" />
       </map>
     </option>
   </component>

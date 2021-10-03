@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.smartFitness.home.Admin.Add_admin_activity;
+import com.smartFitness.home.AdminNutritionists.Add_new_nutritionist;
+import com.smartFitness.home.AdminNutritionists.Admin_View_Nutritionists_List;
 import com.smartFitness.home.DataBase.DBHelper;
 import com.smartFitness.home.DataBase.DBHelperWeightTrainer;
 import com.smartFitness.home.R;
@@ -17,11 +19,14 @@ import com.smartFitness.home.R;
 public class Admin_View_AddWeightTrainer extends AppCompatActivity {
 
     EditText et_name;
-    EditText et_address;
+    EditText et_location;
     EditText et_contactnumber;
-    EditText et_workinghours;
+    EditText et_email;
     EditText et_about;
-    Button btn_add;
+    Button btn_save;
+    Button btn_cancel;
+
+    String emailExtra;
 
     DBHelperWeightTrainer dbHelperWeightTrainer;
 
@@ -34,27 +39,35 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
         Intent weightTrainerIntent = getIntent();
 
         dbHelperWeightTrainer = new DBHelperWeightTrainer(this);
-        et_name = findViewById(R.id.et_wtName);
-        et_address = findViewById(R.id.et_wtaddress);
-        et_contactnumber = findViewById(R.id.et_wtContactnumber);
-        et_workinghours= findViewById(R.id.et_workinghours);
+        et_name = findViewById(R.id.et_name);
+        et_location = findViewById(R.id.et_location);
+        et_contactnumber = findViewById(R.id.et_contactNumber);
         et_about = findViewById(R.id.et_about);
-        btn_add= findViewById(R.id.btn_addNewWeightTrainer);
+        btn_save = findViewById(R.id.btn_save);
+        btn_cancel = findViewById(R.id.btn_cancel);
     }
     @Override
     protected void onResume() {
         super.onResume();
 
-        btn_add.setOnClickListener(new View.OnClickListener() {
+        btn_cancel.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent intent = new Intent(Admin_View_AddWeightTrainer.this, Admin_View_WeightTrainerList.class);
+                intent.putExtra("emailaddress",emailExtra);
+                startActivity(intent);
+            }
+        });
+
+        btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String name = et_name.getText().toString();
-                String address = et_address.getText().toString();
+                String address = et_location.getText().toString();
                 String contactnumber = et_contactnumber.getText().toString();
-                String workinghours = et_workinghours.getText().toString();
+                String email = et_email.getText().toString() ;
                 String about = et_about.getText().toString();
-                boolean val;
-                val = dbHelperWeightTrainer.addWeightTrainer(name,address,contactnumber,workinghours,about);
+
+                boolean val = dbHelperWeightTrainer.addWeightTrainer(name,address,contactnumber,email,about);
 
                 if(val == true){
                     Toast.makeText(Admin_View_AddWeightTrainer.this,"Add Success",Toast.LENGTH_SHORT).show();

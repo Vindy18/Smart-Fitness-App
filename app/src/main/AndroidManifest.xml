@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Home">
-        <activity android:name=".AdminNutritionists.Edit_Nutritionists"></activity>
-        <activity android:name=".Admin.Edit_admin_pass_activity" android:exported="true" />
+        <activity
+            android:name=".AdminWeightTrainer.Admin_View_WeightTrainerList"
+            android:exported="true" />
+        <activity android:name=".AdminNutritionists.Edit_Nutritionists" />
+        <activity
+            android:name=".Admin.Edit_admin_pass_activity"
+            android:exported="true" />
         <activity android:name=".CustomerNutritionists.Customer_View_Nutritionist_Profile_View" />
         <activity android:name=".CustomerNutritionists.Customer_View_Nutritionists_List" />
         <activity android:name=".AdminNutritionists.Admin_View_Nutritionists_List" />
