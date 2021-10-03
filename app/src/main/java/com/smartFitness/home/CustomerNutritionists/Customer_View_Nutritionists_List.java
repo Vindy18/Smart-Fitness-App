@@ -44,7 +44,7 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
         // Get nutrition form data base
         nutritionist = dbHelper.getAllNutritionists();
 
-        // lord Lay out constrain lay out
+        // lord Lay out (constrain lay out)
         listView = (ListView) findViewById(R.id.lv_CvNutrition);
         NutritionistListCvView  adapter = new NutritionistListCvView (Customer_View_Nutritionists_List.this,nutritionist);
         listView.setAdapter(adapter);
@@ -57,7 +57,7 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
                 startActivity(intent);
 
                 Context context = getApplicationContext();
-                Toast.makeText(context,"Nutritionists are Loading ",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"Menu Loading ",Toast.LENGTH_SHORT).show();
             }
         });
     }

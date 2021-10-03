@@ -32,7 +32,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 AdminMaster.Admins.COLUMN_NAME_CITY  + " TEXT NOT NULL," +
                 AdminMaster.Admins.COLUMN_NAME_EMAIL  + " TEXT NOT NULL UNIQUE," +
                 AdminMaster.Admins.COLUMN_NAME_MOBILENUMBER  + " TEXT NOT NULL," +
-                AdminMaster.Admins.COLUMN_NAME_PASSWORD  + " TEXT NOT NULL UNIQUE)" ;
+                AdminMaster.Admins.COLUMN_NAME_PASSWORD  + " TEXT NOT NULL)" ;
 
         db.execSQL(SQL_CREATE_ENTRIES);
 

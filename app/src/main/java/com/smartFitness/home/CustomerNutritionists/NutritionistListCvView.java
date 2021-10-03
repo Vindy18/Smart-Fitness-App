@@ -28,6 +28,7 @@ public class NutritionistListCvView extends ArrayAdapter<Nutritionist> {
 
     //constructor
     NutritionistListCvView(Context context, List<Nutritionist> nutritionists) {
+
         super(context, R.layout.single_row_ncv,nutritionists);
         this.context = context;
         this.nutritionists = nutritionists;
@@ -37,6 +38,7 @@ public class NutritionistListCvView extends ArrayAdapter<Nutritionist> {
     @Nullable
     @Override
     public View getView(int position,@Nullable View convertView,@NonNull ViewGroup parent) {
+
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         //add one row to one layout

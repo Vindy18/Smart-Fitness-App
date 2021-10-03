@@ -26,13 +26,13 @@ public class DBHelperWeightTrainer extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String SQL_CREATE_ENTRIES = "CREATE TABLE " + NutritionistMaster.Nutritionists.TABLE_NAME + " (" +
+        String SQL_CREATE_ENTRIES = "CREATE TABLE " + WeightTrainerMaster.WeightTrainer.TABLE_NAME + " (" +
                 WeightTrainerMaster.WeightTrainer._ID + " INTEGER PRIMARY KEY," +
                 WeightTrainerMaster.WeightTrainer.COLUMN_NAME_NAME + " TEXT NOT NULL," +
                 WeightTrainerMaster.WeightTrainer.COLUMN_NAME_LOCATION + " TEXT NOT NULL," +
                 WeightTrainerMaster.WeightTrainer.COLUMN_NAME_EMAIL  + " TEXT NOT NULL UNIQUE," +
                 WeightTrainerMaster.WeightTrainer.COLUMN_NAME_CONTACTNUMBER + " TEXT NOT NULL," +
-                WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ABOUT + " TEXT NOT NULL," +
+                WeightTrainerMaster.WeightTrainer.COLUMN_NAME_ABOUT + " TEXT," +
                 WeightTrainerMaster.WeightTrainer.COLUMN_NAME_PHOTO + " BLOB )";
 
         db.execSQL(SQL_CREATE_ENTRIES);
@@ -65,8 +65,8 @@ public class DBHelperWeightTrainer extends SQLiteOpenHelper {
         }
 
     }
-    public int updateWeightTrainer(String keyEmail, String name, String location, String contactnumber, String email
-            , String about){
+
+    public int updateWeightTrainer(String keyEmail, String name, String location, String email,String contactnumber,String about){
 
         SQLiteDatabase db= getReadableDatabase();
 
@@ -141,12 +141,12 @@ public class DBHelperWeightTrainer extends SQLiteOpenHelper {
         return WeightTrainerList;
     }
 
-    public WeightTrainer  getNutritionist(String Email) {
+    public WeightTrainer  getWeightTrainers(String Email) {
         //Get all date repository write mode
         SQLiteDatabase db = getReadableDatabase();
 
         //Get all date repository write mode
-        String sql = "select * from nutritionists where email=?";
+        String sql = "select * from weighttrainer where email=?";
         Cursor cursor = db.rawQuery(sql , new String[]{Email});
 
 

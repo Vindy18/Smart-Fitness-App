@@ -128,7 +128,7 @@
     </RelativeLayout>
 
     <ListView
-        android:id="@+id/lv_CvNutrition"
+        android:id="@+id/lv_CvWightTrainer"
         android:layout_width="406dp"
         android:layout_height="514dp"
         android:layout_marginTop="20dp"

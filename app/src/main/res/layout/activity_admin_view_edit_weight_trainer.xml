@@ -152,7 +152,7 @@
                 android:layout_marginBottom="60dp"
                 android:ems="10"
                 android:hint="@string/et_editContactNumber"
-                android:inputType="textPersonName" />
+                android:inputType="number"  />
 
             <EditText
 
@@ -165,7 +165,7 @@
                 android:layout_marginBottom="60dp"
                 android:ems="10"
                 android:hint="@string/et_editEmail"
-                android:inputType="textPersonName" />
+                android:inputType="textEmailAddress" />
 
             <EditText
 

@@ -7,8 +7,8 @@
 
     <RelativeLayout
         android:id="@+id/singl_wt_lo_CV"
-        android:layout_width="307dp"
-        android:layout_height="261dp"
+        android:layout_width="286dp"
+        android:layout_height="161dp"
         android:background="@drawable/card1"
         app:layout_constraintBottom_toTopOf="@+id/singl_wt_lo_CV"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,29 +16,18 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="NotSibling">
 
-        <TextView
-            android:id="@+id/wt_CVphone4"
-            android:layout_width="181dp"
-            android:layout_height="34dp"
-            android:layout_below="@+id/wt_CVabout"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="0dp"
-            android:text="Weight Trainer * "
-            android:textColor="@color/Warning_red"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/wt_CVabout"
-            android:layout_width="181dp"
-            android:layout_height="34dp"
-            android:layout_below="@+id/wt_CVemail"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="0dp"
-            android:text="About"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/btn_cvWTview"
+            android:layout_width="70dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="23dp"
+            android:layout_marginBottom="21dp"
+            android:text="VIEW"
+            android:textColor="#050505"
+            android:textSize="12sp"
+            app:backgroundTint="@color/teal_700" />
 
         <TextView
             android:id="@+id/wt_CVphone"
@@ -76,18 +65,6 @@
             android:layout_marginTop="55dp"
             android:text="@string/ntr_district"
             android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/wt_CVemail"
-            android:layout_width="181dp"
-            android:layout_height="34dp"
-            android:layout_below="@+id/wt_CVphone"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="0dp"
-            android:text="Email"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent" />
 
 
     </RelativeLayout>

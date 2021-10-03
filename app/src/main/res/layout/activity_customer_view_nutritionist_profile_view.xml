@@ -146,7 +146,7 @@
                 android:textStyle="bold|italic" />
 
             <TextView
-                android:id="@+id/tv_nut_profileEmail"
+                android:id="@+id/tv_wt_profileEmail"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_alignParentTop="false"
