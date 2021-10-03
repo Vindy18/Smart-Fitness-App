@@ -95,7 +95,7 @@
                 app:backgroundTint="#04574F" />
 
             <Button
-                android:id="@+id/btn_ntr_editSave"
+                android:id="@+id/btn_ntr_Save"
                 android:layout_width="77dp"
                 android:layout_height="35dp"
                 android:layout_alignParentLeft="true"
@@ -111,7 +111,7 @@
                 app:backgroundTint="#04574F" />
 
             <EditText
-                android:id="@+id/et_ntr_editName"
+                android:id="@+id/et_ntr_Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -123,7 +123,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/et_ntr_editLocation"
+                android:id="@+id/et_ntr_Location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -147,7 +147,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/et_ntr_editEmail"
+                android:id="@+id/et_ntr_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -159,7 +159,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/et_ntr_editDescription"
+                android:id="@+id/et_ntr_Description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
