@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Home">
         <activity
+            android:name=".CustomerWeightTrainer.Customer_View_WeightTrainer_Profile_View"
+            android:exported="true" />
+        <activity
             android:name=".AdminWeightTrainer.Admin_View_WeightTrainerList"
             android:exported="true" />
         <activity android:name=".AdminNutritionists.Edit_Nutritionists" />

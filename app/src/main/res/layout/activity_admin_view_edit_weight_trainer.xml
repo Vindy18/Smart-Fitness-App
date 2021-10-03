@@ -8,6 +8,203 @@
     tools:context=".AdminWeightTrainer.Admin_View_Edit_WeightTrainer">
 
 
+    <HorizontalScrollView
+        android:id="@+id/horizontalMenuBar"
+        android:layout_width="408dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_logo">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/menu_tab1"
+                android:layout_width="136dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#04574F"
+                android:text="@string/ntr_tab1"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/menu_tab2"
+                android:layout_width="136dp"
+                android:layout_height="43dp"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text="@string/ntr_tab2"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/menu_tab3"
+                android:layout_width="136dp"
+                android:layout_height="43dp"
+                android:layout_weight="1"
+                android:background="#04574F"
+                android:text="@string/ntr_tab3"
+                android:textColor="@color/white"
+                android:textColorHint="#050505"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="322dp"
+        android:layout_height="474dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/card2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:layout_width="205dp"
+            android:layout_height="387dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="50dp">
+
+            <Button
+
+                android:id="@+id/btn_editCancel"
+                android:layout_width="77dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginEnd="-1dp"
+                android:layout_marginRight="-1dp"
+                android:layout_marginBottom="12dp"
+                android:hint="@string/btn_editCancel"
+                android:text="@string/btn_cancel"
+                android:textSize="10sp"
+                app:backgroundTint="#04574F" />
+
+            <Button
+
+                android:id="@+id/btn_editSave"
+                android:layout_width="77dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="false"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="-3dp"
+                android:layout_marginEnd="128dp"
+                android:layout_marginRight="48dp"
+                android:layout_marginBottom="11dp"
+                android:hint="@string/btn_editSave"
+                android:text="save"
+                android:textSize="12sp"
+                app:backgroundTint="#04574F" />
+
+            <EditText
+
+                android:id="@+id/et_editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="60dp"
+                android:ems="10"
+                android:hint="@string/et_editName"
+                android:inputType="textPersonName" />
+
+            <EditText
+
+                android:id="@+id/et_editLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="104dp"
+                android:layout_marginBottom="60dp"
+                android:ems="10"
+                android:hint="@string/et_editLocation"
+                android:inputType="textPersonName" />
+
+            <EditText
+
+                android:id="@+id/et_editContactNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="148dp"
+                android:layout_marginBottom="60dp"
+                android:ems="10"
+                android:hint="@string/et_editContactNumber"
+                android:inputType="textPersonName" />
+
+            <EditText
+
+                android:id="@+id/et_editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="192dp"
+                android:layout_marginBottom="60dp"
+                android:ems="10"
+                android:hint="@string/et_editEmail"
+                android:inputType="textPersonName" />
+
+            <EditText
+
+                android:id="@+id/et_editAbout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="236dp"
+                android:layout_marginBottom="60dp"
+                android:ems="10"
+                android:hint="@string/et_editAbout"
+                android:inputType="textPersonName" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="91dp"
+            android:layout_height="107dp"
+            android:background="#BC646864">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/trainerlogo" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/profile_logo"
+        android:layout_width="102dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
