@@ -40,13 +40,13 @@ public class Add_new_nutritionist extends AppCompatActivity {
 
 
         dbHelper = new DBHelperNutritionist(this);
-        et_Name = findViewById(R.id.et_ntr_editName);
-        et_location = findViewById(R.id.et_ntr_editLocation);
+        et_Name = findViewById(R.id.et_ntr_Name);
+        et_location = findViewById(R.id.et_ntr_Location);
         et_mobileNumber = findViewById(R.id.et_ntrContactNumber);
-        et_email = findViewById(R.id.et_ntr_editEmail);
-        et_description = findViewById(R.id.et_ntr_editDescription);
+        et_email = findViewById(R.id.et_ntr_email);
+        et_description = findViewById(R.id.et_ntr_Description);
         //btn_add_photo = findViewById(R.id.btn_ntr_uploadImage);
-        btn_save = findViewById(R.id.btn_ntr_editSave);
+        btn_save = findViewById(R.id.btn_ntr_Save);
         btn_cancel = findViewById(R.id.btn_ntr_cancel);
 
 
@@ -56,6 +56,7 @@ public class Add_new_nutritionist extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        // Cancel new nutrition
         btn_cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 Intent intent = new Intent(Add_new_nutritionist.this, Admin_View_Nutritionists_List.class);

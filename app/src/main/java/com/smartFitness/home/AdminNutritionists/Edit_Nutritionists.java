@@ -99,7 +99,7 @@ public class Edit_Nutritionists extends AppCompatActivity {
 
                     //pass intent to same page
                     Intent intent = new Intent(Edit_Nutritionists.this, Admin_View_Nutritionists_List.class);
-                    intent.putExtra ("emailaddress",email);
+                    intent.putExtra ("emailaddress",emailExtra);
                     startActivity(intent);
                 }
                 else{
