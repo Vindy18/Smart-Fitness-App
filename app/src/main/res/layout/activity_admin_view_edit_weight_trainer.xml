@@ -152,7 +152,7 @@
                 android:layout_marginBottom="60dp"
                 android:ems="10"
                 android:hint="@string/et_editContactNumber"
-                android:inputType="number"  />
+                android:inputType="number" />
 
             <EditText
 

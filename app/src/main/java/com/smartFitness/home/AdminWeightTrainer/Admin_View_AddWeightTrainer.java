@@ -79,7 +79,7 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
                 String about = et_description.getText().toString() ;
 
                 //pass data to DataBase/DBHelperNutritionist and return "val"
-                boolean val = dbHelper.addWeightTrainer(Name,location ,email,mobileNumber,about );
+                boolean val = dbHelper.addWeightTrainer(Name,location ,mobileNumber,email,about );
 
                 //check "val" variable, if addNutritionist() Success return true
                 if(val == true){

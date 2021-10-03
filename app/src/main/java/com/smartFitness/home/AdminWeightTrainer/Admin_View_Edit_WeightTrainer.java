@@ -70,6 +70,8 @@ public class Admin_View_Edit_WeightTrainer extends AppCompatActivity {
         et_mobileNumber.setText(weightTrainer.contactNumber);
         et_description.setText(weightTrainer.about);
 
+        String Mobi = weightTrainer.contactNumber;
+
     }
     @Override
     protected void onResume() {
