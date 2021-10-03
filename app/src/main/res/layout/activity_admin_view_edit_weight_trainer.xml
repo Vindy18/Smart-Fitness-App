@@ -7,206 +7,207 @@
     android:background="@drawable/trainer"
     tools:context=".AdminWeightTrainer.Admin_View_Edit_WeightTrainer">
 
-    <Button
-        android:id="@+id/button_edit"
-        android:layout_width="312dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginLeft="144dp"
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalMenuBar"
+        android:layout_width="408dp"
+        android:layout_height="43dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginRight="144dp"
-        android:layout_marginBottom="15dp"
-        android:background="@color/black"
-        android:text="Modify"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_logo">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/menu_tab1"
+                android:layout_width="136dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#04574F"
+                android:text="@string/ntr_tab1"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/menu_tab2"
+                android:layout_width="136dp"
+                android:layout_height="43dp"
+                android:layout_weight="1"
+                android:background="#04574F"
+                android:text="@string/ntr_tab2"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/menu_tab3"
+                android:layout_width="136dp"
+                android:layout_height="43dp"
+                android:layout_weight="1"
+                android:background="@color/teal_700"
+                android:text="@string/ntr_tab3"
+                android:textColor="@color/black"
+                android:textColorHint="#050505"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="322dp"
+        android:layout_height="474dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/card2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_about" />
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <EditText
-        android:id="@+id/et_about"
-        android:layout_width="386dp"
-        android:layout_height="138dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginBottom="2dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="sans-serif-thin"
-        android:inputType="textPersonName"
-        android:text="  About"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_edit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_WorkingHours" />
+        <RelativeLayout
+            android:layout_width="205dp"
+            android:layout_height="387dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="50dp">
 
-    <EditText
-        android:id="@+id/et_WorkingHours"
-        android:layout_width="382dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginBottom="2dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="sans-serif-thin"
-        android:inputType="textPersonName"
-        android:text="  Working Hours"
-        app:layout_constraintBottom_toTopOf="@+id/et_about"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_contactNumber" />
+            <Button
 
-    <EditText
-        android:id="@+id/et_contactNumber"
-        android:layout_width="382dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginBottom="2dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="sans-serif-thin"
-        android:inputType="phone"
-        android:text="  Contact number"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/et_WorkingHours"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_address" />
 
-    <EditText
-        android:id="@+id/et_address"
-        android:layout_width="382dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginBottom="2dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="sans-serif-thin"
-        android:inputType="textPostalAddress"
-        android:text="  Address"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/et_contactNumber"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName20" />
+                android:id="@+id/btn_wt_EditCancel"
+                android:layout_width="77dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginEnd="-1dp"
+                android:layout_marginRight="-1dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/btn_cancel"
+                android:textSize="10sp"
+                app:backgroundTint="#04574F" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName20"
-        android:layout_width="382dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginBottom="2dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="sans-serif-thin"
-        android:inputType="textPersonName"
-        android:text="  Trainer ID"
-        app:layout_constraintBottom_toTopOf="@+id/et_address"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_name" />
+            <Button
 
-    <EditText
-        android:id="@+id/et_name"
-        android:layout_width="382dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:layout_marginBottom="2dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:fontFamily="sans-serif-thin"
-        android:inputType="textPersonName"
-        android:text="  Name"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout6" />
+                android:id="@+id/btn_ntr_editSave"
+                android:layout_width="77dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="false"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="-3dp"
+                android:layout_marginEnd="128dp"
+                android:layout_marginRight="48dp"
+                android:layout_marginBottom="11dp"
+                android:text="save"
+                android:textSize="12sp"
+                app:backgroundTint="#04574F" />
+
+            <EditText
+
+                android:id="@+id/et_ntr_editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="60dp"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName" />
+
+            <EditText
+
+                android:id="@+id/et_ntr_editLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="104dp"
+                android:layout_marginBottom="60dp"
+                android:ems="10"
+                android:hint="Location"
+                android:inputType="textPersonName" />
+
+            <EditText
+
+                android:id="@+id/et_ntr_editContactNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="148dp"
+                android:layout_marginBottom="60dp"
+                android:ems="10"
+                android:hint="Contact Number"
+                android:inputType="textPersonName" />
+
+            <EditText
+
+                android:id="@+id/et_ntr_editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="192dp"
+                android:layout_marginBottom="60dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textPersonName" />
+
+            <EditText
+
+                android:id="@+id/et_ntr_editDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="236dp"
+                android:layout_marginBottom="60dp"
+                android:ems="10"
+                android:hint="Description"
+                android:inputType="textPersonName" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="91dp"
+            android:layout_height="107dp"
+            android:background="#BC646864">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="0dp"
+                app:srcCompat="@drawable/person" />
+        </RelativeLayout>
+    </RelativeLayout>
 
     <ImageView
-        android:id="@+id/btn_ImageView"
-        android:layout_width="161dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/profile_logo"
+        android:layout_width="102dp"
+        android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02"
         app:srcCompat="@drawable/logo" />
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout6"
-        android:layout_width="407dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/Tab_color"
-        app:layout_constraintBottom_toTopOf="@+id/et_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_ImageView"
-        app:layout_constraintVertical_bias="0.268"
-        app:tabIndicatorColor="@color/black"
-        app:tabSelectedTextColor="#100F0F">
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cardio Instructor" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Weight Trainer" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nutrition Instructor" />
-    </com.google.android.material.tabs.TabLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
