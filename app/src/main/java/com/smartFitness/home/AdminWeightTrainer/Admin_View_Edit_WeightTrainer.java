@@ -14,9 +14,6 @@ import android.widget.Toast;
 import com.smartFitness.home.Admin.Admin_profile_activity;
 import com.smartFitness.home.Admin.Edit_admin_activity;
 import com.smartFitness.home.DataBase.DBHelperWeightTrainer;
-import com.smartFitness.home.DataBase.WeightTrainerMaster;
-import com.smartFitness.home.DataBase.WeightTrainerMaster.WeightTrainer;
-import com.smartFitness.home.Model.Admin;
 import com.smartFitness.home.R;
 
 public class Admin_View_Edit_WeightTrainer<name> extends AppCompatActivity {
@@ -49,14 +46,14 @@ public class Admin_View_Edit_WeightTrainer<name> extends AppCompatActivity {
 
         dbHelperWeightTrainer = new DBHelperWeightTrainer(this);
 
-        et_name = findViewById(R.id.et_name);
-        et_location= findViewById(R.id.et_location);
-        et_contactNumber= findViewById(R.id.et_contactNumber);
-        et_email=findViewById(R.id.et_email);
-        et_about = findViewById(R.id.et_about);
+        et_name = findViewById(R.id.et_ntr_editName);
+        et_location= findViewById(R.id.et_ntr_editLocation);
+        et_contactNumber= findViewById(R.id.et_ntr_editContactNumber);
+        et_email=findViewById(R.id.et_ntr_editEmail);
+        et_about = findViewById(R.id.et_ntr_editDescription);
 
-        btn_save = findViewById(R.id.btn_save);
-        btn_cancel = findViewById(R.id.btn_cancel);
+        btn_save = findViewById(R.id.btn_ntr_editSave);
+        btn_cancel = findViewById(R.id.btn_ntr_cancel);
 
         //get current weightTrainer details to Edit texts
         //nutritionist = dbHelper.getNutritionist(nutritionistEmail);

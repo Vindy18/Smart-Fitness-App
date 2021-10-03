@@ -36,7 +36,7 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
         Intent Intent = getIntent();
 
         //get element by ID
-        btn_nutCV_Menu = findViewById(R.id.btn_Menu);
+        btn_nutCV_Menu = findViewById(R.id.btn_nutCV_Menu);
 
         //Database Connection
         dbHelper = new DBHelperNutritionist(this);

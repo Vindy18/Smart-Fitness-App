@@ -79,7 +79,7 @@
             android:layout_marginBottom="50dp">
 
             <Button
-                android:id="@+id/btn_cancel"
+                android:id="@+id/btn_ntr_cancel"
                 android:layout_width="77dp"
                 android:layout_height="35dp"
                 android:layout_alignParentLeft="false"
@@ -95,7 +95,7 @@
                 app:backgroundTint="#04574F" />
 
             <Button
-                android:id="@+id/btn_save"
+                android:id="@+id/btn_ntr_editSave"
                 android:layout_width="77dp"
                 android:layout_height="35dp"
                 android:layout_alignParentLeft="true"
@@ -111,7 +111,7 @@
                 app:backgroundTint="#04574F" />
 
             <EditText
-                android:id="@+id/et_name"
+                android:id="@+id/et_ntr_editName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -123,7 +123,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/et_location"
+                android:id="@+id/et_ntr_editLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -135,7 +135,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/et_ContactNumber"
+                android:id="@+id/et_ntrContactNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -147,7 +147,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/et_email"
+                android:id="@+id/et_ntr_editEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -159,7 +159,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/et_about"
+                android:id="@+id/et_ntr_editDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -187,7 +187,7 @@
                 android:textStyle="bold|italic" />
 
             <ImageView
-                android:id="@+id/btn_wt_uploadImage"
+                android:id="@+id/btn_ntr_uploadImage"
                 android:layout_width="50dp"
                 android:layout_height="49dp"
                 android:layout_marginStart="20dp"

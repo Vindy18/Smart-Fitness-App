@@ -9,10 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.smartFitness.home.Admin.Add_admin_activity;
-import com.smartFitness.home.AdminNutritionists.Add_new_nutritionist;
-import com.smartFitness.home.AdminNutritionists.Admin_View_Nutritionists_List;
-import com.smartFitness.home.DataBase.DBHelper;
 import com.smartFitness.home.DataBase.DBHelperWeightTrainer;
 import com.smartFitness.home.R;
 
@@ -39,12 +35,12 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
         Intent weightTrainerIntent = getIntent();
 
         dbHelperWeightTrainer = new DBHelperWeightTrainer(this);
-        et_name = findViewById(R.id.et_name);
-        et_location = findViewById(R.id.et_location);
-        et_contactnumber = findViewById(R.id.et_contactNumber);
-        et_about = findViewById(R.id.et_about);
-        btn_save = findViewById(R.id.btn_save);
-        btn_cancel = findViewById(R.id.btn_cancel);
+        et_name = findViewById(R.id.et_ntr_editName);
+        et_location = findViewById(R.id.et_ntr_editLocation);
+        et_contactnumber = findViewById(R.id.et_ntr_editContactNumber);
+        et_about = findViewById(R.id.et_ntr_editDescription);
+        btn_save = findViewById(R.id.btn_ntr_editSave);
+        btn_cancel = findViewById(R.id.btn_ntr_cancel);
     }
     @Override
     protected void onResume() {

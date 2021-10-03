@@ -46,13 +46,13 @@ public class Edit_Nutritionists extends AppCompatActivity {
         dbHelper = new DBHelperNutritionist(this);
 
         //get element by id
-        et_Name = findViewById(R.id.et_name);
-        et_location = findViewById(R.id.et_location);
-        et_mobileNumber = findViewById(R.id.et_contactNumber);
-        et_email = findViewById(R.id.et_email);
-        et_description = findViewById(R.id.et_about);
+        et_Name = findViewById(R.id.et_ntr_editName);
+        et_location = findViewById(R.id.et_ntr_editLocation);
+        et_mobileNumber = findViewById(R.id.et_ntr_editContactNumber);
+        et_email = findViewById(R.id.et_ntr_editEmail);
+        et_description = findViewById(R.id.et_ntr_editDescription);
         //btn_add_photo = findViewById(R.id.btn_ntr_uploadImage);
-        btn_save = findViewById(R.id.btn_save);
+        btn_save = findViewById(R.id.btn_ntr_editSave);
         btn_cancel = findViewById(R.id.btn_ntr_editCancel);
 
         //get current nutrition details to Edit texts
