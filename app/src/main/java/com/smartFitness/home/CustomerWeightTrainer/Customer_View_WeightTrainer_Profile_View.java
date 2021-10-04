@@ -51,7 +51,7 @@ public class Customer_View_WeightTrainer_Profile_View extends AppCompatActivity 
         tv_wt_profileEmail = findViewById(R.id.tv_wt_profileEmail);
         tv_wt_profileDes = findViewById(R.id.tv_wt_profileDes);
 
-        //get current nutrition details to text views
+        //get current  details to text views
         weightTrainer = dbHelper.getWeightTrainers(emailExtra);
         tv_wt_profileName.setText(weightTrainer.name);
         tv_wt_profileLocation.setText(weightTrainer.location);
