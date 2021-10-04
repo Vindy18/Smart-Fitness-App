@@ -54,7 +54,7 @@ public class Customer_View_WeightTrainerList extends AppCompatActivity {
         //Database Connection
         dbHelper = new DBHelperWeightTrainer(this);
 
-        // Get nutrition form data base
+        // Get form data base
         weightTrainer = dbHelper.getAllWeightTrainers();
 
         //lord Lay out (constrain lay out)
@@ -74,7 +74,7 @@ public class Customer_View_WeightTrainerList extends AppCompatActivity {
             }
         });
 
-        //moving to nutritionists page
+        //moving to weightTrainer page
         menuTab_nt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

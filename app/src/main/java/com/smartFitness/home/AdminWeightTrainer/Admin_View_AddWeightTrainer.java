@@ -69,7 +69,7 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        // Cancel new nutrition
+        // Cancel new weightTrainer
         btn_cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 Intent intent = new Intent(Admin_View_AddWeightTrainer.this, Admin_View_WeightTrainerList.class);
@@ -78,11 +78,11 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
             }
         });
 
-        // save new nutrition
+        // save new weightTrainer
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // take the values from view activity_add_new_nutritionist.xml file
+
 
                 if (awesomeValidation.validate()) {
 
@@ -92,10 +92,10 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
                     String email = et_email.getText().toString();
                     String about = et_description.getText().toString();
 
-                    //pass data to DataBase/DBHelperNutritionist and return "val"
+                    //pass data to DataBase/DBHelper and return "val"
                     boolean val = dbHelper.addWeightTrainer(Name, location, mobileNumber, email, about);
 
-                    //check "val" variable, if addNutritionist() Success return true
+                    //check "val" variable, if addWeightTrainer() Success return true
                     if (val == true) {
 
                         //pass intent to same page
