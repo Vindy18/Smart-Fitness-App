@@ -46,14 +46,14 @@ public class WeightTrainerListView extends ArrayAdapter<WeightTrainer> {
         TextView wt_location= row.findViewById(R.id.wt_location);
         TextView wt_phone= row.findViewById(R.id.wt_phone);
 
-        //get nutritionist by position
+        //get weightTrainer by position
         WeightTrainer weightTrainer = weightTrainers.get(position);
 
         wt_name.setText(weightTrainer.name);
         wt_location.setText(weightTrainer.location);
         wt_phone.setText(weightTrainer.contactNumber);
 
-        //button -> move "Customer_View_Nutritionist_Profile_View" page
+        //button -> move "Customer_View_WeightTrainer_Profile_View" page
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -46,13 +46,13 @@ public class Admin_View_WeightTrainerList extends AppCompatActivity {
         Intent avIntent = getIntent();
         emailExtra = avIntent.getStringExtra("emailaddress");
 
-        //nutritionists trainer tab
+        //weight trainer tab
         menuTab_nt = findViewById(R.id.menu_tab_nt);
 
         // db connection
         dbHelper = new DBHelperWeightTrainer(this);
 
-        // Get nutrition form data base
+        // Get weightTrainer form data base
         weightTrainer = dbHelper.getAllWeightTrainers();
 
         btn_wt_menu = findViewById(R.id. btn_wt_menu);
@@ -93,7 +93,7 @@ public class Admin_View_WeightTrainerList extends AppCompatActivity {
             }
         });
 
-        //moving to Nutritionists page
+
         menuTab_nt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
