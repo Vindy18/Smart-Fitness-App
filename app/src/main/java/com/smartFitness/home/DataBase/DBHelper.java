@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.smartFitness.home.Model.Admin;
+import com.smartFitness.home.Model.Nutritionist;
 
 import org.w3c.dom.Node;
 
@@ -210,5 +211,48 @@ public class DBHelper extends SQLiteOpenHelper {
     public void delete() {
         SQLiteDatabase db= getReadableDatabase();
         db.execSQL("delete from "+ AdminMaster.Admins.TABLE_NAME);
+    }
+
+
+    //Get all admins
+    public List<Admin> getAllAdmins() {
+
+        //Get all date repository read mode
+        SQLiteDatabase db = getReadableDatabase();
+
+        // declare a array list
+        List adminList = new ArrayList();
+
+        //SQl quarry for get all admins
+        String sql = "select * from admins";
+
+        //Get row details to cursor object
+        Cursor cursor = db.rawQuery(sql ,null);
+
+        // Read data Row by Row (cursor in one line)
+        if (cursor.moveToFirst()) {
+            do {
+                // create admins
+                Admin admin = new Admin ();
+
+                // Get one admin details
+                admin.id = cursor.getInt(cursor.getColumnIndex(AdminMaster.Admins._ID));
+                admin.firstName = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_FIRSTNAME));
+                admin.lastName = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_LASTNAME));
+                admin.city = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_CITY));
+                admin.email = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_EMAIL));
+                admin.mobileNumber = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_MOBILENUMBER));
+                admin.Password = cursor.getString(cursor.getColumnIndex(AdminMaster.Admins.COLUMN_NAME_PASSWORD));
+
+                // add nut admin to list
+                adminList.add(admin);
+
+            }while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return adminList;
     }
 }

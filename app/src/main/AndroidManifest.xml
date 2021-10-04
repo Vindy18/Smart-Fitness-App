@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Home">
-
+        <activity
+            android:name=".Admin.Admin_List_Activity"
+            android:exported="true" />
         <activity
             android:name=".AdminWeightTrainer.Admin_View_WeightTrainerList"
             android:exported="true" />

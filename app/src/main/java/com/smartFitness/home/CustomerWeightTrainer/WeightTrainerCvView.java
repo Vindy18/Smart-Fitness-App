@@ -49,16 +49,16 @@ public class WeightTrainerCvView extends ArrayAdapter<WeightTrainer>{
                 Button wt_View = row.findViewById(R.id.btn_cvWTview);
 
 
-                //get nutritionist by position
+                //get weightTrainer by position
                 WeightTrainer weightTrainer = weightTrainers.get(position);
 
-                //get one nutritionist
+                //get one weightTrainer
                 wt_nameView .setText(weightTrainer.name);
                 wt_locationView.setText(weightTrainer.location);
                 wt_phoneView .setText(weightTrainer.contactNumber);
 
 
-                //button -> move "Customer_View_Nutritionist_Profile_View" page
+                //button -> move "Customer_View_WeightTrainer_Profile_View" page
                 wt_View .setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
