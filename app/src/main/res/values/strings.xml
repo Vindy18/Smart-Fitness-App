@@ -73,5 +73,9 @@
     <string name="et_editAbout">About</string>
     <string name="btn_editSave">Save</string>
     <string name="btn_editCancel">Cancel</string>
+    <string name="err_name">Enter a valid name</string>
+    <string name="err_tel">Enter a valid phone number</string>
+    <string name="err_email">Enter a valid email</string>
+    <string name="pass">Capital and small letter symbol</string>
 
 </resources>

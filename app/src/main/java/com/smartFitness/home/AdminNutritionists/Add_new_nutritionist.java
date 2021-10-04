@@ -10,11 +10,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.smartFitness.home.DataBase.DBHelperNutritionist;
 import com.smartFitness.home.R;
 
+import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
+
 public class Add_new_nutritionist extends AppCompatActivity {
 
+    AwesomeValidation awesomeValidation;
 
     EditText et_Name;
     EditText et_location;
@@ -29,10 +34,13 @@ public class Add_new_nutritionist extends AppCompatActivity {
 
     DBHelperNutritionist dbHelper;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_nutritionist);
+
+        awesomeValidation = new AwesomeValidation (BASIC);
 
         // get intent object
         Intent nutritionistsListIntent = getIntent();
@@ -49,7 +57,12 @@ public class Add_new_nutritionist extends AppCompatActivity {
         btn_save = findViewById(R.id.btn_ntr_Save);
         btn_cancel = findViewById(R.id.btn_ntr_cancel);
 
-
+        //validations
+        //String regexPassword = "(?=.*[a-z])(?=.*[A-Z])(?=.*[\\d])(?=.*[~`!@#\\$%\\^&\\*\\(\\)\\-_\\+=\\{\\}\\[\\]\\|\\;:\"<>,./\\?]).{8,}";
+        awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_ntr_Name, "[a-zA-Z\\s]+", R.string.err_name);
+        awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_ntrContactNumber, RegexTemplate.TELEPHONE, R.string.err_tel);
+        awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_ntr_email, android.util.Patterns.EMAIL_ADDRESS, R.string.err_email);
+        //awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_password, regexPassword, R.string.password);
     }
 
     @Override
@@ -69,18 +82,23 @@ public class Add_new_nutritionist extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // tack tha values from view activity_add_new_nutritionist.xml file
-                String Name = et_Name.getText().toString();
-                String location = et_location.getText().toString();
-                String mobileNumber = et_mobileNumber.getText().toString();
-                String email = et_email.getText().toString() ;
-                String description = et_description.getText().toString() ;
+                // take the values from view activity_add_new_nutritionist.xml file
+                //check validations
+                if (awesomeValidation.validate()) {
 
-                //pass data to DataBase/DBHelperNutritionist and return "val"
-                boolean val = dbHelper.addNutritionist(Name,location ,email,mobileNumber,description);
+                    String Name = et_Name.getText().toString();
+                    String location = et_location.getText().toString();
+                    String mobileNumber = et_mobileNumber.getText().toString();
+                    String email = et_email.getText().toString();
+                    String description = et_description.getText().toString();
+
+
+                    //pass data to DataBase/DBHelperNutritionist and return "val"
+                    boolean val = dbHelper.addNutritionist(Name, location, email, mobileNumber, description);
+
 
                 //check "val" variable, if addNutritionist() Success return true
-                if(val == true){
+                //if(val == true){
 
                     //pass intent to same page
                     Intent intent = new Intent(Add_new_nutritionist.this, Add_new_nutritionist.class);
@@ -98,5 +116,4 @@ public class Add_new_nutritionist extends AppCompatActivity {
             }
         });
     }
-
 }
