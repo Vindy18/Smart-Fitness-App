@@ -49,7 +49,7 @@ public class MainAdminLogin extends AppCompatActivity {
         String regexName = "[a-zA-Z\\s]+";
 
         awesomeValidation.addValidation(MainAdminLogin.this, R.id.et_addfirstName, android.util.Patterns.EMAIL_ADDRESS, R.string.err_email);
-        awesomeValidation.addValidation(MainAdminLogin.this, R.id.et_password, regexPassword, R.string.pass);
+        awesomeValidation.addValidation(MainAdminLogin.this, R.id.et_password, regexPassword, R.string.loginpass);
 
         boolean val = dbHelper.addAdmin("Harsha","Prabhath","Kaduwela","admin@gmail.com","0716258847","Pass@123!");
     }

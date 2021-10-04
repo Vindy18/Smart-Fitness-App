@@ -78,5 +78,6 @@
     <string name="err_tel">Enter a valid phone number</string>
     <string name="err_email">Enter a valid email</string>
     <string name="pass">Add minimum 1:[Aa-Zz]characters and Symbols</string>
+    <string name="loginpass">Enter a valid password</string>
 
 </resources>

@@ -27,6 +27,7 @@ public class Admin_profile_activity extends AppCompatActivity {
     Button btn_delete;
     Button btn_menu;
     Button btn_changePassword;
+    Button btn_admin;
 
     TextView tv_adminName;
     TextView tv_adminCity;
@@ -57,6 +58,7 @@ public class Admin_profile_activity extends AppCompatActivity {
         tv_adminEmail = findViewById(R.id.tv_admin_email);
         tv_adminMobileNumber = findViewById(R.id.tv_admin_mobile);
         btn_changePassword = findViewById(R.id.btn_changePass);
+        btn_admin = findViewById(R.id.btn_admins);
 
         dbHelper = new DBHelper(this);
         Admin admin = dbHelper.getAdmin(emailExtra);
@@ -134,6 +136,19 @@ public class Admin_profile_activity extends AppCompatActivity {
 
                 Context context = getApplicationContext();
                 Toast.makeText(context,"You Can Change Password",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //move Change password page
+        btn_admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent intent = new Intent(Admin_profile_activity.this , Admin_List_Activity.class);
+               intent.putExtra("emailaddress",emailExtra);
+               startActivity(intent);
+
+               Context context = getApplicationContext();
+               Toast.makeText(context,"Admin List Loading",Toast.LENGTH_SHORT).show();
             }
         });
     }

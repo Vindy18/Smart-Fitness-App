@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutPerson"
+        android:layout_width="298dp"
+        android:layout_height="142dp"
+        android:background="@drawable/card1"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayoutPerson"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="NotSibling">
+
+        <TextView
+            android:id="@+id/ad_phone"
+            android:layout_width="181dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="90dp"
+            android:text="@string/ntr_phone"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/ad_name"
+            android:layout_width="181dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="20dp"
+            android:text="Name"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/person_image"
+            android:layout_width="52dp"
+            android:layout_height="77dp"
+            android:contentDescription="@string/person_image"
+            app:srcCompat="@drawable/person_icon" />
+
+        <TextView
+            android:id="@+id/ad_email"
+            android:layout_width="181dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="55dp"
+            android:text="Email"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="56dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginLeft="250dp"
+            app:srcCompat="@drawable/logo" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

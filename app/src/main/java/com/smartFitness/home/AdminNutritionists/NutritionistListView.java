@@ -40,6 +40,7 @@ public class NutritionistListView extends ArrayAdapter<Nutritionist> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View row = inflater.inflate(R.layout.single_row_n,parent, false);
