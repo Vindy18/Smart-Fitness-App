@@ -10,13 +10,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.smartFitness.home.DataBase.DBHelperNutritionist;
 import com.smartFitness.home.Model.Nutritionist;
 import com.smartFitness.home.R;
 
+import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
+
 public class Edit_Nutritionists extends AppCompatActivity {
 
     //variables
+
+    AwesomeValidation awesomeValidation;
+
     EditText et_Name;
     EditText et_location;
     EditText et_mobileNumber;
@@ -37,6 +44,8 @@ public class Edit_Nutritionists extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_nutritionists);
 
+        awesomeValidation = new AwesomeValidation (BASIC);
+
         // get intent object
         Intent nutritionistsListIntent = getIntent();
         emailExtra = nutritionistsListIntent.getStringExtra("emailaddress");
@@ -55,13 +64,18 @@ public class Edit_Nutritionists extends AppCompatActivity {
         btn_save = findViewById(R.id.btn_ntr_editSave);
         btn_cancel = findViewById(R.id.btn_ntr_editCancel);
 
-        //get current nutrition details to Edit texts
+        //get current nutritionist details to Edit texts
         nutritionist = dbHelper.getNutritionist(nutritionistEmail);
         et_Name.setText(nutritionist.name);
         et_location.setText(nutritionist.location);
         et_email.setText(nutritionist.email);
         et_mobileNumber.setText(nutritionist.mobileNumber);
         et_description.setText(nutritionist.description);
+
+        //validations
+        awesomeValidation.addValidation(Edit_Nutritionists.this, R.id.et_ntr_Name, "[a-zA-Z\\s]+", R.string.err_name);
+        awesomeValidation.addValidation(Edit_Nutritionists.this, R.id.et_ntrContactNumber, RegexTemplate.TELEPHONE, R.string.err_tel);
+        awesomeValidation.addValidation(Edit_Nutritionists.this, R.id.et_ntr_email, android.util.Patterns.EMAIL_ADDRESS, R.string.err_email);
     }
 
     @Override
@@ -81,19 +95,20 @@ public class Edit_Nutritionists extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 //assign values to variable
-                String Name = et_Name.getText().toString();
-                String location = et_location.getText().toString();
-                String mobileNumber = et_mobileNumber.getText().toString();
-                String email = et_email.getText().toString() ;
-                String description = et_description.getText().toString() ;
+                    String Name = et_Name.getText().toString();
+                    String location = et_location.getText().toString();
+                    String mobileNumber = et_mobileNumber.getText().toString();
+                    String email = et_email.getText().toString();
+                    String description = et_description.getText().toString();
 
-                //pass the assigned values to DBHelperNutritionist and Return "val"
-                int val = dbHelper.updateNutritionist(nutritionistEmail,Name,location,email,mobileNumber,description);
+                    //pass the assigned values to DBHelperNutritionist and Return "val"
+                    int val = dbHelper.updateNutritionist(nutritionistEmail, Name, location, email, mobileNumber, description);
 
-                //check "val" variable, if addNutritionist() Success success return grater than 0 value
+                //check "val" variable, if addNutritionist() Success success return greater than 0 value
                 if (val > 0){
-                    //Toast massage
+                    //Toast message
                     Context context = getApplicationContext();
                     Toast.makeText(context,"Update Successful",Toast.LENGTH_SHORT).show();
 
@@ -103,7 +118,7 @@ public class Edit_Nutritionists extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else{
-                    //Toast massage
+                    //Toast message
                     Context context = getApplicationContext();
                     Toast.makeText(context,"Update Fail",Toast.LENGTH_SHORT).show();
                 }
