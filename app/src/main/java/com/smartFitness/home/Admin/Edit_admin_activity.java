@@ -1,5 +1,7 @@
 package com.smartFitness.home.Admin;
 
+import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -11,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.smartFitness.home.DataBase.DBHelper;
 import com.smartFitness.home.Model.Admin;
 import com.smartFitness.home.R;
@@ -30,6 +34,7 @@ public class Edit_admin_activity extends AppCompatActivity {
 
     DBHelper dbHelper;
     Admin admin;
+    AwesomeValidation awesomeValidation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +62,18 @@ public class Edit_admin_activity extends AppCompatActivity {
         et_email.setText(admin.email);
         et_mobileNumber.setText(admin.mobileNumber);
 
+        awesomeValidation = new AwesomeValidation (BASIC);
+
+        //validations
+        String regexName = "[a-zA-Z\\s]+";
+
+        awesomeValidation.addValidation(Edit_admin_activity.this, R.id.et_admineditFirstName, regexName, R.string.err_name);
+        awesomeValidation.addValidation(Edit_admin_activity.this, R.id.et_adminEditLastName, regexName, R.string.err_name);
+        awesomeValidation.addValidation(Edit_admin_activity.this, R.id.et_adminEditmobilenumber, RegexTemplate.TELEPHONE, R.string.err_tel);
+        awesomeValidation.addValidation(Edit_admin_activity.this, R.id.et_adminEditEmail, android.util.Patterns.EMAIL_ADDRESS, R.string.err_email);
 
     }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -77,28 +92,36 @@ public class Edit_admin_activity extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
 
-                String firstName = et_firstName.getText().toString();
-                String lastName = et_lastName.getText().toString();
-                String city = et_city.getText().toString();
-                String mobileNumber = et_mobileNumber.getText().toString();
-                String email = et_email.getText().toString() ;
-                String password = admin.Password;
+                if (awesomeValidation.validate()) {
 
-                int val = dbHelper.updateAdmin(emailExtra,firstName,lastName,city,email,mobileNumber,password);
+                    String firstName = et_firstName.getText().toString();
+                    String lastName = et_lastName.getText().toString();
+                    String city = et_city.getText().toString();
+                    String mobileNumber = et_mobileNumber.getText().toString();
+                    String email = et_email.getText().toString();
+                    String password = admin.Password;
 
-                if (val > 0){
+                    int val = dbHelper.updateAdmin(emailExtra, firstName, lastName, city, email, mobileNumber, password);
 
-                    Context context = getApplicationContext();
-                    Toast.makeText(context,"Update Successful",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Edit_admin_activity.this, Admin_profile_activity.class);
-                    intent.putExtra ("emailaddress",email);
-                    startActivity(intent);
+                    if (val > 0) {
 
+                        Context context = getApplicationContext();
+                        Toast.makeText(context, "Update Successful", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Edit_admin_activity.this, Admin_profile_activity.class);
+                        intent.putExtra("emailaddress", email);
+                        startActivity(intent);
+
+                    } else {
+
+                        Context context = getApplicationContext();
+                        Toast.makeText(context, "Update Fail", Toast.LENGTH_SHORT).show();
+
+                    }
                 }
                 else{
 
-                    Context context = getApplicationContext();
-                    Toast.makeText(context,"Update Fail",Toast.LENGTH_SHORT).show();
+                    //Toast massage
+                    Toast.makeText(Edit_admin_activity.this,"Invalid details",Toast.LENGTH_SHORT).show();
 
                 }
 

@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Smart Fitness</string>
     <string name="btn_bmical">BMI Calculator</string>
     <string name="btn_wt">Weight Trainers</string>
@@ -76,7 +77,6 @@
     <string name="err_name">Enter a valid name</string>
     <string name="err_tel">Enter a valid phone number</string>
     <string name="err_email">Enter a valid email</string>
-    <string name="pass">Capital and small letter symbol</string>
-
+    <string name="pass">Add minimum 1:[Aa-Zz]characters and Symbols</string>
 
 </resources>

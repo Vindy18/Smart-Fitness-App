@@ -1,5 +1,7 @@
 package com.smartFitness.home.Admin;
 
+import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -11,7 +13,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.smartFitness.home.AdminCommon.Admin_view_Activity;
+import com.smartFitness.home.AdminNutritionists.Add_new_nutritionist;
 import com.smartFitness.home.DataBase.DBHelper;
 import com.smartFitness.home.R;
 
@@ -30,6 +35,7 @@ public class Add_admin_activity extends AppCompatActivity {
     String emailExtra;
 
     DBHelper dbHelper;
+    AwesomeValidation awesomeValidation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +48,26 @@ public class Add_admin_activity extends AppCompatActivity {
 
         dbHelper = new DBHelper(this);
         btn_adminProfile = findViewById(R.id.btn_imageAdminAdd);
+        btn_add= findViewById(R.id.btn_addNewAdmin);
+        btn_Cancel= findViewById(R.id.btn_CancelNewAdmin);
         et_firstName = findViewById(R.id.et_addfirstName);
         et_lastName = findViewById(R.id.et_addlastName);
         et_city = findViewById(R.id.et_addcity);
         et_mobileNumber = findViewById(R.id.et_addmobilenumber);
         et_email = findViewById(R.id.et_addEmail);
         et_password = findViewById(R.id.et_addpassword);
-        btn_add= findViewById(R.id.btn_addNewAdmin);
-        btn_Cancel= findViewById(R.id.btn_CancelNewAdmin);
+
+        awesomeValidation = new AwesomeValidation (BASIC);
+
+        //validations
+        String regexPassword = "(?=.*[a-z])(?=.*[A-Z])(?=.*[\\d])(?=.*[~`!@#\\$%\\^&\\*\\(\\)\\-_\\+=\\{\\}\\[\\]\\|\\;:\"<>,./\\?]).{8,}";
+        String regexName = "[a-zA-Z\\s]+";
+
+        awesomeValidation.addValidation(Add_admin_activity.this, R.id.et_addfirstName, regexName, R.string.err_name);
+        awesomeValidation.addValidation(Add_admin_activity.this, R.id.et_addlastName, regexName, R.string.err_name);
+        awesomeValidation.addValidation(Add_admin_activity.this, R.id.et_addmobilenumber, RegexTemplate.TELEPHONE, R.string.err_tel);
+        awesomeValidation.addValidation(Add_admin_activity.this, R.id.et_addEmail, android.util.Patterns.EMAIL_ADDRESS, R.string.err_email);
+        awesomeValidation.addValidation(Add_admin_activity.this, R.id.et_addpassword, regexPassword, R.string.pass);
 
     }
 
@@ -83,26 +101,36 @@ public class Add_admin_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String firstName = et_firstName.getText().toString();
-                String lastName = et_lastName.getText().toString();
-                String city = et_city.getText().toString();
-                String mobileNumber = et_mobileNumber.getText().toString();
-                String email = et_email.getText().toString() ;
-                String password = et_password.getText().toString() ;
+                if (awesomeValidation.validate()) {
 
-             boolean val = dbHelper.addAdmin(firstName,lastName,city,email,mobileNumber,password);
+                    String firstName = et_firstName.getText().toString();
+                    String lastName = et_lastName.getText().toString();
+                    String city = et_city.getText().toString();
+                    String mobileNumber = et_mobileNumber.getText().toString();
+                    String email = et_email.getText().toString() ;
+                    String password = et_password.getText().toString() ;
 
-                if(val == true){
+                    boolean val = dbHelper.addAdmin(firstName,lastName,city,email,mobileNumber,password);
 
-                    Intent intent = new Intent(Add_admin_activity.this, Add_admin_activity.class);
-                    intent.putExtra ("emailaddress",emailExtra);
-                    startActivity(intent);
+                    if(val == true){
 
-                    Toast.makeText(Add_admin_activity.this,"Add Success",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Add_admin_activity.this, Add_admin_activity.class);
+                        intent.putExtra ("emailaddress",emailExtra);
+                        startActivity(intent);
 
-                }else{
+                        Toast.makeText(Add_admin_activity.this,"Add Success",Toast.LENGTH_SHORT).show();
 
-                    Toast.makeText(Add_admin_activity.this,"Add fail",Toast.LENGTH_SHORT).show();
+                    }else{
+
+                        Toast.makeText(Add_admin_activity.this,"Add fail",Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }
+                else{
+
+                    //Toast massage
+                    Toast.makeText(Add_admin_activity.this,"Invalid details",Toast.LENGTH_SHORT).show();
 
                 }
             }
