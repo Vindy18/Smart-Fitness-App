@@ -84,33 +84,38 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
             public void onClick(View view) {
                 // take the values from view activity_add_new_nutritionist.xml file
 
-                if (awesomeValidation.validate()){
+                if (awesomeValidation.validate()) {
 
-                String Name = et_Name.getText().toString();
-                String location = et_location.getText().toString();
-                String mobileNumber = et_mobileNumber.getText().toString();
-                String email = et_email.getText().toString() ;
-                String about = et_description.getText().toString() ;
+                    String Name = et_Name.getText().toString();
+                    String location = et_location.getText().toString();
+                    String mobileNumber = et_mobileNumber.getText().toString();
+                    String email = et_email.getText().toString();
+                    String about = et_description.getText().toString();
 
-                //pass data to DataBase/DBHelperNutritionist and return "val"
-                boolean val = dbHelper.addWeightTrainer(Name,location ,mobileNumber,email,about );
+                    //pass data to DataBase/DBHelperNutritionist and return "val"
+                    boolean val = dbHelper.addWeightTrainer(Name, location, mobileNumber, email, about);
 
-                //check "val" variable, if addNutritionist() Success return true
-                //if(val == true){
+                    //check "val" variable, if addNutritionist() Success return true
+                    if (val == true) {
 
-                    //pass intent to same page
-                    Intent intent = new Intent(Admin_View_AddWeightTrainer.this, Admin_View_AddWeightTrainer.class);
-                    intent.putExtra("emailaddress",emailExtra);
-                    startActivity(intent);
+                        //pass intent to same page
+                        Intent intent = new Intent(Admin_View_AddWeightTrainer.this, Admin_View_AddWeightTrainer.class);
+                        intent.putExtra("emailaddress", emailExtra);
+                        startActivity(intent);
 
-                    //Toast massage
-                    Toast.makeText(Admin_View_AddWeightTrainer.this,"Add Success",Toast.LENGTH_SHORT).show();
+                        //Toast massage
+                        Toast.makeText(Admin_View_AddWeightTrainer.this, "Add Success", Toast.LENGTH_SHORT).show();
 
-                }else{
-                    //Toast massage
-                   Toast.makeText(Admin_View_AddWeightTrainer.this,"Add fail",Toast.LENGTH_SHORT).show();
+                    } else {
+                        //Toast massage
+                        Toast.makeText(Admin_View_AddWeightTrainer.this, "Add fail", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
-
+                else {
+                    //Toast massage
+                    Toast.makeText(Admin_View_AddWeightTrainer.this, "Invalid details", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

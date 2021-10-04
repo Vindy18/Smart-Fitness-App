@@ -96,6 +96,8 @@ public class Edit_Nutritionists extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                if (awesomeValidation.validate()) {
+
                 //assign values to variable
                     String Name = et_Name.getText().toString();
                     String location = et_location.getText().toString();
@@ -123,6 +125,11 @@ public class Edit_Nutritionists extends AppCompatActivity {
                     Toast.makeText(context,"Update Fail",Toast.LENGTH_SHORT).show();
                 }
 
+            }
+                else{
+                    //Toast massage
+                    Toast.makeText(Edit_Nutritionists.this,"Invalid details",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

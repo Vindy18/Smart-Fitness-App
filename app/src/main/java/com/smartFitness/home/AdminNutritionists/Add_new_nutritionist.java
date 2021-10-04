@@ -62,7 +62,7 @@ public class Add_new_nutritionist extends AppCompatActivity {
         awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_ntr_Name, "[a-zA-Z\\s]+", R.string.err_name);
         awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_ntrContactNumber, RegexTemplate.TELEPHONE, R.string.err_tel);
         awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_ntr_email, android.util.Patterns.EMAIL_ADDRESS, R.string.err_email);
-        //awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_password, regexPassword, R.string.password);
+        //awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_password, regexPassword, R.string.pass);
     }
 
     @Override
@@ -97,22 +97,26 @@ public class Add_new_nutritionist extends AppCompatActivity {
                     boolean val = dbHelper.addNutritionist(Name, location, email, mobileNumber, description);
 
 
-                //check "val" variable, if addNutritionist() Success return true
-                //if(val == true){
+                        //check "val" variable, if addNutritionist() Success return true
+                        if(val == true){
 
-                    //pass intent to same page
-                    Intent intent = new Intent(Add_new_nutritionist.this, Add_new_nutritionist.class);
-                    intent.putExtra("emailaddress",emailExtra);
-                    startActivity(intent);
+                            //pass intent to same page
+                            Intent intent = new Intent(Add_new_nutritionist.this, Add_new_nutritionist.class);
+                            intent.putExtra("emailaddress",emailExtra);
+                            startActivity(intent);
 
-                    //Toast massage
-                    Toast.makeText(Add_new_nutritionist.this,"Add Success",Toast.LENGTH_SHORT).show();
+                            //Toast massage
+                            Toast.makeText(Add_new_nutritionist.this,"Add Success",Toast.LENGTH_SHORT).show();
 
-                }else{
-                    //Toast massage
-                    Toast.makeText(Add_new_nutritionist.this,"Add fail",Toast.LENGTH_SHORT).show();
+                        }else{
+                            //Toast massage
+                            Toast.makeText(Add_new_nutritionist.this,"Add fail",Toast.LENGTH_SHORT).show();
+                        }
                 }
-
+                else{
+                    //Toast massage
+                    Toast.makeText(Add_new_nutritionist.this,"Invalid details",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

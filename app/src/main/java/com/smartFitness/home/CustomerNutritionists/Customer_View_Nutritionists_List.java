@@ -7,7 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,9 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
     TextView menuTab_cd;
     TextView menuTab_nt;
 
+    EditText searchNt_name, searchNt_location;
+    SearchView searchName_icon,searchLocation_icon;
+
     ListView listView;
     DBHelperNutritionist dbHelper;
 
@@ -50,6 +55,9 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
         menuTab_wt = findViewById(R.id.menu_tab_wt);
         menuTab_nt = findViewById(R.id.menu_tab_nt);
 
+        //searching
+        searchNt_name =(EditText) findViewById(R.id.search_nt_name);
+        searchNt_location =(EditText) findViewById(R.id.search_nt_name);
 
         //Database Connection
         dbHelper = new DBHelperNutritionist(this);
@@ -61,7 +69,6 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.lv_CvNutrition);
         NutritionistListCvView adapter = new NutritionistListCvView(Customer_View_Nutritionists_List.this, nutritionist);
         listView.setAdapter(adapter);
-
 
         // event Listener for Menu button
         btn_nutCV_Menu.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +105,7 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
                     Toast.makeText(context, "Nutritionists page loading", Toast.LENGTH_SHORT).show();
                 }
             });
+
 
     }
 
