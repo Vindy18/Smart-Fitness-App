@@ -8,9 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.smartFitness.home.AdminNutritionists.Admin_View_Nutritionists_List;
+import com.smartFitness.home.AdminWeightTrainer.Admin_View_WeightTrainerList;
 import com.smartFitness.home.CustomerCommon.Customer_view_Activity;
+import com.smartFitness.home.CustomerWeightTrainer.Customer_View_WeightTrainerList;
 import com.smartFitness.home.DataBase.DBHelperNutritionist;
 import com.smartFitness.home.Model.Nutritionist;
 import com.smartFitness.home.R;
@@ -19,8 +23,12 @@ import java.util.List;
 
 public class Customer_View_Nutritionists_List extends AppCompatActivity {
 
-    //variable
+    //variables
     Button btn_nutCV_Menu;
+
+    TextView menuTab_wt;
+    TextView menuTab_cd;
+    TextView menuTab_nt;
 
     ListView listView;
     DBHelperNutritionist dbHelper;
@@ -38,6 +46,11 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
         //get element by ID
         btn_nutCV_Menu = findViewById(R.id.btn_nutCV_Menu);
 
+        //menu bar tabs
+        menuTab_wt = findViewById(R.id.menu_tab_wt);
+        menuTab_nt = findViewById(R.id.menu_tab_nt);
+
+
         //Database Connection
         dbHelper = new DBHelperNutritionist(this);
 
@@ -46,8 +59,9 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
 
         // lord Lay out (constrain lay out)
         listView = (ListView) findViewById(R.id.lv_CvNutrition);
-        NutritionistListCvView  adapter = new NutritionistListCvView (Customer_View_Nutritionists_List.this,nutritionist);
+        NutritionistListCvView adapter = new NutritionistListCvView(Customer_View_Nutritionists_List.this, nutritionist);
         listView.setAdapter(adapter);
+
 
         // event Listener for Menu button
         btn_nutCV_Menu.setOnClickListener(new View.OnClickListener() {
@@ -57,9 +71,34 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
                 startActivity(intent);
 
                 Context context = getApplicationContext();
-                Toast.makeText(context,"Menu Loading ",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Menu Loading ", Toast.LENGTH_SHORT).show();
             }
         });
+
+
+            //moving to weight trainers page
+            menuTab_wt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Customer_View_Nutritionists_List.this, Customer_View_WeightTrainerList.class);
+                    startActivity(intent);
+
+                    Context context = getApplicationContext();
+                    Toast.makeText(context, "Weight Trainers page loading", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            menuTab_nt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Customer_View_Nutritionists_List.this, Customer_View_Nutritionists_List.class);
+                    startActivity(intent);
+
+                 Context context = getApplicationContext();
+                    Toast.makeText(context, "Nutritionists page loading", Toast.LENGTH_SHORT).show();
+                }
+            });
+
     }
 
 }

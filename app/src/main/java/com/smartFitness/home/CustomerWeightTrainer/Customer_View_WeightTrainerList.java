@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.smartFitness.home.CustomerCommon.Customer_view_Activity;
@@ -26,6 +27,10 @@ public class Customer_View_WeightTrainerList extends AppCompatActivity {
     //variable
     Button btn_wtCV_Menu;
 
+    TextView menuTab_nt;
+    TextView menuTab_cd;
+    TextView menuTab_wt;
+
     ListView listView;
     DBHelperWeightTrainer dbHelper;
 
@@ -41,6 +46,10 @@ public class Customer_View_WeightTrainerList extends AppCompatActivity {
 
         //get element by ID
         btn_wtCV_Menu = findViewById(R.id.btn_wtCV_Menu);
+
+        //menu bar tabs
+        menuTab_nt = findViewById(R.id.menu_tab_nt);
+        menuTab_wt = findViewById(R.id.menu_tab_wt);
 
         //Database Connection
         dbHelper = new DBHelperWeightTrainer(this);
@@ -62,6 +71,29 @@ public class Customer_View_WeightTrainerList extends AppCompatActivity {
 
                 Context context = getApplicationContext();
                 Toast.makeText(context,"Menu Loading ",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //moving to nutritionists page
+        menuTab_nt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Customer_View_WeightTrainerList.this, Customer_View_Nutritionists_List.class);
+                startActivity(intent);
+
+                Context context = getApplicationContext();
+                Toast.makeText(context, "Nutritionists page loading", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        menuTab_wt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Customer_View_WeightTrainerList.this, Customer_View_WeightTrainerList.class);
+                startActivity(intent);
+
+                Context context = getApplicationContext();
+                Toast.makeText(context, "Weight Trainers page loading", Toast.LENGTH_SHORT).show();
             }
         });
     }

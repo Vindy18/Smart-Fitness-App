@@ -23,7 +23,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/menu_tab1"
+                android:id="@+id/menu_tab_cd"
                 android:layout_width="136dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -34,7 +34,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/menu_tab2"
+                android:id="@+id/menu_tab_wt"
                 android:layout_width="136dp"
                 android:layout_height="43dp"
                 android:layout_weight="1"
@@ -44,7 +44,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/menu_tab3"
+                android:id="@+id/menu_tab_nt"
                 android:layout_width="136dp"
                 android:layout_height="43dp"
                 android:layout_weight="1"

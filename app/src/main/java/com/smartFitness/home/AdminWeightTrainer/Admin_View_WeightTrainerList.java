@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -31,6 +32,9 @@ public class Admin_View_WeightTrainerList extends AppCompatActivity {
     String emailExtra;
     ListView listView;
 
+    TextView menuTab_nt;
+    TextView menuTab_cd;
+
     List<WeightTrainer> weightTrainer;
 
     DBHelperWeightTrainer dbHelper;
@@ -41,6 +45,9 @@ public class Admin_View_WeightTrainerList extends AppCompatActivity {
 
         Intent avIntent = getIntent();
         emailExtra = avIntent.getStringExtra("emailaddress");
+
+        //nutritionists trainer tab
+        menuTab_nt = findViewById(R.id.menu_tab_nt);
 
         // db connection
         dbHelper = new DBHelperWeightTrainer(this);
@@ -81,6 +88,19 @@ public class Admin_View_WeightTrainerList extends AppCompatActivity {
                 Toast.makeText(context,"Menu Loading",Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Admin_View_WeightTrainerList.this, Admin_view_Activity.class);
+                intent.putExtra ("emailaddress",emailExtra);
+                startActivity(intent);
+            }
+        });
+
+        //moving to Nutritionists page
+        menuTab_nt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = getApplicationContext();
+                Toast.makeText(context,"Nutritionists page loading",Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(Admin_View_WeightTrainerList.this, Admin_View_Nutritionists_List.class);
                 intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);
             }
