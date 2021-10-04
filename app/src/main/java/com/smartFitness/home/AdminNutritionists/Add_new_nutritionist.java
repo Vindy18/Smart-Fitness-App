@@ -19,8 +19,6 @@ import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
 
 public class Add_new_nutritionist extends AppCompatActivity {
 
-    AwesomeValidation awesomeValidation;
-
     EditText et_Name;
     EditText et_location;
     EditText et_mobileNumber;
@@ -33,6 +31,7 @@ public class Add_new_nutritionist extends AppCompatActivity {
     String emailExtra;
 
     DBHelperNutritionist dbHelper;
+    AwesomeValidation awesomeValidation;
 
 
     @Override
@@ -40,12 +39,12 @@ public class Add_new_nutritionist extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_nutritionist);
 
-        awesomeValidation = new AwesomeValidation (BASIC);
 
         // get intent object
         Intent nutritionistsListIntent = getIntent();
         emailExtra = nutritionistsListIntent.getStringExtra("emailaddress");
 
+        awesomeValidation = new AwesomeValidation (BASIC);
 
         dbHelper = new DBHelperNutritionist(this);
         et_Name = findViewById(R.id.et_ntr_Name);
