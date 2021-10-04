@@ -73,9 +73,9 @@ public class Edit_Nutritionists extends AppCompatActivity {
         et_description.setText(nutritionist.description);
 
         //validations
-        awesomeValidation.addValidation(Edit_Nutritionists.this, R.id.et_ntr_Name, "[a-zA-Z\\s]+", R.string.err_name);
-        awesomeValidation.addValidation(Edit_Nutritionists.this, R.id.et_ntrContactNumber, RegexTemplate.TELEPHONE, R.string.err_tel);
-        awesomeValidation.addValidation(Edit_Nutritionists.this, R.id.et_ntr_email, android.util.Patterns.EMAIL_ADDRESS, R.string.err_email);
+        awesomeValidation.addValidation(Edit_Nutritionists.this, R.id.et_ntr_editName, "[a-zA-Z\\s]+", R.string.err_name);
+        awesomeValidation.addValidation(Edit_Nutritionists.this, R.id.et_ntr_editContactNumber, RegexTemplate.TELEPHONE, R.string.err_tel);
+        awesomeValidation.addValidation(Edit_Nutritionists.this, R.id.et_ntr_editEmail, android.util.Patterns.EMAIL_ADDRESS, R.string.err_email);
     }
 
     @Override
@@ -95,7 +95,7 @@ public class Edit_Nutritionists extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //check validations
                 if (awesomeValidation.validate()) {
 
                 //assign values to variable
@@ -108,22 +108,22 @@ public class Edit_Nutritionists extends AppCompatActivity {
                     //pass the assigned values to DBHelperNutritionist and Return "val"
                     int val = dbHelper.updateNutritionist(nutritionistEmail, Name, location, email, mobileNumber, description);
 
-                //check "val" variable, if addNutritionist() Success success return greater than 0 value
-                if (val > 0){
-                    //Toast message
-                    Context context = getApplicationContext();
-                    Toast.makeText(context,"Update Successful",Toast.LENGTH_SHORT).show();
+                            //check "val" variable, if addNutritionist() Success success return greater than 0 value
+                            if (val > 0){
+                                //Toast message
+                                Context context = getApplicationContext();
+                                Toast.makeText(context,"Update Successful",Toast.LENGTH_SHORT).show();
 
-                    //pass intent to same page
-                    Intent intent = new Intent(Edit_Nutritionists.this, Admin_View_Nutritionists_List.class);
-                    intent.putExtra ("emailaddress",emailExtra);
-                    startActivity(intent);
-                }
-                else{
-                    //Toast message
-                    Context context = getApplicationContext();
-                    Toast.makeText(context,"Update Fail",Toast.LENGTH_SHORT).show();
-                }
+                                //pass intent to same page
+                                Intent intent = new Intent(Edit_Nutritionists.this, Admin_View_Nutritionists_List.class);
+                                intent.putExtra ("emailaddress",emailExtra);
+                                startActivity(intent);
+                            }
+                            else{
+                                //Toast message
+                                Context context = getApplicationContext();
+                                Toast.makeText(context,"Update Fail",Toast.LENGTH_SHORT).show();
+                            }
 
             }
                 else{
