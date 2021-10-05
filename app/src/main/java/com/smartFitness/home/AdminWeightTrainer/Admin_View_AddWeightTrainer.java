@@ -21,8 +21,7 @@ import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
 
 public class Admin_View_AddWeightTrainer extends AppCompatActivity {
 
-    AwesomeValidation awesomeValidation;
-
+    //declare variables
     EditText et_Name;
     EditText et_location;
     EditText et_mobileNumber;
@@ -35,6 +34,7 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
     String emailExtra;
 
     DBHelperWeightTrainer dbHelper;
+    AwesomeValidation awesomeValidation;
 
 
     @Override
@@ -42,14 +42,17 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_view_add_weight_trainer);
 
+        //validation object created
         awesomeValidation = new AwesomeValidation (BASIC);
 
         // get intent object
         Intent Intent = getIntent();
         emailExtra = Intent.getStringExtra("emailaddress");
 
-
+        //dbHelper weight trainer object
         dbHelper = new DBHelperWeightTrainer(this);
+
+        //get elements by ID
         et_Name = findViewById(R.id.et_name);
         et_location = findViewById(R.id.et_Location);
         et_mobileNumber = findViewById(R.id.et_contactNumber);
@@ -69,30 +72,33 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        // Cancel new weightTrainer
+        //Cancel new weightTrainer
         btn_cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
+
+                //pass intent object
                 Intent intent = new Intent(Admin_View_AddWeightTrainer.this, Admin_View_WeightTrainerList.class);
                 intent.putExtra("emailaddress",emailExtra);
                 startActivity(intent);
             }
         });
 
-        // save new weightTrainer
+        //save new weightTrainer
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
+                //check validations
                 if (awesomeValidation.validate()) {
 
+                    //get text to variables
                     String Name = et_Name.getText().toString();
                     String location = et_location.getText().toString();
                     String mobileNumber = et_mobileNumber.getText().toString();
                     String email = et_email.getText().toString();
                     String about = et_description.getText().toString();
 
-                    //pass data to DataBase/DBHelper and return "val"
+                    //pass data to DBHelperWeightTrainer and return "val"
                     boolean val = dbHelper.addWeightTrainer(Name, location, mobileNumber, email, about);
 
                     //check "val" variable, if addWeightTrainer() Success return true
@@ -103,17 +109,17 @@ public class Admin_View_AddWeightTrainer extends AppCompatActivity {
                         intent.putExtra("emailaddress", emailExtra);
                         startActivity(intent);
 
-                        //Toast massage
+                        //Toast message
                         Toast.makeText(Admin_View_AddWeightTrainer.this, "Add Success", Toast.LENGTH_SHORT).show();
 
                     } else {
-                        //Toast massage
+                        //Toast message
                         Toast.makeText(Admin_View_AddWeightTrainer.this, "Add fail", Toast.LENGTH_SHORT).show();
                     }
 
                 }
                 else {
-                    //Toast massage
+                    //Toast message
                     Toast.makeText(Admin_View_AddWeightTrainer.this, "Invalid details", Toast.LENGTH_SHORT).show();
                 }
             }

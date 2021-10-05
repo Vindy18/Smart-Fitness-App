@@ -25,7 +25,7 @@ import java.util.List;
 
 public class Customer_View_Nutritionists_List extends AppCompatActivity {
 
-    //variables
+    //declare variables
     Button btn_nutCV_Menu;
 
     TextView menuTab_wt;
@@ -50,8 +50,6 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
 
         //get element by ID
         btn_nutCV_Menu = findViewById(R.id.btn_nutCV_Menu);
-
-        //menu bar tabs
         menuTab_wt = findViewById(R.id.menu_tab_wt);
         menuTab_nt = findViewById(R.id.menu_tab_nt);
 
@@ -59,10 +57,10 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
         searchNt_name =(EditText) findViewById(R.id.search_nt_name);
         searchNt_location =(EditText) findViewById(R.id.search_nt_name);
 
-        //Database Connection
+        //dbHelperNutritionist object creation
         dbHelper = new DBHelperNutritionist(this);
 
-        // Get nutrition form data base
+        // Get all nutritionist form data base
         nutritionist = dbHelper.getAllNutritionists();
 
         // lord Lay out (constrain lay out)
@@ -74,34 +72,43 @@ public class Customer_View_Nutritionists_List extends AppCompatActivity {
         btn_nutCV_Menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //pass intent
                 Intent intent = new Intent(Customer_View_Nutritionists_List.this, Customer_view_Activity.class);
                 startActivity(intent);
 
+                //toast message
                 Context context = getApplicationContext();
                 Toast.makeText(context, "Menu Loading ", Toast.LENGTH_SHORT).show();
             }
         });
 
-
             //moving to weight trainers page
             menuTab_wt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    //pass intent
                     Intent intent = new Intent(Customer_View_Nutritionists_List.this, Customer_View_WeightTrainerList.class);
                     startActivity(intent);
 
+                    //toast message
                     Context context = getApplicationContext();
                     Toast.makeText(context, "Weight Trainers page loading", Toast.LENGTH_SHORT).show();
                 }
             });
 
+            //loading current page
             menuTab_nt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    //pass intent
                     Intent intent = new Intent(Customer_View_Nutritionists_List.this, Customer_View_Nutritionists_List.class);
                     startActivity(intent);
 
-                 Context context = getApplicationContext();
+                    //toast message
+                    Context context = getApplicationContext();
                     Toast.makeText(context, "Nutritionists page loading", Toast.LENGTH_SHORT).show();
                 }
             });

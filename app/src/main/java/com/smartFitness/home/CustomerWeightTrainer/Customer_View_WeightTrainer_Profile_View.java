@@ -18,7 +18,7 @@ import com.smartFitness.home.R;
 
 public class Customer_View_WeightTrainer_Profile_View extends AppCompatActivity {
 
-    //variable
+    //declare variables
     Button btn_wt_cv_close;
     TextView tv_wt_profileName;
     TextView tv_wt_profileLocation;
@@ -40,7 +40,7 @@ public class Customer_View_WeightTrainer_Profile_View extends AppCompatActivity 
         Intent Intent = getIntent();
         emailExtra = Intent.getStringExtra("emailaddress");
 
-        //db connection
+        //DBHelper WeightTrainer object creation
         dbHelper = new DBHelperWeightTrainer(this);
 
         //get element by ID
@@ -63,9 +63,12 @@ public class Customer_View_WeightTrainer_Profile_View extends AppCompatActivity 
         btn_wt_cv_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //pass intent
                 Intent intent = new Intent(Customer_View_WeightTrainer_Profile_View.this, Customer_View_WeightTrainerList.class);
                 startActivity(intent);
 
+                //toast message
                 Context context = getApplicationContext();
                 Toast.makeText(context,"Weigh trainers are Loading ",Toast.LENGTH_SHORT).show();
             }

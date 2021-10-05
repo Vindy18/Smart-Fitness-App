@@ -16,7 +16,7 @@ import com.smartFitness.home.R;
 
 public class Customer_View_Nutritionist_Profile_View extends AppCompatActivity {
 
-    //variable
+    //declare variables
     Button btn_nut_cv_close;
     TextView tv_nut_profileName;
     TextView tv_nut_profileLocation;
@@ -38,7 +38,7 @@ public class Customer_View_Nutritionist_Profile_View extends AppCompatActivity {
         Intent Intent = getIntent();
         emailExtra = Intent.getStringExtra("emailaddress");
 
-        //db connection
+        //dbHelper Nutritionist object creation
         dbHelper = new DBHelperNutritionist(this);
 
         //get element by ID
@@ -61,9 +61,12 @@ public class Customer_View_Nutritionist_Profile_View extends AppCompatActivity {
         btn_nut_cv_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //pass intent
                 Intent intent = new Intent(Customer_View_Nutritionist_Profile_View.this, Customer_View_Nutritionists_List.class);
                 startActivity(intent);
 
+                //toast message
                 Context context = getApplicationContext();
                 Toast.makeText(context,"Nutritionists are Loading ",Toast.LENGTH_SHORT).show();
             }

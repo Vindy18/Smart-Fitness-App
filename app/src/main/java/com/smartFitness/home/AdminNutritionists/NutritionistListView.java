@@ -24,12 +24,15 @@ import com.smartFitness.home.R;
 import java.util.List;
 
 public class NutritionistListView extends ArrayAdapter<Nutritionist> {
+
+    //declare variables
     Context context;
 
     List<Nutritionist> nutritionists;
 
     String emailExtra;
 
+    //constrictor
     NutritionistListView(Context context,List<Nutritionist> nutritionists,String emailExtra ) {
         super(context, R.layout.single_row_n,nutritionists);
         this.context  = context;
@@ -41,10 +44,13 @@ public class NutritionistListView extends ArrayAdapter<Nutritionist> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        //layout inflater object fetched
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+        //get single row view object
         View row = inflater.inflate(R.layout.single_row_n,parent, false);
 
+        //get elements by id
         Button btn_edit = row.findViewById(R.id.btn_edit);
         Button btn_delete = row.findViewById(R.id.btn_delete);
         TextView ntr_name= row.findViewById(R.id.ntr_name);
@@ -54,6 +60,7 @@ public class NutritionistListView extends ArrayAdapter<Nutritionist> {
         //get nutritionist by position
         Nutritionist nutritionist = nutritionists.get(position);
 
+        //set nutritionist details for text view
         ntr_name.setText(nutritionist.name);
         ntr_location.setText(nutritionist.location);
         ntr_phone.setText(nutritionist.mobileNumber);
@@ -62,28 +69,34 @@ public class NutritionistListView extends ArrayAdapter<Nutritionist> {
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 // pass intent
                 Intent intent = new Intent(context, Edit_Nutritionists.class);
                 intent.putExtra("emailaddress",emailExtra);
                 intent.putExtra("nutritionistemail",nutritionist.email);
                 context.startActivity(intent);
 
-                //Toast massage
+                //Toast message
                 Toast.makeText(context, "Nutritionist Loading", Toast.LENGTH_SHORT).show();
             }
         });
-
 
 
         //Delete row
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // dbHelper nutritionist object created
                 DBHelperNutritionist dbHelper = new DBHelperNutritionist(context);
+
+                //delete method called
                 dbHelper.deleteNutritionists(nutritionist.email);
 
+                //Toast message
                 Toast.makeText(context,"Deleting..",Toast.LENGTH_SHORT).show();
 
+                //pass intent
                 Intent intent = new Intent(context, Admin_View_Nutritionists_List.class);
                 intent.putExtra("emailaddress",emailExtra);
                 context.startActivity(intent);

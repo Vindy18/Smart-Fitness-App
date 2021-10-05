@@ -34,15 +34,18 @@ public class AdminList extends ArrayAdapter<Admin> {
 
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        //layout inflater object fetched
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+        //get single row view object
         View row = inflater.inflate(R.layout.single_row_admin,parent, false);
 
+        //get elements by id
         TextView ad_name = row.findViewById(R.id.ad_name);
         TextView ad_email = row.findViewById(R.id.ad_email);
         TextView ad_phone = row.findViewById(R.id.ad_phone);
 
-        //get nutritionist by position
+        //get admin by position
         Admin admin = Admins.get(position);
 
         String fullName = admin.firstName +" "+ admin.lastName ;

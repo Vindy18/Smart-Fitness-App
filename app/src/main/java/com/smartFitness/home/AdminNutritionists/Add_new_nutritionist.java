@@ -19,6 +19,7 @@ import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
 
 public class Add_new_nutritionist extends AppCompatActivity {
 
+    //declare variables
     EditText et_Name;
     EditText et_location;
     EditText et_mobileNumber;
@@ -44,9 +45,13 @@ public class Add_new_nutritionist extends AppCompatActivity {
         Intent nutritionistsListIntent = getIntent();
         emailExtra = nutritionistsListIntent.getStringExtra("emailaddress");
 
+        //validation object created
         awesomeValidation = new AwesomeValidation (BASIC);
 
+        //dbHelper nutritionist object
         dbHelper = new DBHelperNutritionist(this);
+
+        //get elements by ID
         et_Name = findViewById(R.id.et_ntr_Name);
         et_location = findViewById(R.id.et_ntr_Location);
         et_mobileNumber = findViewById(R.id.et_ntrContactNumber);
@@ -57,34 +62,36 @@ public class Add_new_nutritionist extends AppCompatActivity {
         btn_cancel = findViewById(R.id.btn_ntr_cancel);
 
         //validations
-        //String regexPassword = "(?=.*[a-z])(?=.*[A-Z])(?=.*[\\d])(?=.*[~`!@#\\$%\\^&\\*\\(\\)\\-_\\+=\\{\\}\\[\\]\\|\\;:\"<>,./\\?]).{8,}";
         awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_ntr_Name, "[a-zA-Z\\s]+", R.string.err_name);
         awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_ntrContactNumber, RegexTemplate.TELEPHONE, R.string.err_tel);
         awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_ntr_email, android.util.Patterns.EMAIL_ADDRESS, R.string.err_email);
-        //awesomeValidation.addValidation(Add_new_nutritionist.this, R.id.et_password, regexPassword, R.string.pass);
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        // Cancel new nutrition
+        //Cancel new nutrition
         btn_cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
+
+                //pass intent object
                 Intent intent = new Intent(Add_new_nutritionist.this, Admin_View_Nutritionists_List.class);
                 intent.putExtra("emailaddress",emailExtra);
                 startActivity(intent);
             }
         });
 
-        // save new nutrition
+        //save new nutrition
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // take the values from view activity_add_new_nutritionist.xml file
+
                 //check validations
                 if (awesomeValidation.validate()) {
 
+                    //get text to variables
                     String Name = et_Name.getText().toString();
                     String location = et_location.getText().toString();
                     String mobileNumber = et_mobileNumber.getText().toString();
@@ -92,7 +99,7 @@ public class Add_new_nutritionist extends AppCompatActivity {
                     String description = et_description.getText().toString();
 
 
-                    //pass data to DataBase/DBHelperNutritionist and return "val"
+                    //pass data to DBHelperNutritionist and return "val"
                     boolean val = dbHelper.addNutritionist(Name, location, email, mobileNumber, description);
 
 
@@ -104,16 +111,16 @@ public class Add_new_nutritionist extends AppCompatActivity {
                             intent.putExtra("emailaddress",emailExtra);
                             startActivity(intent);
 
-                            //Toast massage
+                            //Toast message
                             Toast.makeText(Add_new_nutritionist.this,"Add Success",Toast.LENGTH_SHORT).show();
 
                         }else{
-                            //Toast massage
+                            //Toast message
                             Toast.makeText(Add_new_nutritionist.this,"Add fail",Toast.LENGTH_SHORT).show();
                         }
                 }
                 else{
-                    //Toast massage
+                    //Toast message
                     Toast.makeText(Add_new_nutritionist.this,"Invalid details",Toast.LENGTH_SHORT).show();
                 }
             }

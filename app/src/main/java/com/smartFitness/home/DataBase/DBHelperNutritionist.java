@@ -159,7 +159,6 @@ public class DBHelperNutritionist extends SQLiteOpenHelper {
         //Get row details to cursor object
         Cursor cursor = db.rawQuery(sql ,null);
 
-
         //Read data Row by Row (cursor in one line)
             if (cursor.moveToFirst()) {
                 do {

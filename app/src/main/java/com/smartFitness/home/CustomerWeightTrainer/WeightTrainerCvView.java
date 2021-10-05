@@ -37,6 +37,7 @@ public class WeightTrainerCvView extends ArrayAdapter<WeightTrainer>{
         @Override
         public View getView(int position,@Nullable View convertView,@NonNull ViewGroup parent) {
 
+                //layout inflater object fetched
                 LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
                 //add one row to one layout
@@ -47,7 +48,6 @@ public class WeightTrainerCvView extends ArrayAdapter<WeightTrainer>{
                 TextView wt_locationView = row.findViewById(R.id.Wt_CVlocation);
                 TextView wt_phoneView = row.findViewById(R.id.wt_CVphone);
                 Button wt_View = row.findViewById(R.id.btn_cvWTview);
-
 
                 //get weightTrainer by position
                 WeightTrainer weightTrainer = weightTrainers.get(position);

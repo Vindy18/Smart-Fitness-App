@@ -20,10 +20,7 @@ import static com.basgeekball.awesomevalidation.ValidationStyle.BASIC;
 
 public class Edit_Nutritionists extends AppCompatActivity {
 
-    //variables
-
-    AwesomeValidation awesomeValidation;
-
+    //declare variables
     EditText et_Name;
     EditText et_location;
     EditText et_mobileNumber;
@@ -39,22 +36,25 @@ public class Edit_Nutritionists extends AppCompatActivity {
     Nutritionist nutritionist;
     DBHelperNutritionist dbHelper;
 
+    AwesomeValidation awesomeValidation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_nutritionists);
 
+        //validation object created
         awesomeValidation = new AwesomeValidation (BASIC);
 
-        // get intent object
+        //get intent object
         Intent nutritionistsListIntent = getIntent();
         emailExtra = nutritionistsListIntent.getStringExtra("emailaddress");
         nutritionistEmail = nutritionistsListIntent.getStringExtra("nutritionistemail");
 
-
+        //dbHelper nutritionist object created
         dbHelper = new DBHelperNutritionist(this);
 
-        //get element by id
+        //get elements by id
         et_Name = findViewById(R.id.et_ntr_editName);
         et_location = findViewById(R.id.et_ntr_editLocation);
         et_mobileNumber = findViewById(R.id.et_ntr_editContactNumber);
@@ -85,6 +85,8 @@ public class Edit_Nutritionists extends AppCompatActivity {
         //cancel button
         btn_cancel.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
+
+                //pass intent
                 Intent intent = new Intent(Edit_Nutritionists.this, Admin_View_Nutritionists_List.class);
                 intent.putExtra("emailaddress",emailExtra);
                 startActivity(intent);
@@ -108,13 +110,13 @@ public class Edit_Nutritionists extends AppCompatActivity {
                     //pass the assigned values to DBHelperNutritionist and Return "val"
                     int val = dbHelper.updateNutritionist(nutritionistEmail, Name, location, email, mobileNumber, description);
 
-                            //check "val" variable, if addNutritionist() Success success return greater than 0 value
+                            //check "val" variable, if addNutritionist() success return greater than 0 value
                             if (val > 0){
                                 //Toast message
                                 Context context = getApplicationContext();
                                 Toast.makeText(context,"Update Successful",Toast.LENGTH_SHORT).show();
 
-                                //pass intent to same page
+                                //pass intent
                                 Intent intent = new Intent(Edit_Nutritionists.this, Admin_View_Nutritionists_List.class);
                                 intent.putExtra ("emailaddress",emailExtra);
                                 startActivity(intent);
@@ -124,10 +126,9 @@ public class Edit_Nutritionists extends AppCompatActivity {
                                 Context context = getApplicationContext();
                                 Toast.makeText(context,"Update Fail",Toast.LENGTH_SHORT).show();
                             }
-
-            }
+                }
                 else{
-                    //Toast massage
+                    //Toast message
                     Toast.makeText(Edit_Nutritionists.this,"Invalid details",Toast.LENGTH_SHORT).show();
                 }
             }

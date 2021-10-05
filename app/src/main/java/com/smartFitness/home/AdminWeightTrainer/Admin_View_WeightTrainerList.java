@@ -26,7 +26,7 @@ import java.util.List;
 
 public class Admin_View_WeightTrainerList extends AppCompatActivity {
 
-
+    //declare variables
     FloatingActionButton btn_wt_AddNew;
     Button btn_wt_menu;
     String emailExtra;
@@ -43,22 +43,27 @@ public class Admin_View_WeightTrainerList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_view_weight_trainer_list2);
 
+        //get intend object
         Intent avIntent = getIntent();
         emailExtra = avIntent.getStringExtra("emailaddress");
 
-        //weight trainer tab
+        //nutritionist tab
         menuTab_nt = findViewById(R.id.menu_tab_nt);
 
-        // db connection
+        // dbHelper weightTrainer object created
         dbHelper = new DBHelperWeightTrainer(this);
 
-        // Get weightTrainer form data base
+        // Get weightTrainers form data base
         weightTrainer = dbHelper.getAllWeightTrainers();
 
+        //get elements by id
         btn_wt_menu = findViewById(R.id. btn_wt_menu);
         btn_wt_AddNew = findViewById(R.id. btn_wt_AddNew);
 
+        //get list view by id
         listView = findViewById(R.id.lv_WeightTrainer);
+
+        //WeightTrainer list view object creation and set adapter
         WeightTrainerListView adapter = new WeightTrainerListView (Admin_View_WeightTrainerList.this,weightTrainer,emailExtra);
         listView.setAdapter(adapter);
 
@@ -71,10 +76,13 @@ public class Admin_View_WeightTrainerList extends AppCompatActivity {
         btn_wt_AddNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //pass intent
                 Intent intent = new Intent(Admin_View_WeightTrainerList.this, Admin_View_AddWeightTrainer.class);
                 intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);
 
+                //Toast message
                 Context context = getApplicationContext();
                 Toast.makeText(context, "Page Loading", Toast.LENGTH_SHORT).show();
             }
@@ -84,22 +92,28 @@ public class Admin_View_WeightTrainerList extends AppCompatActivity {
         btn_wt_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //Toast message
                 Context context = getApplicationContext();
                 Toast.makeText(context,"Menu Loading",Toast.LENGTH_SHORT).show();
 
+                //pass intent
                 Intent intent = new Intent(Admin_View_WeightTrainerList.this, Admin_view_Activity.class);
                 intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);
             }
         });
 
-
+        //load current page
         menuTab_nt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Context context = getApplicationContext();
-                Toast.makeText(context,"Nutritionists page loading",Toast.LENGTH_SHORT).show();
 
+                //Toast message
+                Context context = getApplicationContext();
+                Toast.makeText(context,"Weight trainers page loading",Toast.LENGTH_SHORT).show();
+
+                //pass intent
                 Intent intent = new Intent(Admin_View_WeightTrainerList.this, Admin_View_Nutritionists_List.class);
                 intent.putExtra ("emailaddress",emailExtra);
                 startActivity(intent);

@@ -39,6 +39,7 @@ public class NutritionistListCvView extends ArrayAdapter<Nutritionist> {
     @Override
     public View getView(int position,@Nullable View convertView,@NonNull ViewGroup parent) {
 
+        //layout inflater object fetched
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         //add one row to one layout
